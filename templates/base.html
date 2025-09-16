@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Kadar Przeprowadzki</title>
+        <link rel="icon" type="image/jpg" href="static/zoro.jpg" class="icon-image">
+        <link rel="shortcut icon" type="image/jpg" href="static/zoro.jpg" class="icon-image">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Great+Vibes&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="../static/styles.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Flip.min.js"></script>
+
+    </head>
+
+    <body>
+        <div id="main-content">
+            {% block content %}{% endblock %}
+        </div>
+
+        <!--Easter egg-->
+        <script src="{{ url_for('static', filename='js/easter-egg.js') }}"></script>
+
+        <video id="the-world-bg" autoplay muted playsinline>
+            <source src="/static/Za-Warudo.mp4" type="video/mp4">
+        </video>
+
+    </body>
+</html>
