@@ -12,9 +12,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Great+Vibes&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="stylesheet" href="../static/styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/glightbox/dist/css/glightbox.min.css">
+
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Flip.min.js"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
+        <script src="https://unpkg.com/glightbox/dist/js/glightbox.min.js"></script>
+        <script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+
+
 
     </head>
 
@@ -24,11 +34,12 @@
         </div>
 
         <!--Easter egg-->
-        <script src="{{ url_for('static', filename='js/easter-egg.js') }}"></script>
+<!--        <script src="{{ url_for('static', filename='js/easter-egg.js') }}"></script>-->
 
-        <video id="the-world-bg" autoplay muted playsinline>
-            <source src="/static/Za-Warudo.mp4" type="video/mp4">
-        </video>
+<!--        <video id="the-world-bg" autoplay muted playsinline>-->
+<!--            <source src="/static/Za-Warudo.mp4" type="video/mp4">-->
+<!--        </video>-->
 
+        <script src="{{ url_for('static', filename='js/slider.js') }}"></script>
     </body>
 </html>
