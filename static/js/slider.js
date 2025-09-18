@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (index >= slides.length) index = 0;
     currentSlide = index;
 
-    slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+    slidesContainer.style.transform = `translate3d(-${currentSlide * 100}%, 0, 0)`;
+
 
     dots.forEach(d => d.classList.remove("active"));
     dots[currentSlide].classList.add("active");

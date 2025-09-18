@@ -3,9 +3,9 @@
 {% block content %}
 
 
-<div class="title">
-  <h1>{{ translations.title }}</h1>
-</div>
+<!--<div class="title">-->
+<!--  <h1>{{ translations.title }}</h1>-->
+<!--</div>-->
 
 <div class="slider">
   <div class="slides">
@@ -15,7 +15,10 @@
   </div>
 
   <div class="bottom-center">
-    <h3 class="luxury-heading">Przeprowadzka jest łatwa</h3>
+    <h3 id="hero-heading" class="luxury-heading">
+      <span class="line">Przeprowadzka</span>
+      <span class="line">jest łatwa</span>
+    </h3>
 
     <div class="buttons">
       <button class="btn primary">Zadzwoń 601 896 568</button>
@@ -62,5 +65,11 @@
   </div>
 
 </section>
+
+<!-- Fixed truck at bottom -->
+<div class="truck-track" aria-hidden="true">
+  <img class="truck" src="{{ url_for('static', filename='truck.png') }}" alt="">
+</div>
+
 
 {% endblock %}

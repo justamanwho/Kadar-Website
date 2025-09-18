@@ -11,64 +11,55 @@
   width: 100%;
 }
 
-/* --- SIZE: wider + taller --- */
-.slider{
-  position: relative;
-  width: 95%;           /* almost full width */
-  height: 75vh;          /* TALLER: make it more vertical */
-  margin: 40px auto;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-/* container that moves horizontally */
-.slides{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s ease-in-out;
-}
-
-/* each slide is your <img> */
+/* EACH SLIDE (your <img class="slide">) */
 .slide{
-  min-width: 100%;
-  height: 100%;
-  object-fit: cover;
-  flex-shrink: 0;
-
-  transform: scale(1.01);
-  transition: transform 10s ease-out;   /* was 6s */
-  will-change: transform;
-}
-.slider{
-  overflow: hidden; /* already there, but keep it */
-}
-
-.slides{
-  display: flex;
+  flex: 0 0 100%;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s ease-in-out;
-  will-change: transform;
-  gap: 0;                 /* ensure no gap */
-}
-
-.slide{
-  flex: 0 0 100%;         /* exact width = 100% of slider */
-  width: 100%;
-  height: 100%;
+  display: block;
   object-fit: cover;
-  display: block;         /* avoid inline-image quirks */
+  object-position: center;
+  max-width: none;
+
+  /* Don't scale non-active slides at all */
+  transform: none;
+  transition: transform 10s ease-out;   /* for the Ken Burns on active */
+  will-change: transform;
+  position: relative;                   /* for z-index stacking */
+  z-index: 0;
 }
 
-/* Ken-Burns active state (we toggle this class in JS) */
+/* Only the active slide gets the slow zoom */
 .slide.ken{
-  transform: scale(1.08);    /* subtle zoom in while the slide is shown */
+  transform: scale(1.08);
+  z-index: 1;                           /* sit above neighbors if they overflow */
 }
 
-/* optional: alternate zoom origin so it feels more "alive" */
+/* Optional: alternate origin to make the zoom feel alive */
 .slide:nth-child(odd){  transform-origin: left center;  }
 .slide:nth-child(even){ transform-origin: right center; }
+
+.slider{
+  position: relative;
+  width: 95%;
+  height: 75vh;
+  margin: 40px auto;
+  border-radius: 20px;
+  overflow: hidden;    /* important */
+  padding: 0;
+}
+
+.slides{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+  backface-visibility: hidden;
+}
 
 /* bottom panel can stay; if it's too narrow on big screens, bump it a bit */
 .bottom-center{
@@ -129,16 +120,23 @@
   font-size: 14px;
 }
 
-.luxury-heading {
-  font-family: "Gloock", serif;
+/* Responsive size: grows on desktop, stays readable on mobile */
+.luxury-heading{
   font-weight: 700;
-  font-size: 2.9rem;
-  color: #2c2a29; /* deep charcoal */
-  letter-spacing: 0.05em;
-  margin-bottom: 0.3em;
-  text-transform: capitalize;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  line-height: 1.05;
+  margin: 0 0 0.25em;
+  /* min 2.4rem, fluid 6.2vw, max 5.6rem */
+  font-size: clamp(2rem, 4.5vw, 3rem) !important;
+  white-space: normal;         /* ensure wrapping allowed */
+  word-break: keep-all;
+  hyphens: none;
 }
+
+.luxury-heading .line{
+  display: block;              /* force onto separate lines */
+}
+
+/* (If you had a previous .luxury-heading { font-size: … !important; } remove it) */
 
 .luxury-subtitle {
   font-family: "Montserrat", sans-serif;
@@ -217,7 +215,14 @@
 .dot.active {
   background-color: #333;
 }
+@media(max-width:1150px){
+  .bottom-center {
+    width: 40%;
+    border-radius:10px;
+    padding: 25px 25px;
+  }
 
+}
 
 @media(max-width:768px){
   .slider {
@@ -231,25 +236,31 @@
     margin:5px;
   }
   .bottom-center {
-    width: 80%;
-    border-radius:10px;
+    width: 60%;
+    max-height: 180px;       /* limit height */
+    padding: 15px;           /* smaller padding makes it look tighter */
+    border-radius: 10px;
   }
   .bottom-center::before {
   left: -20px;
   bottom: -20px;
   mask: radial-gradient(20px at top left, #0000 98%, #000);
-}
+  }
 
-.bottom-center::after {
-  right: -20px;
-  bottom: -20px;
-  mask: radial-gradient(20px at top right, #0000 98%, #000);
-}
+  .bottom-center::after {
+    right: -20px;
+    bottom: -20px;
+    mask: radial-gradient(20px at top right, #0000 98%, #000);
+  }
 }
 
 @media(max-width:414px){
   .bottom-center{
     border-radius:10px 10px 0 0;
+    width: 60%;              /* more horizontal space on tiny screens */
+    max-height: 150px;       /* even shorter */
+    padding: 12px;
+
   }
    .btn{
     width:100%;
@@ -324,3 +335,83 @@
   border: 0;
 }
 .map-actions{ margin-top: 10px; }
+
+
+/* fixed container pinned to the bottom of the viewport */
+.truck-track{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: max(0px, env(safe-area-inset-bottom)); /* iOS safe area */
+  height: clamp(40px, 10vh, 100px); /* road height */
+  pointer-events: none;             /* never blocks clicks */
+  z-index: 999;                     /* above content, below nav if needed */
+  /* optional faint road line */
+  background:
+    linear-gradient(#dcdcdc,#dcdcdc) 0 calc(100% - 3px) / 100% 3px no-repeat;
+}
+
+/* the truck image itself */
+.truck{
+  position: absolute;
+  bottom: 3px;                      /* sit on the road line */
+  left: 0;
+  width: clamp(50px, 8vw, 120px);
+  height: auto;
+  transform: translateX(var(--carX, 0));
+  will-change: transform;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* optional subtle bob so it feels alive (keeps X via CSS var) */
+.truck.bob{
+  animation: truckBob 2.6s ease-in-out infinite;
+}
+@keyframes truckBob{
+  0%,100% { transform: translateX(var(--carX,0)) translateY(0); }
+  50%     { transform: translateX(var(--carX,0)) translateY(-2px); }
+}
+
+
+
+/* each letter becomes an inline-block we can animate */
+.word{
+  display: inline-block;        /* keep the whole word as a unit */
+  white-space: nowrap;
+  margin-right: 0.4em;          /* <-- word spacing; tweak to taste */
+}
+
+/* optional: prevent weird auto-hyphenation/word breaking */
+.luxury-heading{
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: none;
+}
+
+/* letter animation */
+.char{
+  display: inline-block;
+  font: inherit;
+  line-height: inherit;
+  vertical-align: baseline;
+  opacity: 0;
+  white-space: pre;
+  transform: translate3d(var(--tx,0),var(--ty,0),0) rotate(var(--rot,0));
+  filter: blur(2px);
+  will-change: transform, opacity, filter;
+  animation: fly-in 2.5s cubic-bezier(.2,.7,.2,1) forwards; /* slower */
+}
+
+
+/* spaces we might inject won’t animate */
+.char.space{ animation: none; opacity: 1; transform: none; filter: none; }
+
+@keyframes fly-in{
+  0%   { opacity: 0; filter: blur(2px); }
+  100% { opacity: 1; filter: blur(0); transform: translate3d(0,0,0) rotate(0deg); }
+}
+
+
+@media (max-width: 420px){
+  .luxury-heading { font-size: clamp(2rem, 8vw, 3rem); }
+}
