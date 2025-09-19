@@ -1,3 +1,6 @@
+
+
+
 .title {
   margin: 70px 0;
   text-align: center;
@@ -314,6 +317,14 @@
 }
 
 
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+}
+
+
 .map-section{
   width: min(95vw, 1200px);
   margin: 40px auto;
@@ -415,3 +426,60 @@
 @media (max-width: 420px){
   .luxury-heading { font-size: clamp(2rem, 8vw, 3rem); }
 }
+
+
+/* --- About Section --- */
+.about-section {
+  width: min(95vw, 1400px);
+  margin: 90px auto;
+  text-align: center;
+}
+
+.about-with-logos {
+  display: flex;
+  align-items: center;      /* vertical centering */
+  justify-content: center;  /* keep everything centered as a block */
+  gap: 60px;                /* space between logos and text */
+}
+
+.about-logo {
+  width: 200px;              /* slightly larger logos */
+  height: auto;
+}
+
+.about-text {
+  max-width: 800px;         /* don’t let text get too wide */
+  text-align: center;
+  font-size: clamp(16px, 2vw, 30px);  /* scales bigger like you asked */
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .about-with-logos {
+    flex-direction: column;   /* stack items vertically */
+    gap: 20px;
+  }
+
+  /* hide the right logo on small screens */
+  .about-logo:last-child {
+    display: none;
+  }
+
+  .about-logo {
+    width: 120px;  /* smaller size for phones */
+  }
+
+  .about-text {
+    max-width: 80%;  /* allow text to take full width */
+  }
+}
+
+
+@media (max-width: 480px) {
+  .about-text {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+}
+
