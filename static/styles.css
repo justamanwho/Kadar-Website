@@ -1,4 +1,8 @@
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
 
 .title {
@@ -42,14 +46,13 @@
 .slide:nth-child(odd){  transform-origin: left center;  }
 .slide:nth-child(even){ transform-origin: right center; }
 
-.slider{
+.slider {
   position: relative;
-  width: 95%;
-  height: 75vh;
-  margin: 40px auto;
-  border-radius: 20px;
-  overflow: hidden;    /* important */
-  padding: 0;
+  width: 100vw;       /* take full viewport width */
+  height: 100vh;      /* full viewport height */
+  margin: 0;          /* remove auto-centering */
+  border-radius: 0;   /* no rounding on edges */
+  overflow: hidden;
 }
 
 .slides{
@@ -238,12 +241,17 @@
   .btn{
     margin:5px;
   }
+
   .bottom-center {
-    width: 60%;
-    max-height: 180px;       /* limit height */
-    padding: 15px;           /* smaller padding makes it look tighter */
-    border-radius: 10px;
+    width: 70%;           /* give it more room */
+    max-height: none;     /* remove the hard limit */
+    padding: 18px;        /* keep it comfortable */
   }
+
+  .indicators {
+    margin-top: 12px;     /* ensure dots stay visible */
+  }
+
   .bottom-center::before {
   left: -20px;
   bottom: -20px;
@@ -258,11 +266,11 @@
 }
 
 @media(max-width:414px){
-  .bottom-center{
-    border-radius:10px 10px 0 0;
-    width: 60%;              /* more horizontal space on tiny screens */
-    max-height: 150px;       /* even shorter */
-    padding: 12px;
+  .bottom-center {
+    width: 85%;
+    max-height: none;     /* no cutoff on very small screens */
+    padding: 15px;
+  }
 
   }
    .btn{
@@ -323,61 +331,69 @@
     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   }
 }
-
-
+/* Full-bleed section with vertical margins only */
 .map-section{
-  width: min(95vw, 1200px);
-  margin: 40px auto;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;   /* pull to full viewport width */
+  margin-right: -50vw;
+  width: 100vw;         /* truly edge-to-edge */
+  margin-top: 40px;     /* <-- your top margin */
+  margin-bottom: 40px;  /* <-- your bottom margin */
 }
-.map-section h2{ margin: 0 0 12px; }
 
 .map-embed{
   position: relative;
   width: 100%;
-  /* 16:9; adjust if you want it taller (e.g., 60%) */
-  padding-bottom: 56.25%;
-  border-radius: 12px;
+  padding-bottom: 45vh; /* height control (make shorter/taller as you like) */
+  border-radius: 0;     /* no side rounding since it’s full-bleed */
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  box-shadow: none;
 }
+
 .map-embed iframe{
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   border: 0;
 }
-.map-actions{ margin-top: 10px; }
+
+/* On phones, make it a bit shorter */
+@media (max-width: 768px){
+  .map-embed{ padding-bottom: 25vh; }
+}
 
 
 /* fixed container pinned to the bottom of the viewport */
+/* Fixed bar at the very bottom */
 .truck-track{
   position: fixed;
   left: 0;
   right: 0;
-  bottom: max(0px, env(safe-area-inset-bottom)); /* iOS safe area */
-  height: clamp(40px, 10vh, 100px); /* road height */
-  pointer-events: none;             /* never blocks clicks */
-  z-index: 999;                     /* above content, below nav if needed */
-  /* optional faint road line */
+  bottom: 0;
+  height: 72px;              /* road height */
+  overflow: hidden;           /* hides any tiny overflow */
+  pointer-events: none;
+  z-index: 999;
   background:
     linear-gradient(#dcdcdc,#dcdcdc) 0 calc(100% - 3px) / 100% 3px no-repeat;
 }
 
-/* the truck image itself */
+/* The truck image inside the track */
 .truck{
-  position: absolute;
-  bottom: 3px;                      /* sit on the road line */
+  position: absolute;         /* moves inside the track */
+  bottom: 3px;                /* sit on the road line */
   left: 0;
-  width: clamp(50px, 8vw, 120px);
+  width: 65px;                /* smaller truck – tweak as you like */
   height: auto;
   transform: translateX(var(--carX, 0));
   will-change: transform;
-  image-rendering: -webkit-optimize-contrast;
 }
 
-/* optional subtle bob so it feels alive (keeps X via CSS var) */
-.truck.bob{
-  animation: truckBob 2.6s ease-in-out infinite;
-}
+/* turn off bobbing to keep the edge perfectly clean */
+.truck.bob{ animation: none; }
+
+
 @keyframes truckBob{
   0%,100% { transform: translateX(var(--carX,0)) translateY(0); }
   50%     { transform: translateX(var(--carX,0)) translateY(-2px); }
@@ -483,3 +499,126 @@
   }
 }
 
+/* --- Contact Cards (like the reference site) --- */
+.contact-cards{
+  width: min(95vw, 1200px);
+  margin: 50px auto 30px;
+  text-align: center;
+}
+.contact-cards h2{
+  font-size: clamp(22px, 2.6vw, 32px);
+  margin-bottom: 18px;
+}
+
+/* 3 columns on desktop, stack on mobile */
+.cards{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 900px){
+  .cards{ grid-template-columns: 1fr; }
+  .contact-cards{ width: min(95vw, 700px); }
+}
+
+.card{
+  background: #fff;
+  border-radius: 14px;
+  padding: 22px 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+}
+.card .icon{
+  font-size: 28px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.card h3{
+  font-size: clamp(18px, 2vw, 22px);
+  margin: 6px 0 10px;
+}
+.card p{
+  margin: 6px 0;
+  color: #333;
+}
+.card .link{
+  color: #0a66c2;
+  text-decoration: none;
+}
+.card .link:hover{ text-decoration: underline; }
+.card .muted{ color:#666; font-size: .95em; }
+
+.contact-cta{
+  margin-top: 16px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+}
+
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Base size/colors (edit these numbers to taste) */
+.social-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+  outline: none;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.social-button i,
+.social-button svg {
+  position: relative;
+  z-index: 1;
+  transition: 0.3s;
+  font-size: 26px; /* 64px * 0.4 ≈ 26px */
+}
+
+/* expanding colored circle background */
+.social-button::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.social-button:hover,
+.social-button:focus {
+  color: #fff; /* icon turns white on hover */
+}
+.social-button:hover::after,
+.social-button:focus::after {
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  margin-left: calc(-50% - 1px);
+}
+
+/* Per-network colors */
+.social-button--mail       { color: #0072c6; }
+.social-button--mail::after{ background: #0072c6; }
+
+.social-button--facebook       { color: #3b5999; }
+.social-button--facebook::after{ background: #3b5999; }
+
+.social-button--instagram       { color: #e4405f; }
+.social-button--instagram::after{ background: #e4405f; }
+
+/* Add more if needed:
+.social-button--linkedin{ color:#0077b5 } .social-button--linkedin::after{ background:#0077b5 }
+.social-button--github{ color:#6e5494 } .social-button--github::after{ background:#6e5494 }
+... */
