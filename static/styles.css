@@ -5,6 +5,78 @@ html, body {
 }
 
 
+/* --- Global heading style (site-wide) --- */
+:root{
+  --brand-accent: #ffc727;   /* change this to pick a different title color */
+  --title-dark:   #1f1f1f;
+}
+
+/* Base heading reset */
+h1, h2, h3 {
+  margin: 0 0 0.4em;
+  line-height: 1.1;
+  color: var(--title-dark);
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+
+/* Sizes scale nicely; tweak to taste */
+h1 { font-size: clamp(2.2rem, 5.5vw, 3.2rem); }
+h2 { font-size: clamp(1.6rem, 3.8vw, 2.2rem); }
+h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
+
+/* Two short lines snug to the title text, fully responsive */
+.section-title{
+  display: inline-flex;            /* lines + text on one row */
+  align-items: center;
+  gap: clamp(6px, 1.2vw, 12px);    /* space between text and lines */
+  padding: 0;                      /* no extra spacing */
+  position: relative;              /* (not strictly needed now) */
+}
+
+/* left & right lines become flex items (no absolute positioning) */
+.section-title::before,
+.section-title::after{
+  content: "";
+  display: block;
+  width: clamp(28px, 8vw, 72px);   /* line length scales with screen */
+  height: 3px;                     /* line thickness */
+  background: var(--brand-accent);
+  border-radius: 2px;
+  flex: 0 0 auto;                  /* don’t stretch */
+}
+
+/* optional: make the lines thinner on very small phones */
+@media (max-width: 420px){
+  .section-title::before,
+  .section-title::after{
+    width: 28px;
+    height: 2px;
+  }
+  .section-title{ gap: 6px; }
+}
+
+
+
+/* --- Pricing / description section --- */
+.pricing-note{
+  width: min(95vw, 1300px);
+  margin: 72px auto;
+  text-align: center;
+}
+.pricing-note p{
+  font-size: clamp(26px, 2.1vw, 29px);
+  line-height: 1.65;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Make headings pop a bit more in dark images above */
+.pricing-note .section-title{
+  color: var(--title-dark);
+}
+
+
 .title {
   margin: 70px 0;
   text-align: center;
@@ -49,7 +121,7 @@ html, body {
 .slider {
   position: relative;
   width: 100vw;       /* take full viewport width */
-  height: 100vh;      /* full viewport height */
+  height: 80vh;      /* full viewport height */
   margin: 0;          /* remove auto-centering */
   border-radius: 0;   /* no rounding on edges */
   overflow: hidden;
@@ -58,7 +130,7 @@ html, body {
 .slides{
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 80%;
   margin: 0;
   padding: 0;
   gap: 0;
@@ -232,12 +304,12 @@ html, body {
 
 @media(max-width:768px){
   .slider {
-    width:95%;
-    height:400px;
+    width: 100vw;   /* edge to edge */
+    height: 70vh;  /* or 80vh if you want shorter */
+    margin: 0;
+    border-radius: 0;
   }
-  .slider{
-    border-radius:10px;
-  }
+
   .btn{
     margin:5px;
   }
@@ -286,15 +358,19 @@ html, body {
 
 
 /* --- Gallery --- */
-.gallery-wrap{
-  width: min(95vw, 1200px);
-  margin: 40px auto;
+.gallery-wrap {
+  width: min(85vw, 600px); /* narrower on big desktops */
+  margin: 60px auto;        /* a bit more breathing space */
+  text-align: center;       /* centers the heading */
 }
 
-.gallery-wrap h2{
-  font-size: clamp(20px, 2.4vw, 28px);
-  margin: 0 0 16px;
+
+.gallery-wrap h2 {
+  font-size: clamp(26px, 2.1vw, 29px); /* same as .pricing-note p size */
+  text-align: center;
+  margin-bottom: 24px;
 }
+
 
 .gallery{
   display: grid;
@@ -483,7 +559,7 @@ html, body {
   }
 
   .about-logo {
-    width: 120px;  /* smaller size for phones */
+    width: 170px;  /* smaller size for phones */
   }
 
   .about-text {
@@ -494,7 +570,7 @@ html, body {
 
 @media (max-width: 480px) {
   .about-text {
-    font-size: 15px;
+    font-size: 25px;
     line-height: 1.4;
   }
 }
@@ -622,3 +698,23 @@ html, body {
 .social-button--linkedin{ color:#0077b5 } .social-button--linkedin::after{ background:#0077b5 }
 .social-button--github{ color:#6e5494 } .social-button--github::after{ background:#6e5494 }
 ... */
+
+/* Narrower gallery on big screens + centered title */
+.gallery-wrap{
+  width: min(80vw, 1200px) !important; /* smaller cap than 1200px */
+  margin: 60px auto !important;       /* center the section */
+  text-align: center;                  /* center the heading */
+  margin-bottom: 150px !important;    /* more space below */
+}
+
+/* Make the gallery title match your pricing-note title */
+.gallery-wrap .section-title{
+  font-size: clamp(1.6rem, 3.8vw, 2.2rem) !important; /* same as pricing section */
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+/* (Optional) if your global .section-title adds an underline and you want it here too,
+   keep as-is; otherwise you can turn it off just for gallery:
+.gallery-wrap .section-title::after { display:none; }
+*/
