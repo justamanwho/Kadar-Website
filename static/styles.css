@@ -718,3 +718,31 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
    keep as-is; otherwise you can turn it off just for gallery:
 .gallery-wrap .section-title::after { display:none; }
 */
+
+/* --- Fleet / capabilities section --- */
+.fleet-section {
+  width: min(95vw, 1300px);
+  margin: 72px auto 120px auto; /* top, sides, bottom */
+  text-align: center;
+}
+
+.fleet-section p {
+  font-size: clamp(26px, 2.1vw, 29px);
+  line-height: 1.65;
+  color: #333;
+  margin: 10px 0;
+}
+
+.fleet-section .section-title {
+  color: var(--title-dark);
+  margin-bottom: 24px;
+  font-size: clamp(32px, 2.5vw, 38px);
+}
+
+
+/* On phones, reset bottom margin back to 72px */
+@media (max-width: 768px) {
+  .fleet-section {
+    margin: 72px auto;
+  }
+}

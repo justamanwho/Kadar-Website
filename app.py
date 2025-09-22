@@ -69,4 +69,3 @@ def set_language(lang_code):
     logger.info(f"Language was set to {lang_code}")
 
     return redirect(url_for('index'))
-
