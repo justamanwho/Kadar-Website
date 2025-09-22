@@ -70,4 +70,3 @@ def set_language(lang_code):
 
     return redirect(url_for('index'))
 
-app.run()
