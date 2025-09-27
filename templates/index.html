@@ -3,11 +3,20 @@
 {% block content %}
 
 
-<!--<div class="title">-->
-<!--  <h1>{{ translations.title }}</h1>-->
-<!--</div>-->
 
 <div class="slider">
+  <div class="language-switcher">
+    <div class="language-picker js-language-picker"
+         data-trigger-class="li4-btn li4-btn--subtle js-tab-focus">
+      <form class="language-picker__form">
+        <select id="language-picker-select" name="language">
+          <option lang="pl" value="pl" {% if lang == 'pl' %}selected{% endif %}>PL</option>
+          <option lang="en" value="en" {% if lang == 'en' %}selected{% endif %}>EN</option>
+        </select>
+      </form>
+    </div>
+  </div>
+
   <div class="slides">
     <img src="static/slides/horizontal1.jpg" class="slide active" />
     <img src="static/slides/horizontal2.jpg" class="slide" />
@@ -17,12 +26,14 @@
 
   <div class="bottom-center">
     <h3 id="hero-heading" class="luxury-heading">
-      <span class="line">Przeprowadzka</span>
-      <span class="line">jest łatwa</span>
+      <span class="line">{{ translations.hero_line1 }}</span>
+      <span class="line">{{ translations.hero_line2 }}</span>
     </h3>
 
     <div class="buttons">
-      <button class="btn primary"><a href="tel:+48601896568" class="btn primary">Zadzwoń 601 896 568</a></button>
+      <button class="btn primary">
+        <a href="tel:+48601896568" class="btn primary">{{ translations.call_us }}</a>
+      </button>
     </div>
 
     <div class="indicators">
@@ -40,8 +51,8 @@
   <div class="about-with-logos">
     <img src="static/logo.jpg" alt="Logo left" class="about-logo">
     <div class="about-text">
-      <p>Oferujemy przeprowadzki osób prywatnych oraz instytucji na terenie Bielsko-Białej oraz całej Polski.</p>
-      <p>Firma istnieje od 1997 roku i od tego czasu zdobyliśmy ogromne doświadczenie w branży przeprowadzkowej.</p>
+      <p>{{ translations.about_p1 }}</p>
+      <p>{{ translations.about_p2 }}</p>
     </div>
     <img src="static/logo.jpg" alt="Logo right" class="about-logo">
   </div>
@@ -49,21 +60,17 @@
 
 
 <section class="fleet-section">
-  <h2 class="section-title">Nasze pojazdy</h2>
+  <h2 class="section-title">{{ translations.fleet_title }}</h2>
   <div class="fleet-content">
     <div class="fleet-text">
-      <p>
-        Dysponujemy samochodami przystosowanymi do przeprowadzek, w tym
-        <strong>auto z windą o udźwigu do 750 kg</strong>. Dzięki temu możemy bezpiecznie
-        i sprawnie przewozić nawet ciężkie meble oraz sprzęt.
-      </p>
+      <p>{{ translations.fleet_text | safe }}</p>
     </div>
   </div>
 </section>
 
 
 <section class="gallery-wrap">
-  <h2 class="section-title">Galeria zdjęć z przeprowadzek</h2>
+  <h2 class="section-title">{{ translations.gallery_title }}</h2>
 
   <div class="gallery" id="moves-gallery">
     {% for i in range(2, 16) %}
@@ -80,19 +87,13 @@
 </section>
 
 
+
 <section class="pricing-note" id="wycena">
-  <h2 class="section-title">Przeprowadzki Bielsko-Biała tanio</h2>
-  <p>
-    Oferujemy przejrzyste i uczciwe ceny. Dokładną wycenę przygotowujemy po poznaniu
-    wszystkich szczegółów zlecenia – adresów załadunku i rozładunku, liczby oraz
-    wagi przedmiotów do przewiezienia.
-  </p>
-  <p>
-    Na tej podstawie określamy potrzebną liczbę pojazdów i pracowników oraz
-    przewidywany czas realizacji, dzięki czemu płacisz tylko za to, czego naprawdę
-    potrzebujesz.
-  </p>
+  <h2 class="section-title">{{ translations.pricing_title }}</h2>
+  <p>{{ translations.pricing_p1 }}</p>
+  <p>{{ translations.pricing_p2 }}</p>
 </section>
+
 
 
 <div class="social-buttons">
@@ -100,6 +101,8 @@
     <i class="fab fa-facebook-f"></i>
   </a>
 </div>
+
+
 
 <section class="map-section">
   <div class="map-embed">
@@ -115,6 +118,7 @@
   </div>
 
 </section>
+
 
 
 <div class="truck-track" aria-hidden="true">
