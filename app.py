@@ -85,5 +85,3 @@ def credits():
                            language_options=LANGUAGE_OPTIONS,
                            max_length=max_length)
 
-
-app.run()
