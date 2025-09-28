@@ -69,3 +69,21 @@ def set_language(lang_code):
     logger.info(f"Language was set to {lang_code}")
 
     return redirect(url_for('index'))
+
+
+@app.route('/credits')
+def credits():
+    if 'lang' not in session:
+        session['lang'] = 'pl'
+
+    translations = load_translations(session['lang'])
+    max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
+
+    return render_template('credits.html',
+                           translations=translations,
+                           lang=session['lang'],
+                           language_options=LANGUAGE_OPTIONS,
+                           max_length=max_length)
+
+
+app.run()

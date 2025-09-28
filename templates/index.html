@@ -88,6 +88,65 @@
 
 
 
+<!-- OFFER / SERVICES -->
+<section class="services-section" id="oferta">
+  <div class="services-header">
+    <span class="eyebrow">{{ translations.services_eyebrow }}</span>
+  </div>
+
+  <h2 class="section-title">{{ translations.services_title }}</h2>
+
+  <div class="services-grid">
+    <!-- Card 1 -->
+    <article class="service-card">
+      <div class="service-icon">
+        <img src="{{ url_for('static', filename='services/moving-home.png') }}" alt="">
+      </div>
+      <h3 class="service-title">{{ translations.services_1_title }}</h3>
+      <p class="service-desc">{{ translations.services_1_desc }}</p>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="service-card">
+      <div class="service-icon">
+        <img src="{{ url_for('static', filename='services/moving-agd.png') }}" alt="">
+      </div>
+      <h3 class="service-title">{{ translations.services_2_title }}</h3>
+      <p class="service-desc">{{ translations.services_2_desc }}</p>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="service-card">
+      <div class="service-icon">
+        <img src="{{ url_for('static', filename='services/moving-company.png') }}" alt="">
+      </div>
+      <h3 class="service-title">{{ translations.services_3_title }}</h3>
+      <p class="service-desc">{{ translations.services_3_desc }}</p>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="service-card">
+      <div class="service-icon">
+        <img src="{{ url_for('static', filename='services/moving-truck.png') }}" alt="">
+      </div>
+      <h3 class="service-title">{{ translations.services_4_title }}</h3>
+      <p class="service-desc">{{ translations.services_4_desc }}</p>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="service-card">
+      <div class="service-icon">
+        <img src="{{ url_for('static', filename='services/moving-furniture.png') }}" alt="">
+      </div>
+      <h3 class="service-title">{{ translations.services_5_title }}</h3>
+      <p class="service-desc">{{ translations.services_5_desc }}</p>
+    </article>
+
+  </div>
+</section>
+
+
+
 <section class="pricing-note" id="wycena">
   <h2 class="section-title">{{ translations.pricing_title }}</h2>
   <p>{{ translations.pricing_p1 }}</p>
@@ -119,6 +178,9 @@
 
 </section>
 
+<footer class="site-footer">
+  <small><a href="{{ url_for('credits') }}">Credits</a></small>
+</footer>
 
 
 <div class="truck-track" aria-hidden="true">
