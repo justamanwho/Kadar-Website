@@ -1,0 +1,56 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      SSH_USER: ${{ secrets.SSH_USER }}
+      SSH_HOST: ${{ secrets.SSH_HOST }}
+      WORK_DIR: ${{ secrets.WORK_DIR }}
+      MAIN_BRANCH: ${{ secrets.MAIN_BRANCH }}
+
+    steps:
+      - name: Install SSH key
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_ed25519
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          ssh-keyscan -H "$SSH_HOST" >> ~/.ssh/known_hosts
+
+      - name: Check SSH connectivity (fail fast)
+        run: |
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=10 \
+              -i ~/.ssh/id_ed25519 "$SSH_USER@$SSH_HOST" "echo 'SSH ok'"
+
+      - name: Deploy over SSH (pull & restart)
+        run: |
+          ssh -o BatchMode=yes -o StrictHostKeyChecking=yes -o ConnectTimeout=10 \
+              -i ~/.ssh/id_ed25519 "$SSH_USER@$SSH_HOST" << "EOSH"
+            set -Eeuo pipefail
+            trap 'echo "❌ Deploy failed on line $LINENO"; exit 1' ERR
+          
+            echo "→ cd ${{ secrets.WORK_DIR }}"
+            cd "${{ secrets.WORK_DIR }}"
+          
+            echo "→ verify remote (SSH)"
+            git remote -v
+            git ls-remote origin >/dev/null
+          
+            echo "→ fetch & fast-forward pull"
+            git fetch --all
+            git checkout "${{ secrets.MAIN_BRANCH }}"
+            git pull --ff-only
+          
+            echo "→ restart service"
+            sudo systemctl restart personal-website
+          
+            echo "✅ Deploy completed"
+          EOSH
+
+      - name: Cleanup SSH
+        if: always()
+        run: rm -rf ~/.ssh

@@ -85,3 +85,7 @@ def credits():
                            language_options=LANGUAGE_OPTIONS,
                            max_length=max_length)
 
+
+
+if __name__ == '__main__':
+    app.run()

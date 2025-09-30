@@ -1079,3 +1079,11 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   border: 1px solid rgba(0,0,0,.08);
 }
 .back-btn:hover{ background: #fff8e1; }
+
+
+/* was .luxury-heading { ... } */
+.luxury-heading {
+  font-variant: normal !important;         /* disable small-caps */
+  font-feature-settings: normal !important;/* disable 'smcp' */
+  text-transform: none;                    /* or use uppercase if you prefer */
+}
