@@ -22,6 +22,7 @@
     <img src="static/slides/horizontal2.jpg" class="slide" />
     <img src="static/slides/horizontal3.jpg" class="slide" />
     <img src="static/slides/horizontal4.jpg" class="slide" />
+    <img src="static/slides/horizontal5.jpg" class="slide" />
   </div>
 
   <div class="bottom-center">
@@ -41,6 +42,7 @@
       <span class="dot" onclick="showSlide(1)"></span>
       <span class="dot" onclick="showSlide(2)"></span>
       <span class="dot" onclick="showSlide(3)"></span>
+      <span class="dot" onclick="showSlide(4)"></span>
     </div>
   </div>
 </div>
@@ -155,10 +157,56 @@
 
 
 
-<div class="social-buttons">
-  <a href="https://www.facebook.com/profile.php?id=100048410993247" class="social-button social-button--facebook" aria-label="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
+<!-- OPINIONS / TESTIMONIALS -->
+<section class="opinions-section" id="opinie">
+  <div class="opinions-container">
+    <!-- header row -->
+    <div class="opinions-header">
+      <div>
+        <p class="opinions-eyebrow">{{ translations.reviews_title or "Opinie klientów" }}</p>
+        <h2 class="section-title">{{ translations.reviews_heading or "Co o nas mówią nasi klienci" }}</h2>
+      </div>
+      <p class="opinions-see-more">
+        <a href="https://www.google.com/search?q=kadar+przeprowadzki#lrd=0x0:0x0,1,,,"
+           target="_blank" rel="noreferrer noopener">
+          {{ translations.services_see_more or "zobacz więcej ⟶" }}
+        </a>
+      </p>
+    </div>
+
+    <!-- cards -->
+    <div class="opinions-grid">
+      {% for r in translations.reviews[:3] %}
+      <article class="opinion-card">
+        <div class="opinion-stars">
+          <!-- use your own star strip image -->
+          <img src="{{ url_for('static', filename='stars.png') }}" alt="5/5">
+        </div>
+        <p class="opinion-text">„{{ r.text }}”</p>
+        <div class="spacer-20" aria-hidden="true"></div>
+        <p class="opinion-name"><strong>{{ r.name }}</strong></p>
+        <div class="spacer-20" aria-hidden="true"></div>
+        <p class="opinion-source"><em>Google</em></p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="opinions-button">
+    <a href="https://www.google.com/search?q=kadar+przeprowadzki#lrd=0x0:0x0,1,,,"
+       target="_blank" rel="noopener noreferrer" class="btn-ghost">
+      {{ translations.reviews_add_button or "Dodaj opinię ⟶" }}
+    </a>
+  </div>
+</section>
+
+
+<div class="social-buttons-section">
+  <div class="social-buttons">
+    <a href="https://www.facebook.com/profile.php?id=100048410993247" class="social-button social-button--facebook" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+  </div>
 </div>
 
 

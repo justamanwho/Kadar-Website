@@ -22,5 +22,24 @@
   "services_4_title": "Vehicle Rental with Driver",
   "services_4_desc": "Need a spacious vehicle for your move? Give us a call! We offer vehicle rentals with a driver included.",
   "services_5_title": "Furniture Assembly and Disassembly",
-  "services_5_desc": "Beyond moving, our team can also disassemble and reassemble your household or office furniture."
+  "services_5_desc": "Beyond moving, our team can also disassemble and reassemble your household or office furniture.",
+  "reviews_title": "Client Reviews",
+  "reviews": [
+    {
+      "name": "Jakub Folarzyński",
+      "rating": 5,
+      "text": "Moving emergency: they arrived quickly, transported and carried everything (including delicate tableware), and even helped connect the washing machine and take out old furniture. A team you can rely on."
+    },
+    {
+      "name": "Aleksandra Mrzyk",
+      "rating": 5,
+      "text": "Highly recommended! The guys showed real ingenuity—and even finesse—carrying a huge corner sofa up to the 6th floor. Definitely recommend!"
+    },
+    {
+      "name": "Tomasz Przybyła",
+      "rating": 5,
+      "text": "Great. A very professional company."
+    }
+  ],
+  "reviews_add_button": "Add a review ⟶"
 }

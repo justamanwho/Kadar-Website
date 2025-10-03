@@ -22,5 +22,24 @@
   "services_4_title": "Wynajem samochodu z kierowcą",
   "services_4_desc": "Potrzebujesz samochodu do przeprowadzki z dużą przestrzenią załadunkową? Zadzwoń do nas! Oferujemy wynajem takich samochodów wraz z kierowcą.",
   "services_5_title": "Montaż i demontaż mebli",
-  "services_5_desc": "Poza przeprowadzką nasza ekipa może zająć się również demontażem i montażem Twoich mebli mieszkalnych oraz mebli biurowych."
+  "services_5_desc": "Poza przeprowadzką nasza ekipa może zająć się również demontażem i montażem Twoich mebli mieszkalnych oraz mebli biurowych.",
+  "reviews_title": "Opinie klientów",
+  "reviews": [
+    {
+      "name": "Jakub Folarzyński",
+      "rating": 5,
+      "text": "Przeprowadzkowe emergency: przyjechali, przewieźli i ponosili (w tym delikatną zastawę), a także pomogli podłączyć pralkę i wynieść stare meble. Ekipa, na której można polegać."
+    },
+    {
+      "name": "Aleksandra Mrzyk",
+      "rating": 5,
+      "text": "Polecam! Panowie wykazali się pomysłowością i wręcz finezją przy wnoszeniu ogromnej rogówki na 6. piętro w bloku. Zdecydowanie polecam!"
+    },
+    {
+      "name": "Tomasz Przybyła",
+      "rating": 5,
+      "text": "Super. Bardzo profesjonalna firma."
+    }
+  ],
+  "reviews_add_button": "Dodaj opinię ⟶"
 }

@@ -1087,3 +1087,102 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   font-feature-settings: normal !important;/* disable 'smcp' */
   text-transform: none;                    /* or use uppercase if you prefer */
 }
+
+
+
+/* container like 1300px max, centered */
+.opinions-container{
+  width:min(95vw,1300px);
+  margin:120px auto 64px;
+}
+
+/* header: left titles, right link */
+.opinions-header{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:16px;
+  align-items:end;
+  margin-bottom:24px;
+}
+@media (max-width:768px){
+  .opinions-header{ grid-template-columns: 1fr; }
+  .opinions-see-more{ text-align:left; }
+}
+.opinions-eyebrow{
+  letter-spacing:.04em;
+  font-size:.9rem;
+  color:#666;
+  margin:0 0 6px;
+  text-transform:uppercase;
+}
+
+.opinions-see-more{
+  margin:0;
+  text-align:right;
+}
+.opinions-see-more a{
+  color:#1863ff; /* or your theme link color */
+  text-decoration:none;
+}
+.opinions-see-more a:hover{ text-decoration:underline; }
+
+/* grid of 3 columns desktop, 1 on mobile */
+.opinions-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap:18px;
+  margin-top:18px;
+}
+@media (max-width:900px){
+  .opinions-grid{ grid-template-columns: 1fr; }
+}
+
+.opinion-card{
+  background:#fff;
+  padding:22px;
+  border-radius:10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+.opinion-stars img{ width:112px; height:auto; display:block; }
+.opinion-text{
+  margin:14px 0 0;
+  color:#222;
+  line-height:1.6;
+  font-size:1.3rem;
+}
+
+.opinion-name{
+    margin:0;
+    font-size:1.1rem;
+}
+
+.opinion-source{ margin:0; color:#555; }
+.spacer-20{ height:20px; }
+
+
+.opinions-button {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 60px;
+}
+
+.social-buttons-section {
+  margin-top: 0;        /* reset, so spacing comes only from .opinions-button */
+}
+
+
+.btn-ghost{
+  display:inline-block;
+  padding:15px 30px;
+  font-size:1.4rem;
+  border:2px solid #ffb300; /* same orange as your call button */
+  border-radius:6px;
+  background:transparent;
+  color:#ffb300;
+  text-decoration:none;
+  transition: all .2s ease;
+}
+.btn-ghost:hover{
+  background:#ffb300;
+  color:#fff;
+}
