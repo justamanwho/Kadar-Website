@@ -46,7 +46,7 @@ jobs:
             git pull --ff-only
           
             echo "→ restart service"
-            sudo systemctl restart personal-website
+            sudo systemctl restart kadar-website
           
             echo "✅ Deploy completed"
           EOSH
