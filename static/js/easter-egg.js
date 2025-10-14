@@ -2,19 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(Flip);
 
     let Clicks = 0;
-    const Text = document.getElementById('anime-manga-text');
+    const cardImage = document.querySelector('.promotion-image'); // Target the card image
     const bg = document.getElementById('the-world-bg');
 
-    if (!Text || !bg) return;
+    if (!cardImage || !bg) return;
 
-    // Handle both mouse and touch properly
-    Text.addEventListener('pointerdown', handleInteraction);
+    // Handle both mouse and touch on the card image
+    cardImage.addEventListener('pointerdown', handleInteraction);
+    cardImage.style.cursor = 'pointer'; // Add pointer cursor to indicate it's clickable
 
     function handleInteraction(e) {
         e.preventDefault();
         Clicks++;
 
         // Get exact interaction point
+        const rect = cardImage.getBoundingClientRect();
         const pos = {
             x: e.clientX,
             y: e.clientY
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function activateEasterEgg() {
+        bg.style.display = 'block';
         bg.muted = false;
         bg.style.opacity = '1';
         bg.load();
@@ -52,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         drop.style.left = `${pos.x}px`;
         drop.style.top = `${pos.y}px`;
         drop.style.color = 'black';
+        drop.style.zIndex = '10000';
+        drop.style.pointerEvents = 'none';
         document.body.appendChild(drop);
 
         // YOUR ORIGINAL ANIMATION LOGIC

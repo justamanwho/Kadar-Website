@@ -1,5 +1,5 @@
 /* static/js/language-selector.js
-   Purpose: switch site language by navigating to /pl or /en.
+   Purpose: switch site language by navigating to /pl, /en, /de, /ukr
    Works with:
    - Native <select id="language-picker-select">…</select>
    - CodyHouse-style custom list with .language-picker__list and .language-picker__item
@@ -10,8 +10,16 @@
   function getLanguageUrl(code) {
     if (!code) return '/';
     code = String(code).toLowerCase();
-    if (code !== 'pl' && code !== 'en') code = 'pl';
-    return '/' + code; // → /pl or /en
+
+    // List of all supported language codes
+    const supportedLanguages = ['pl', 'en', 'de', 'ukr'];
+
+    // If the code is not supported, default to Polish
+    if (!supportedLanguages.includes(code)) {
+      code = 'pl';
+    }
+
+    return '/' + code;
   }
 
   // Prevent a form submit if the select sits inside a <form>
@@ -35,15 +43,6 @@
     }
 
     // 2) CodyHouse-style custom dropdown (optional)
-    //    Expect markup like:
-    //    <div class="language-picker">
-    //      <div class="language-picker__dropdown">
-    //        <ul class="language-picker__list">
-    //          <li class="language-picker__item" data-value="pl">PL</li>
-    //          <li class="language-picker__item" data-value="en">EN</li>
-    //        </ul>
-    //      </div>
-    //    </div>
     var picker = document.querySelector('.language-picker');
     if (picker) {
       var list = picker.querySelector('.language-picker__list');

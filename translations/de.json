@@ -1,0 +1,50 @@
+{
+  "hero_line1": "Umzug",
+  "hero_line2": "ist einfach",
+  "call_us": "Rufen Sie an 601 896 568",
+  "about_p1": "Wir bieten Umzüge für Privatpersonen und Institutionen in Bielsko-Biała und ganz Polen an.",
+  "about_p2": "Das Unternehmen besteht seit 1997 und hat seitdem enorme Erfahrung in der Umzugsbranche gesammelt.",
+  "fleet_title": "Unsere Fahrzeuge",
+  "fleet_text": "Wir verfügen über umzugsgeeignete Fahrzeuge, darunter ein Auto <strong>mit einem Aufzug mit einer Tragfähigkeit von bis zu 750 kg.</strong> Dadurch können wir auch schwere Möbel und Geräte sicher und effizient transportieren.",
+  "gallery_title": "Fotogalerie von Umzügen",
+  "pricing_title": "Günstige Umzüge in Bielsko-Biała",
+  "pricing_p1": "Wir bieten transparente und faire Preise. Einen genauen Kostenvoranschlag erstellen wir nach Kenntnis aller Auftragsdetails – Lade- und Entladeadressen, Anzahl und Gewicht der zu transportierenden Gegenstände.",
+  "pricing_p2": "Auf dieser Basis bestimmen wir die benötigte Anzahl von Fahrzeugen und Mitarbeitern sowie die voraussichtliche Ausführungszeit, sodass Sie nur für das bezahlen, was Sie wirklich benötigen.",
+  "services_eyebrow": "Angebot",
+  "services_see_more": "mehr sehen →",
+  "services_title": "Was wir tun",
+  "services_1_title": "Haus- und Wohnungsumzüge",
+  "services_1_desc": "Wir bieten Unterstützung und fachliche Beratung in allen Phasen des Umzugs. Daher ist der Umzug mit uns einfach.",
+  "services_2_title": "Entsorgung von Möbeln, Haushaltsgeräten und Unterhaltungselektronik",
+  "services_2_desc": "Wir kümmern uns auch um die Entsorgung alter Möbel sowie von Haushaltsgeräten und Unterhaltungselektronik. Wenn sich nach dem Umzug herausstellt, dass Sie etwas loswerden möchten, kümmern wir uns darum!",
+  "services_3_title": "Firmenumzüge",
+  "services_3_desc": "Wenn Sie ein erfahrenes Team suchen, das Ihren Umzug erleichtert, sind Sie hier richtig. Denn Firmenumzüge sind unsere Spezialität.",
+  "services_4_title": "Mietwagen mit Fahrer",
+  "services_4_desc": "Benötigen Sie ein Auto für den Umzug mit großem Laderaum? Rufen Sie uns an! Wir bieten die Vermietung solcher Fahrzeuge mit Fahrer an.",
+  "services_5_title": "Möbelmontage und -demontage",
+  "services_5_desc": "Neben dem Umzug kann sich unser Team auch um den Abbau und Aufbau Ihrer Wohnmöbel und Büromöbel kümmern.",
+  "reviews_title": "Kundenbewertungen",
+  "reviews_heading": "Was unsere Kunden über uns sagen",
+  "reviews": [
+    {
+      "name": "Jakub Folarzyński",
+      "rating": 5,
+      "text": "Umzugs-Notfall: Sie kamen, transportierten und trugen (einschließlich des empfindlichen Geschirrs) und halfen auch, die Waschmaschine anzuschließen und alte Möbel herauszutragen. Ein Team, auf das man sich verlassen kann."
+    },
+    {
+      "name": "Aleksandra Mrzyk",
+      "rating": 5,
+      "text": "Empfehle ich! Die Herren zeigten Einfallsreichtum und geradezu Finesse beim Tragen einer riesigen Ecksitzgruppe in den 6. Stock eines Wohnblocks. Auf jeden Fall zu empfehlen!"
+    },
+    {
+      "name": "Tomasz Przybyła",
+      "rating": 5,
+      "text": "Super. Sehr professionelles Unternehmen."
+    }
+  ],
+  "reviews_add_button": "Bewertung hinzufügen ⟶",
+  "promotions_title": "Aktionen",
+  "discount": "Rabatt",
+  "loyalty_offer": "für Stammkunden, für Gepäcktransport mit Fahrer – wir geben eine Visitenkarte nach dem ersten Umzug",
+  "loyalty_card": "Stammkundenkarte"
+}

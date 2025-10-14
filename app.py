@@ -35,7 +35,10 @@ app.secret_key = os.getenv('SECRET_KEY')
 
 LANGUAGE_OPTIONS = {
     'pl': {'name': 'Polski'},
-    'en': {'name': 'English'}
+    'en': {'name': 'English'},
+    'de': {'name': 'Deutsch'},
+    'ukr': {'name': 'Українська'},
+    'ja': {'name': '日本語'}
 }
 
 

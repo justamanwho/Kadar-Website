@@ -1186,3 +1186,244 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   background:#ffb300;
   color:#fff;
 }
+
+
+.promotions-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.promotion-title {
+  font-size: 2rem;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.promotion-text {
+  font-size: 1.5rem;
+  margin: 6px 0;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 10px auto; /* ← add this line */
+}
+
+.promotion-highlight {
+  color: #ffc727;
+  font-weight: 700;
+  font-size: 2.3rem;
+}
+
+.promotion-image {
+  max-width: 280px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 14px;
+}
+
+
+
+
+
+/* --- Side Menu Styles --- */
+*, *:before, *:after {
+    box-sizing: border-box;
+    outline: none;
+}
+
+.menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 250ms ease;
+    cursor: pointer;
+    z-index: 200;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.menu span {
+    position: relative;
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: #444;
+    float: left;
+    transform-origin: center center;
+    transition: transform 250ms ease;
+    z-index: 200;
+}
+
+.menu span:nth-of-type(1) {
+    transform: translateY(-5px);
+}
+
+.menu span:nth-of-type(3) {
+    transform: translateY(5px);
+}
+
+#menu {
+    display: none;
+}
+
+#menu:checked ~ .menu {
+    background-color: transparent;
+    transform: rotate(360deg);
+    transition: transform 250ms ease;
+}
+
+#menu:checked ~ .menu span {
+    background-color: white;
+    transition: transform 250ms ease;
+}
+
+#menu:checked ~ .menu span:nth-of-type(1) {
+    transform: translateY(1px) rotate(45deg);
+}
+
+#menu:checked ~ .menu span:nth-of-type(2) {
+    display: none;
+}
+
+#menu:checked ~ .menu span:nth-of-type(3) {
+    transform: translateY(-1px) rotate(-45deg);
+}
+
+#menu:checked ~ .nav {
+    right: 0px;
+    transition: right 500ms ease;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #444;
+    transition: right 500ms ease;
+    z-index: 100;
+}
+
+.nav ul {
+    position: relative;
+    list-style-type: none;
+    margin: 100px 0;
+    padding: 0;
+}
+
+.nav li {
+    position: relative;
+    display: block;
+    border-bottom: 5px solid rgba(255,255,255,1);
+}
+
+.nav a {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 15px 20px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav a:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: width 250ms ease;
+    z-index: -1;
+}
+
+.nav a:hover {
+    color: #444;
+}
+
+.nav a:hover:before {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,1);
+    transition: width 250ms ease;
+}
+
+
+.menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#menu:checked ~ .menu-backdrop {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+/* Add to your styles.css */
+.promotion-image {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.promotion-image:hover {
+    transform: scale(1.05);
+}
+
+#the-world-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: none;
+}
+
+.the-world-active #main-content {
+    filter: grayscale(1) brightness(0.7);
+    pointer-events: none;
+}
+
+
+/* Easter Egg */
+
+.drop-one {
+    position: fixed;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+    pointer-events: none;
+    user-select: none;
+    z-index: 9999;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    font-family: system-ui, sans-serif;
+    transform: translate(-50%, -50%);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
