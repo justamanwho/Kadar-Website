@@ -88,12 +88,17 @@ def credits():
                            language_options=LANGUAGE_OPTIONS,
                            max_length=max_length)
 
+
 @app.after_request
 def add_header(response):
-    # Cache static files for 1 year
-    if request.path.startswith('/static/'):
-        response.cache_control.max_age = 31536000
+    # Extend caching to all static file types
+    if (request.path.startswith('/static/') or
+        request.path.endswith(('.webp', '.jpg', '.jpeg', '.png', '.css', '.js', '.mp4', '.webm'))):
+        response.cache_control.max_age = 31536000  # 1 year
         response.cache_control.public = True
+        # Add immutable for versioned files
+        if 'v=' in request.path or '.min.' in request.path:
+            response.cache_control.immutable = True
     return response
 
 

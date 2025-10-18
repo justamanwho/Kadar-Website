@@ -1,15 +1,31 @@
+// easter-egg.js - Updated version
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(Flip);
 
     let Clicks = 0;
-    const cardImage = document.querySelector('.promotion-image'); // Target the card image
+    const cardImage = document.querySelector('.promotion-image');
     const bg = document.getElementById('the-world-bg');
 
+    // ===== VIDEO LAZY LOADING =====
+    if (bg) {
+        // Only load video when user interacts or after delay
+        setTimeout(() => {
+            bg.load();
+        }, 3000); // Load after 3 seconds
+
+        // Or load on user interaction
+        document.addEventListener('click', function loadVideo() {
+            bg.load();
+            document.removeEventListener('click', loadVideo);
+        });
+    }
+
+    // ===== ORIGINAL EASTER EGG LOGIC =====
     if (!cardImage || !bg) return;
 
     // Handle both mouse and touch on the card image
     cardImage.addEventListener('pointerdown', handleInteraction);
-    cardImage.style.cursor = 'pointer'; // Add pointer cursor to indicate it's clickable
+    cardImage.style.cursor = 'pointer';
 
     function handleInteraction(e) {
         e.preventDefault();
