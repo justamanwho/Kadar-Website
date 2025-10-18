@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 <input type="checkbox" id="menu" />
 <label for="menu" class="menu">
     <span></span>
@@ -41,11 +40,12 @@
   </div>
 
   <div class="slides">
-    <img src="static/slides/horizontal1.jpg" class="slide active" />
-    <img src="static/slides/horizontal2.jpg" class="slide" />
-    <img src="static/slides/horizontal3.jpg" class="slide" />
-    <img src="static/slides/horizontal4.jpg" class="slide" />
-    <img src="static/slides/horizontal5.jpg" class="slide" />
+      <!-- Use WebP directly since modern browsers support it -->
+      <img src="{{ url_for('static', filename='slides/horizontal1.webp') }}" class="slide active" loading="eager" width="1920" height="1080" alt="Moving service slide 1">
+      <img src="{{ url_for('static', filename='slides/horizontal2.webp') }}" class="slide" loading="lazy" width="1920" height="1080" alt="Moving service slide 2">
+      <img src="{{ url_for('static', filename='slides/horizontal3.webp') }}" class="slide" loading="lazy" width="1920" height="1080" alt="Moving service slide 3">
+      <img src="{{ url_for('static', filename='slides/horizontal4.webp') }}" class="slide" loading="lazy" width="1920" height="1080" alt="Moving service slide 4">
+      <img src="{{ url_for('static', filename='slides/horizontal5.webp') }}" class="slide" loading="lazy" width="1920" height="1080" alt="Moving service slide 5">
   </div>
 
   <div class="bottom-center">
@@ -74,12 +74,19 @@
 
 <section class="about-section" id="o-nas">
   <div class="about-with-logos">
-    <img src="static/logo.jpg" alt="Logo left" class="about-logo">
+    <!-- Optimized logo with explicit dimensions -->
+    <picture>
+      <source srcset="static/logo.webp" type="image/webp">
+      <img src="static/logo.jpg" alt="Logo left" class="about-logo" width="200" height="200" loading="lazy">
+    </picture>
     <div class="about-text">
       <p>{{ translations.about_p1 }}</p>
       <p>{{ translations.about_p2 }}</p>
     </div>
-    <img src="static/logo.jpg" alt="Logo right" class="about-logo">
+    <picture>
+      <source srcset="static/logo.webp" type="image/webp">
+      <img src="static/logo.jpg" alt="Logo right" class="about-logo" width="200" height="200" loading="lazy">
+    </picture>
   </div>
 </section>
 
@@ -102,10 +109,16 @@
       <a href="{{ url_for('static', filename='gallery/gallery (' ~ i ~ ').jpg') }}"
          class="gallery__item"
          data-gallery="moves">
-        <img
-          src="{{ url_for('static', filename='gallery/gallery (' ~ i ~ ').jpg') }}"
-          alt="Przeprowadzka – zdjęcie {{ i }}"
-          loading="lazy">
+        <!-- Optimized gallery images with WebP and lazy loading -->
+        <picture>
+          <source srcset="{{ url_for('static', filename='gallery/gallery (' ~ i ~ ').webp') }}" type="image/webp">
+          <img
+            src="{{ url_for('static', filename='gallery/gallery (' ~ i ~ ').jpg') }}"
+            alt="Przeprowadzka – zdjęcie {{ i }}"
+            loading="lazy"
+            width="300"
+            height="300">
+        </picture>
       </a>
     {% endfor %}
   </div>
@@ -125,7 +138,11 @@
     <!-- Card 1 -->
     <article class="service-card">
       <div class="service-icon">
-        <img src="{{ url_for('static', filename='services/moving-home.png') }}" alt="">
+        <!-- Optimized service icons -->
+        <picture>
+          <source srcset="{{ url_for('static', filename='services/moving-home.webp') }}" type="image/webp">
+          <img src="{{ url_for('static', filename='services/moving-home.png') }}" alt="" width="70" height="70" loading="lazy">
+        </picture>
       </div>
       <h3 class="service-title">{{ translations.services_1_title }}</h3>
       <p class="service-desc">{{ translations.services_1_desc }}</p>
@@ -134,7 +151,10 @@
     <!-- Card 2 -->
     <article class="service-card">
       <div class="service-icon">
-        <img src="{{ url_for('static', filename='services/moving-agd.png') }}" alt="">
+        <picture>
+          <source srcset="{{ url_for('static', filename='services/moving-agd.webp') }}" type="image/webp">
+          <img src="{{ url_for('static', filename='services/moving-agd.png') }}" alt="" width="70" height="70" loading="lazy">
+        </picture>
       </div>
       <h3 class="service-title">{{ translations.services_2_title }}</h3>
       <p class="service-desc">{{ translations.services_2_desc }}</p>
@@ -143,7 +163,10 @@
     <!-- Card 3 -->
     <article class="service-card">
       <div class="service-icon">
-        <img src="{{ url_for('static', filename='services/moving-company.png') }}" alt="">
+        <picture>
+          <source srcset="{{ url_for('static', filename='services/moving-company.webp') }}" type="image/webp">
+          <img src="{{ url_for('static', filename='services/moving-company.png') }}" alt="" width="70" height="70" loading="lazy">
+        </picture>
       </div>
       <h3 class="service-title">{{ translations.services_3_title }}</h3>
       <p class="service-desc">{{ translations.services_3_desc }}</p>
@@ -152,7 +175,10 @@
     <!-- Card 4 -->
     <article class="service-card">
       <div class="service-icon">
-        <img src="{{ url_for('static', filename='services/moving-truck.png') }}" alt="">
+        <picture>
+          <source srcset="{{ url_for('static', filename='services/moving-truck.webp') }}" type="image/webp">
+          <img src="{{ url_for('static', filename='services/moving-truck.png') }}" alt="" width="70" height="70" loading="lazy">
+        </picture>
       </div>
       <h3 class="service-title">{{ translations.services_4_title }}</h3>
       <p class="service-desc">{{ translations.services_4_desc }}</p>
@@ -161,7 +187,10 @@
     <!-- Card 5 -->
     <article class="service-card">
       <div class="service-icon">
-        <img src="{{ url_for('static', filename='services/moving-furniture.png') }}" alt="">
+        <picture>
+          <source srcset="{{ url_for('static', filename='services/moving-furniture.webp') }}" type="image/webp">
+          <img src="{{ url_for('static', filename='services/moving-furniture.png') }}" alt="" width="70" height="70" loading="lazy">
+        </picture>
       </div>
       <h3 class="service-title">{{ translations.services_5_title }}</h3>
       <p class="service-desc">{{ translations.services_5_desc }}</p>
@@ -191,11 +220,17 @@
     {{ translations.loyalty_offer or "dla stałych klientów, na transport bagażowy z kierowcą – dajemy wizytówkę po pierwszej przeprowadzce" }}
   </p>
 
-  <img
-    src="{{ url_for('static', filename='card.jpg') }}"
-    alt="{{ translations.loyalty_card or 'Karta stałego klienta' }}"
-    class="promotion-image"
-  >
+  <!-- Optimized promotion image -->
+  <picture>
+    <source srcset="{{ url_for('static', filename='card.webp') }}" type="image/webp">
+    <img
+      src="{{ url_for('static', filename='card.jpg') }}"
+      alt="{{ translations.loyalty_card or 'Karta stałego klienta' }}"
+      class="promotion-image"
+      width="280"
+      height="186"
+      loading="lazy">
+  </picture>
 </section>
 
 
@@ -222,8 +257,11 @@
       {% for r in translations.reviews[:3] %}
       <article class="opinion-card">
         <div class="opinion-stars">
-          <!-- use your own star strip image -->
-          <img src="{{ url_for('static', filename='stars.png') }}" alt="5/5">
+          <!-- Optimized stars image -->
+          <picture>
+            <source srcset="{{ url_for('static', filename='stars.webp') }}" type="image/webp">
+            <img src="{{ url_for('static', filename='stars.png') }}" alt="5/5" width="112" height="20" loading="lazy">
+          </picture>
         </div>
         <p class="opinion-text">„{{ r.text }}”</p>
         <div class="spacer-20" aria-hidden="true"></div>
@@ -263,10 +301,10 @@
       style="border:0;"
       allowfullscreen=""
       loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Map showing Kadar Przeprowadzki location">
     </iframe>
   </div>
-
 </section>
 
 <footer class="site-footer">
@@ -275,7 +313,11 @@
 
 
 <div class="truck-track" aria-hidden="true">
-  <img class="truck" src="{{ url_for('static', filename='truck.png') }}" alt="">
+  <!-- Optimized truck image -->
+  <picture>
+    <source srcset="{{ url_for('static', filename='truck.webp') }}" type="image/webp">
+    <img class="truck" src="{{ url_for('static', filename='truck.png') }}" alt="" width="65" height="40" loading="lazy">
+  </picture>
 </div>
 
 

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, session
+from flask import Flask, render_template, redirect, url_for, session, request
 from dotenv import load_dotenv
 import logging
 import atexit
@@ -88,6 +88,13 @@ def credits():
                            language_options=LANGUAGE_OPTIONS,
                            max_length=max_length)
 
+@app.after_request
+def add_header(response):
+    # Cache static files for 1 year
+    if request.path.startswith('/static/'):
+        response.cache_control.max_age = 2592000
+        response.cache_control.public = True
+    return response
 
 
 if __name__ == '__main__':
