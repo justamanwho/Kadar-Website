@@ -92,7 +92,7 @@ def credits():
 def add_header(response):
     # Cache static files for 1 year
     if request.path.startswith('/static/'):
-        response.cache_control.max_age = 2592000
+        response.cache_control.max_age = 31536000
         response.cache_control.public = True
     return response
 
