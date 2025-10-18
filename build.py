@@ -32,6 +32,25 @@ def minify_all_css():
         with open(css_file.replace('.css', '.min.css'), 'w') as f:
             f.write(minified)
 
+
+def compress_slider_images():
+    for i in range(1, 6):
+        input_path = f"static/slides/horizontal{i}.jpg"
+        output_path = f"static/slides/horizontal{i}.webp"
+
+        with Image.open(input_path) as img:
+            if img.width > 1920:
+                ratio = 1920 / img.width
+                new_height = int(img.height * ratio)
+                img = img.resize((1920, new_height), Image.Resampling.LANCZOS)
+
+            # Save as WebP with 75% quality
+            img.save(output_path, 'WEBP', quality=75, optimize=True)
+
+        print(f"Compressed: {input_path} -> {output_path}")
+
+
 if __name__ == '__main__':
     optimize_all_images()
     minify_all_css()
+    compress_slider_images()

@@ -84,8 +84,8 @@
       <p>{{ translations.about_p2 }}</p>
     </div>
     <picture>
-      <source srcset="static/logo.webp" type="image/webp">
-      <img src="static/logo.jpg" alt="Logo right" class="about-logo" width="200" height="200" loading="lazy">
+      <source srcset="{{ url_for('static', filename='logo.webp') }}" type="image/webp">
+      <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo left" class="about-logo" width="200" height="200" loading="lazy">
     </picture>
   </div>
 </section>
