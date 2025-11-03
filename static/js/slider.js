@@ -10,44 +10,46 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  // (optional) keep this in sync with CSS transition duration
   const AUTOPLAY_MS = 7000;   // how long a slide stays visible
-  const ZOOM_RESTART = () => { /* no-op; just for readability */ };
+  const SLIDE_TRANSITION_MS = 600; // must match your CSS transition (.slides)
 
-  function startKenBurns(imgEl){
-    // remove .ken from all, then force-reflow and add to the active
+  function startKenBurns(slideEl) {
+    // remove .ken from all slides
     slides.forEach(s => s.classList.remove("ken"));
 
-    // Alternate origin via inline style for more variety (overrides nth-child)
-    imgEl.style.transformOrigin = (currentSlide % 2 === 0) ? "left center" : "right center";
+    // Set alternating zoom origin for variety
+    slideEl.style.transformOrigin = (currentSlide % 2 === 0) ? "left center" : "right center";
 
-    // Restart CSS transition cleanly:
-    // 1) read a layout property to force reflow
-    void imgEl.offsetWidth;
-    // 2) add the class so the 6s transition plays every time
-    imgEl.classList.add("ken");
+    // Force reflow so browser restarts the transition cleanly
+    void slideEl.offsetWidth;
+
+    // Now add ken for zoom-in
+    slideEl.classList.add("ken");
   }
 
   function showSlide(index) {
     if (index < 0) index = slides.length - 1;
     if (index >= slides.length) index = 0;
+
     currentSlide = index;
 
+    // Move slides container
     slidesContainer.style.transform = `translate3d(-${currentSlide * 100}%, 0, 0)`;
 
-
+    // Update dots
     dots.forEach(d => d.classList.remove("active"));
     dots[currentSlide].classList.add("active");
 
-    startKenBurns(slides[currentSlide]);
+    // Delay the zoom until after the horizontal slide finishes
+    setTimeout(() => startKenBurns(slides[currentSlide]), SLIDE_TRANSITION_MS);
   }
 
-  // dot clicks
+  // Dot clicks
   dots.forEach((dot, idx) => dot.addEventListener("click", () => showSlide(idx)));
 
-  // initial
+  // Initial setup
   showSlide(0);
 
-  // autoplay
+  // Autoplay
   setInterval(() => showSlide(currentSlide + 1), AUTOPLAY_MS);
 });

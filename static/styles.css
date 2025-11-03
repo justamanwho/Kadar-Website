@@ -1,16 +1,17 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 
-/* --- Global heading style (site-wide) --- */
+
 :root{
-  --brand-accent: #ffc727;   /* change this to pick a different title color */
+  --brand-accent: #ffc727;
   --title-dark:   #1f1f1f;
 }
 
-/* Base heading reset */
+
 h1, h2, h3 {
   margin: 0 0 0.4em;
   line-height: 1.1;
@@ -19,33 +20,33 @@ h1, h2, h3 {
   letter-spacing: .01em;
 }
 
-/* Sizes scale nicely; tweak to taste */
+
 h1 { font-size: clamp(2.2rem, 5.5vw, 3.2rem); }
 h2 { font-size: clamp(1.6rem, 3.8vw, 2.2rem); }
 h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 
-/* Two short lines snug to the title text, fully responsive */
+
 .section-title{
-  display: inline-flex;            /* lines + text on one row */
+  display: inline-flex;
   align-items: center;
-  gap: clamp(6px, 1.2vw, 12px);    /* space between text and lines */
-  padding: 0;                      /* no extra spacing */
-  position: relative;              /* (not strictly needed now) */
+  gap: clamp(6px, 1.2vw, 12px);
+  padding: 0;
+  position: relative;
 }
 
-/* left & right lines become flex items (no absolute positioning) */
+
 .section-title::before,
 .section-title::after{
   content: "";
   display: block;
-  width: clamp(28px, 8vw, 72px);   /* line length scales with screen */
-  height: 3px;                     /* line thickness */
+  width: clamp(28px, 8vw, 72px);
+  height: 3px;
   background: var(--brand-accent);
   border-radius: 2px;
-  flex: 0 0 auto;                  /* don’t stretch */
+  flex: 0 0 auto;
 }
 
-/* optional: make the lines thinner on very small phones */
+
 @media (max-width: 420px){
   .section-title::before,
   .section-title::after{
@@ -70,7 +71,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   margin: 20px 5px;
 }
 
-/* Make headings pop a bit more in dark images above */
+
 .pricing-note .section-title{
   color: var(--title-dark);
 }
@@ -89,44 +90,17 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   width: 100%;
 }
 
-/* EACH SLIDE (your <img class="slide">) */
-.slide{
-  flex: 0 0 100%;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  max-width: none;
-
-  /* Don't scale non-active slides at all */
-  transform: none;
-  transition: transform 10s ease-out;   /* for the Ken Burns on active */
-  will-change: transform;
-  position: relative;                   /* for z-index stacking */
-  z-index: 0;
-}
-
-/* Only the active slide gets the slow zoom */
-.slide.ken{
-  transform: scale(1.08);
-  z-index: 1;                           /* sit above neighbors if they overflow */
-}
-
-/* Optional: alternate origin to make the zoom feel alive */
-.slide:nth-child(odd){  transform-origin: left center;  }
-.slide:nth-child(even){ transform-origin: right center; }
-
 .slider {
   position: relative;
-  width: 100vw;       /* take full viewport width */
-  height: 80vh;      /* full viewport height */
-  margin: 0;          /* remove auto-centering */
-  border-radius: 0;   /* no rounding on edges */
+  width: 100%;
   overflow: hidden;
+  max-width: 100vw;
+  height: 80vh;
+  margin: 0;
+  border-radius: 0;
 }
 
-.slides{
+.slides {
   display: flex;
   width: 100%;
   height: 80%;
@@ -138,7 +112,32 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   backface-visibility: hidden;
 }
 
-/* bottom panel can stay; if it's too narrow on big screens, bump it a bit */
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.slide img {
+  transform: scale(1);
+  transition: transform 8s ease-out;
+}
+
+.slide.ken img {
+  transform: scale(1.08);
+}
+
 .bottom-center{
   width: clamp(280px, 32vw, 520px);
 }
@@ -160,7 +159,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   transition:all 0.3s ease-in-out;
 }
 
-/* Outer radius using pseudo-elements */
+
 .bottom-center::before,
 .bottom-center::after {
   content: "";
@@ -197,29 +196,29 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   font-size: 14px;
 }
 
-/* Responsive size: grows on desktop, stays readable on mobile */
+
 .luxury-heading{
   font-weight: 700;
   line-height: 1.05;
   margin: 0 0 0.25em;
-  /* min 2.4rem, fluid 6.2vw, max 5.6rem */
+
   font-size: clamp(2rem, 4.5vw, 3rem) !important;
-  white-space: normal;         /* ensure wrapping allowed */
+  white-space: normal;
   word-break: keep-all;
   hyphens: none;
 }
 
 .luxury-heading .line{
-  display: block;              /* force onto separate lines */
+  display: block;
 }
 
-/* (If you had a previous .luxury-heading { font-size: … !important; } remove it) */
+
 
 .luxury-subtitle {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 1.2rem;
-  color: #6b5b3b; /* warm gold-brown */
+  color: #6b5b3b;
   letter-spacing: 0.04em;
   line-height: 1.5;
   margin-top: 0;
@@ -303,8 +302,8 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 
 @media(max-width:768px){
   .slider {
-    width: 100vw;   /* edge to edge */
-    height: 70vh;  /* or 80vh if you want shorter */
+    width: 100vw;
+    height: 70vh;
     margin: 0;
     border-radius: 0;
   }
@@ -314,13 +313,13 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   }
 
   .bottom-center {
-    width: 70%;           /* give it more room */
-    max-height: none;     /* remove the hard limit */
-    padding: 18px;        /* keep it comfortable */
+    width: 70%;
+    max-height: none;
+    padding: 18px;
   }
 
   .indicators {
-    margin-top: 12px;     /* ensure dots stay visible */
+    margin-top: 12px;
   }
 
   .bottom-center::before {
@@ -339,7 +338,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 @media(max-width:414px){
   .bottom-center {
     width: 85%;
-    max-height: none;     /* no cutoff on very small screens */
+    max-height: none;
     padding: 15px;
   }
 
@@ -358,14 +357,14 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 
 /* --- Gallery --- */
 .gallery-wrap {
-  width: min(85vw, 600px); /* narrower on big desktops */
-  margin: 60px auto;        /* a bit more breathing space */
-  text-align: center;       /* centers the heading */
+  width: min(85vw, 600px);
+  margin: 60px auto;
+  text-align: center;
 }
 
 
 .gallery-wrap h2 {
-  font-size: clamp(26px, 2.1vw, 29px); /* same as .pricing-note p size */
+  font-size: clamp(26px, 2.1vw, 29px);
   text-align: center;
   margin-bottom: 24px;
 }
@@ -388,7 +387,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 .gallery__item img{
   width: 100%;
   height: 100%;
-  aspect-ratio: 1 / 1;          /* uniform squares like in the WP grid */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
   transition: transform .4s ease, filter .4s ease;
@@ -406,23 +405,23 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   }
 }
-/* Full-bleed section with vertical margins only */
+
 .map-section{
   position: relative;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;   /* pull to full viewport width */
+  margin-left: -50vw;
   margin-right: -50vw;
-  width: 100vw;         /* truly edge-to-edge */
-  margin-top: 40px;     /* <-- your top margin */
-  margin-bottom: 40px;  /* <-- your bottom margin */
+  width: 100vw;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .map-embed{
   position: relative;
   width: 100%;
-  padding-bottom: 45vh; /* height control (make shorter/taller as you like) */
-  border-radius: 0;     /* no side rounding since it’s full-bleed */
+  padding-bottom: 45vh;
+  border-radius: 0;
   overflow: hidden;
   box-shadow: none;
 }
@@ -433,21 +432,21 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   border: 0;
 }
 
-/* On phones, make it a bit shorter */
+
 @media (max-width: 768px){
   .map-embed{ padding-bottom: 32vh; }
 }
 
 
-/* fixed container pinned to the bottom of the viewport */
-/* Fixed bar at the very bottom */
+
+
 .truck-track{
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 72px;              /* road height */
-  overflow: hidden;           /* hides any tiny overflow */
+  height: 72px;
+  overflow: hidden;
   pointer-events: none;
   z-index: 999;
   background:
@@ -456,16 +455,16 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 
 /* The truck image inside the track */
 .truck{
-  position: absolute;         /* moves inside the track */
-  bottom: 3px;                /* sit on the road line */
+  position: absolute;
+  bottom: 3px;
   left: 0;
-  width: 65px;                /* smaller truck – tweak as you like */
+  width: 65px;
   height: auto;
   transform: translateX(var(--carX, 0));
   will-change: transform;
 }
 
-/* turn off bobbing to keep the edge perfectly clean */
+
 .truck.bob{ animation: none; }
 
 
@@ -476,21 +475,21 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 
 
 
-/* each letter becomes an inline-block we can animate */
+
 .word{
-  display: inline-block;        /* keep the whole word as a unit */
+  display: inline-block;
   white-space: nowrap;
-  margin-right: 0.4em;          /* <-- word spacing; tweak to taste */
+  margin-right: 0.4em;
 }
 
-/* optional: prevent weird auto-hyphenation/word breaking */
+
 .luxury-heading{
   overflow-wrap: normal;
   word-break: keep-all;
   hyphens: none;
 }
 
-/* letter animation */
+
 .char{
   display: inline-block;
   font: inherit;
@@ -501,11 +500,11 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   transform: translate3d(var(--tx,0),var(--ty,0),0) rotate(var(--rot,0));
   filter: blur(2px);
   will-change: transform, opacity, filter;
-  animation: fly-in 2.5s cubic-bezier(.2,.7,.2,1) forwards; /* slower */
+  animation: fly-in 2.5s cubic-bezier(.2,.7,.2,1) forwards;
 }
 
 
-/* spaces we might inject won’t animate */
+
 .char.space{ animation: none; opacity: 1; transform: none; filter: none; }
 
 @keyframes fly-in{
@@ -528,41 +527,41 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 
 .about-with-logos {
   display: flex;
-  align-items: center;      /* vertical centering */
-  justify-content: center;  /* keep everything centered as a block */
-  gap: 60px;                /* space between logos and text */
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
 }
 
 .about-logo {
-  width: 200px;              /* slightly larger logos */
+  width: 200px;
   height: auto;
 }
 
 .about-text {
-  max-width: 800px;         /* don’t let text get too wide */
+  max-width: 800px;
   text-align: center;
-  font-size: clamp(16px, 2vw, 30px);  /* scales bigger like you asked */
+  font-size: clamp(16px, 2vw, 30px);
   line-height: 1.6;
   color: #333;
 }
 
 @media (max-width: 768px) {
   .about-with-logos {
-    flex-direction: column;   /* stack items vertically */
+    flex-direction: column;
     gap: 20px;
   }
 
-  /* hide the right logo on small screens */
+
   .about-logo:last-child {
     display: none;
   }
 
   .about-logo {
-    width: 170px;  /* smaller size for phones */
+    width: 170px;
   }
 
   .about-text {
-    max-width: 80%;  /* allow text to take full width */
+    max-width: 80%;
   }
 }
 
@@ -574,7 +573,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   }
 }
 
-/* --- Contact Cards (like the reference site) --- */
+
 .contact-cards{
   width: min(95vw, 1200px);
   margin: 50px auto 30px;
@@ -585,7 +584,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   margin-bottom: 18px;
 }
 
-/* 3 columns on desktop, stack on mobile */
+
 .cards{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -615,12 +614,16 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   margin: 6px 0;
   color: #333;
 }
-.card .link{
-  color: #0a66c2;
+
+.card .link {
+  color: #000;
   text-decoration: none;
 }
-.card .link:hover{ text-decoration: underline; }
-.card .muted{ color:#666; font-size: .95em; }
+
+.card .link:hover {
+  text-decoration: underline;
+  color: #000;
+}
 
 .contact-cta{
   margin-top: 16px;
@@ -637,7 +640,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   gap: 8px;
 }
 
-/* Base size/colors (edit these numbers to taste) */
+
 .social-button {
   position: relative;
   display: flex;
@@ -658,10 +661,10 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   position: relative;
   z-index: 1;
   transition: 0.3s;
-  font-size: 26px; /* 64px * 0.4 ≈ 26px */
+  font-size: 26px;
 }
 
-/* expanding colored circle background */
+
 .social-button::after {
   content: "";
   position: absolute;
@@ -674,7 +677,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 }
 .social-button:hover,
 .social-button:focus {
-  color: #fff; /* icon turns white on hover */
+  color: #fff;
 }
 .social-button:hover::after,
 .social-button:focus::after {
@@ -683,7 +686,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   margin-left: calc(-50% - 1px);
 }
 
-/* Per-network colors */
+/* Social Buttons colors */
 .social-button--mail       { color: #0072c6; }
 .social-button--mail::after{ background: #0072c6; }
 
@@ -693,35 +696,31 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 .social-button--instagram       { color: #e4405f; }
 .social-button--instagram::after{ background: #e4405f; }
 
-/* Add more if needed:
+/* more:
 .social-button--linkedin{ color:#0077b5 } .social-button--linkedin::after{ background:#0077b5 }
 .social-button--github{ color:#6e5494 } .social-button--github::after{ background:#6e5494 }
 ... */
 
-/* Narrower gallery on big screens + centered title */
+
 .gallery-wrap{
-  width: min(80vw, 1200px) !important; /* smaller cap than 1200px */
-  margin: 60px auto !important;       /* center the section */
-  text-align: center;                  /* center the heading */
-  margin-bottom: 150px !important;    /* more space below */
+  width: min(80vw, 1200px) !important;
+  margin: 60px auto !important;
+  text-align: center;
+  margin-bottom: 150px !important;
 }
 
-/* Make the gallery title match your pricing-note title */
+
 .gallery-wrap .section-title{
-  font-size: clamp(1.6rem, 3.8vw, 2.2rem) !important; /* same as pricing section */
+  font-size: clamp(1.6rem, 3.8vw, 2.2rem) !important;
   line-height: 1.1;
   margin-bottom: 24px;
 }
 
-/* (Optional) if your global .section-title adds an underline and you want it here too,
-   keep as-is; otherwise you can turn it off just for gallery:
-.gallery-wrap .section-title::after { display:none; }
-*/
 
 /* --- Fleet / capabilities section --- */
 .fleet-section {
   width: min(95vw, 1300px);
-  margin: 72px auto 120px auto; /* top, sides, bottom */
+  margin: 72px auto 120px auto;
   text-align: center;
 }
 
@@ -739,15 +738,15 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 }
 
 
-/* On phones, reset bottom margin back to 72px */
+
 @media (max-width: 768px) {
   .fleet-section {
     margin: 72px auto;
   }
 }
-/* ---------- Language Picker: minimal, no global overrides ---------- */
 
-/* Variables (namespaced) */
+
+
 :root {
   --li4-color-primary-hsl: 250, 84%, 54%;
   --li4-color-bg-hsl: 0, 0%, 100%;
@@ -773,7 +772,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   }
 }
 
-/* Button used by the picker trigger */
+
 .li4-btn {
   position: relative;
   display: inline-flex;
@@ -820,16 +819,15 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   flex-shrink: 0;
 }
 
-/* Picker wrapper */
+
 :root { --picker-vertical-gap: 4px; }
 .language-picker { display: inline-block; position: relative; }
-.language-picker__form { display: none; } /* hide native select if using custom UI */
-/* show the native select so you can see/use it even if JS fails */
+.language-picker__form { display: none; }
 .language-picker__form {
   display: block !important;
 }
 
-/* keep it compact */
+
 .language-picker__form select {
   padding: 6px 10px;
   border-radius: 6px;
@@ -867,7 +865,6 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   visibility: visible; opacity: 1; transition: visibility 0s, opacity 0.2s;
 }
 
-/* Items */
 .language-picker__item {
   display: flex; align-items: center;
   padding: var(--li4-space-2xs) var(--li4-space-sm);
@@ -890,7 +887,6 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
           mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpolyline stroke-width='2' stroke='%23ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round' points='1,9 5,13 15,3 '/%3E%3C/svg%3E");
 }
 
-/* Flags (keep only EN + PL) */
 .language-picker__flag { display: flex; align-items: center; }
 .language-picker__flag::before {
   content: ""; height: 16px; width: 16px; margin-right: var(--li4-space-xs);
@@ -902,27 +898,24 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 }
 
 .language-picker__flag--polski::before {
-  /* Polish flag */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='24' y='0' fill='%23ffffff'/%3E%3Crect width='48' height='24' y='24' fill='%23dc143c'/%3E%3C/svg%3E");
 }
 
-/* Optional: hide label variant */
 .language-picker--hide-label .language-picker__button .li4-icon { margin-left: 0; }
 .language-picker--hide-label .language-picker__button .li4-icon:first-of-type { display: none; }
 .language-picker--hide-label .language-picker__button em { display: none; }
 
-/* A11y utility */
 .li4-sr-only {
   position: absolute; clip: rect(1px,1px,1px,1px); clip-path: inset(50%);
   width: 1px; height: 1px; overflow: hidden; white-space: nowrap;
 }
 
-/* Position language switcher inside slider */
+
 .language-switcher {
   position: absolute;
-  top: 15px;      /* distance from top edge */
-  left: 15px;     /* distance from left edge */
-  z-index: 10;    /* above slides */
+  top: 15px;
+  left: 15px;
+  z-index: 10;
 }
 
 @media (max-width: 768px) {
@@ -933,21 +926,20 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 }
 
 .slider {
-  position: relative;              /* anchor for absolutely-positioned children */
+  position: relative;
 }
 
 .language-switcher {
   position: absolute;
   top: 12px;
   left: 12px;
-  z-index: 9999;                   /* higher than slides/overlays */
-  pointer-events: auto;            /* ensure it’s clickable */
+  z-index: 9999;
+  pointer-events: auto;
 }
 
-/* if your slides have massive z-index, keep them low */
+
 .slides, .slide { z-index: 1; position: relative; }
 
-/* --- Services (Offer) --- */
 .services-section{
   width: min(95vw, 1200px);
   margin: 72px auto 130px;
@@ -964,13 +956,13 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   font-size: 0.95rem;
   letter-spacing: .06em;
   text-transform: uppercase;
-  color:#6b7280; /* neutral-500 */
+  color:#6b7280;
 }
 
 .services-header .see-more{
   font-size: 0.95rem;
   text-decoration:none;
-  color:#0ea5e9; /* link */
+  color:#0ea5e9;
 }
 
 .services-title{
@@ -1006,7 +998,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   height:100px; width:100px;
   border-radius: 999px;
   display:grid; place-items:center;
-  background: #fff8f0;            /* soft brand orange tint */
+  background: #fff8f0;
   border: 1px solid #ffe1c2;
   margin-bottom: 14px;
 }
@@ -1016,7 +1008,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 .service-desc{
   font-size: 1.2rem;
   line-height: 1.6;
-  color:#374151; /* neutral-700 */
+  color:#374151;
 }
 
 
@@ -1044,7 +1036,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 
 .credits-section {
   width: min(95vw, 1300px);
-  margin: 5px auto 120px auto; /* top, sides, bottom */
+  margin: 5px auto 120px auto;
   text-align: center;
 }
 
@@ -1058,7 +1050,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 .site-footer small a {
   font-size: 16px;
   position: relative;
-  top: -20px;         /* optional tiny lift if line still crosses */
+  top: -20px;
 }
 
 
@@ -1080,22 +1072,20 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 .back-btn:hover{ background: #fff8e1; }
 
 
-/* was .luxury-heading { ... } */
+
 .luxury-heading {
-  font-variant: normal !important;         /* disable small-caps */
-  font-feature-settings: normal !important;/* disable 'smcp' */
-  text-transform: none;                    /* or use uppercase if you prefer */
+  font-variant: normal !important;
+  font-feature-settings: normal !important;
+  text-transform: none;
 }
 
 
 
-/* container like 1300px max, centered */
 .opinions-container{
   width:min(95vw,1300px);
   margin:120px auto 64px;
 }
 
-/* header: left titles, right link */
 .opinions-header{
   display:grid;
   grid-template-columns: 1fr auto;
@@ -1120,7 +1110,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   text-align:right;
 }
 .opinions-see-more a{
-  color:#1863ff; /* or your theme link color */
+  color:#1863ff;
   text-decoration:none;
 }
 .opinions-see-more a:hover{ text-decoration:underline; }
@@ -1166,7 +1156,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 }
 
 .social-buttons-section {
-  margin-top: 0;        /* reset, so spacing comes only from .opinions-button */
+  margin-top: 0;
 }
 
 
@@ -1174,7 +1164,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   display:inline-block;
   padding:15px 30px;
   font-size:1.4rem;
-  border:2px solid #ffb300; /* same orange as your call button */
+  border:2px solid #ffb300;
   border-radius:6px;
   background:transparent;
   color:#ffb300;
@@ -1203,7 +1193,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
   margin: 6px 0;
   line-height: 1.5;
   max-width: 700px;
-  margin: 0 auto 10px auto; /* ← add this line */
+  margin: 0 auto 10px auto;
 }
 
 .promotion-highlight {
@@ -1380,7 +1370,6 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 
 
 
-/* Add to your styles.css */
 .promotion-image {
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -1406,6 +1395,17 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 .the-world-active #main-content {
     filter: grayscale(1) brightness(0.7);
     pointer-events: none;
+}
+
+
+/* Remove underline from all button-style links */
+a.btn {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.btn:hover {
+  text-decoration: none;
 }
 
 

@@ -50,43 +50,47 @@ def load_translations(lang_code):
         return json.load(f)
 
 
+# 🔹 Global context processor so translations work in ALL templates (including base.html)
+@app.context_processor
+def inject_translations():
+    lang = session.get('lang', 'pl')
+    translations = load_translations(lang)
+    return dict(translations=translations, lang=lang, language_options=LANGUAGE_OPTIONS)
+
+
 @app.route('/')
 def index():
     if 'lang' not in session:
-        session['lang'] = 'pl' # Default Language
+        session['lang'] = 'pl'  # Default Language
 
-    translations = load_translations(session['lang'])
     max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
-    return render_template('index.html',
-                           translations=translations,
-                           lang=session['lang'],
-                           language_options=LANGUAGE_OPTIONS,
-                           max_length=max_length)
+    return render_template('index.html', max_length=max_length)
 
 
 @app.route('/<lang_code>')
 def set_language(lang_code):
     if lang_code in LANGUAGE_OPTIONS:
         session['lang'] = lang_code
-
-    logger.info(f"Language was set to {lang_code}")
-
+        logger.info(f"Language was set to {lang_code}")
     return redirect(url_for('index'))
 
 
 @app.route('/credits')
 def credits():
-    if 'lang' not in session:
-        session['lang'] = 'pl'
-
-    translations = load_translations(session['lang'])
     max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
+    return render_template('credits.html', max_length=max_length)
 
-    return render_template('credits.html',
-                           translations=translations,
-                           lang=session['lang'],
-                           language_options=LANGUAGE_OPTIONS,
-                           max_length=max_length)
+
+@app.route('/kontakt')
+def contact():
+    max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
+    return render_template('contact.html', max_length=max_length)
+
+
+@app.route('/o-nas')
+def about():
+    max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
+    return render_template('about-us.html', max_length=max_length)
 
 
 @app.after_request

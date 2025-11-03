@@ -16,7 +16,7 @@
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Great+Vibes&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Great+Vibes&display=swap"></noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles.min.css') }}?v=20250924">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=20250924">
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'">
         <link rel="stylesheet" href="https://unpkg.com/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'">
         <link rel="preload" href="{{ url_for('static', filename='slides/horizontal1.webp') }}" as="image">
@@ -35,9 +35,36 @@
     </head>
 
     <body>
+        <!-- Menu -->
+        <input type="checkbox" id="menu" />
+        <label for="menu" class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <label for="menu" class="menu-backdrop"></label>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="{{ url_for('index') }}" class="site-menu-link">{{ translations.menu1 }}</a></li>
+                <li><a href="{{ url_for('about') }}" class="site-menu-link">{{ translations.menu2 }}</a></li>
+                <li><a href="{{ url_for('contact') }}" class="site-menu-link">{{ translations.menu3 }}</a></li>
+                <li><a href="{{ url_for('index') }}#oferta" class="site-menu-link">{{ translations.menu4 }}</a></li>
+                <li><a href="{{ url_for('index') }}#wycena" class="site-menu-link">{{ translations.menu5 }}</a></li>
+                <li><a href="{{ url_for('index') }}#promotions" class="site-menu-link">{{ translations.menu6 }}</a></li>
+                <li><a href="{{ url_for('index') }}#opinie" class="site-menu-link">{{ translations.menu7 }}</a></li>
+            </ul>
+        </nav>
+
+
+        <!-- Everything that is in index.html -->
         <div id="main-content">
-            {% block content %}{% endblock %}
+            {% block content %}
+
+            {% endblock %}
         </div>
+
 
         <!--Easter egg-->
         <script src="{{ url_for('static', filename='js/easter-egg.js') }}"></script>
@@ -45,5 +72,6 @@
         <video id="the-world-bg" autoplay muted playsinline>
             <source src="/static/Za-Warudo.mp4" type="video/mp4" defer>
         </video>
+
     </body>
 </html>

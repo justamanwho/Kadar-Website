@@ -2,27 +2,6 @@
 
 {% block content %}
 
-<input type="checkbox" id="menu" />
-<label for="menu" class="menu">
-    <span></span>
-    <span></span>
-    <span></span>
-</label>
-
-<!-- Add this backdrop -->
-<label for="menu" class="menu-backdrop"></label>
-
-<nav class="nav">
-    <ul>
-      <li><a href="#o-nas" class="site-menu-link">O nas</a></li>
-      <li><a href="#oferta" class="site-menu-link">Oferta</a></li>
-      <li><a href="#wycena" class="site-menu-link">Wycena</a></li>
-      <li><a href="#promotions" class="site-menu-link">Promocje</a></li>
-      <li><a href="#opinie" class="site-menu-link">Opinie</a></li>
-      <li><a href="#kontakt" class="site-menu-link">Kontakt</a></li>
-    </ul>
-</nav>
-
 
 <div class="slider">
   <div class="language-switcher">
@@ -40,12 +19,11 @@
   </div>
 
   <div class="slides">
-      <!-- Use WebP directly since modern browsers support it -->
-      <img src="{{ url_for('static', filename='slides/horizontal1.webp') }}" class="slide active" loading="eager" width="1920" height="1080" alt="Moving service slide 1">
-      <img src="{{ url_for('static', filename='slides/horizontal2.webp') }}" class="slide" loading="lazy" width="1920" height="1080" alt="Moving service slide 2">
-      <img src="{{ url_for('static', filename='slides/horizontal3.webp') }}" class="slide" loading="lazy" width="1920" height="1080" alt="Moving service slide 3">
-      <img src="{{ url_for('static', filename='slides/horizontal4.webp') }}" class="slide" loading="lazy" width="1920" height="1080" alt="Moving service slide 4">
-      <img src="{{ url_for('static', filename='slides/horizontal5.webp') }}" class="slide" loading="lazy" width="1920" height="1080" alt="Moving service slide 5">
+    <div class="slide"><img src="{{ url_for('static', filename='slides/horizontal1.webp') }}" loading="eager" width="1920" height="1080" alt="Moving service slide 1"></div>
+    <div class="slide"><img src="{{ url_for('static', filename='slides/horizontal2.webp') }}" loading="lazy" width="1920" height="1080" alt="Moving service slide 2"></div>
+    <div class="slide"><img src="{{ url_for('static', filename='slides/horizontal3.webp') }}" loading="lazy" width="1920" height="1080" alt="Moving service slide 3"></div>
+    <div class="slide"><img src="{{ url_for('static', filename='slides/horizontal4.webp') }}" loading="lazy" width="1920" height="1080" alt="Moving service slide 4"></div>
+    <div class="slide"><img src="{{ url_for('static', filename='slides/horizontal5.webp') }}" loading="lazy" width="1920" height="1080" alt="Moving service slide 5"></div>
   </div>
 
   <div class="bottom-center">
