@@ -62,7 +62,8 @@
       <p>{{ translations.about_p2 }}</p>
     </div>
     <picture>
-      <source srcset="{{ url_for('static', filename='logo.webp') }}" type="image/webp">
+      <source srcset="static/logo.webp" type="image/webp">
+      <img src="static/logo.jpg" alt="Logo left" class="about-logo" width="200" height="200" loading="lazy">
     </picture>
   </div>
 </section>
@@ -184,6 +185,28 @@
   <p>{{ translations.pricing_p2 }}</p>
 </section>
 
+
+<section class="about-section">
+  <div class="main-expertise">
+    <h2 class="section-title">{{ translations.about_us_expertise_title or "Nasze Doświadczenie" }}</h2>
+    <p>{{ translations.about_us_expertise_p1 or "Specjalizujemy się w różnych rodzajach przeprowadzek, od małych mieszkań po duże domy jednorodzinne i lokale komercyjne. Nasza flota pojazdów jest dostosowana do różnorodnych potrzeb, co pozwala nam efektywnie zarządzać nawet najbardziej wymagającymi zleceniami." }}</p>
+
+    <div class="main-stats">
+      <div class="main-stat">
+        <span class="main-stat-number">5000+</span>
+        <span class="main-stat-label">{{ translations.stat_moves or "przeprowadzek" }}</span>
+      </div>
+      <div class="main-stat">
+        <span class="main-stat-number">5</span>
+        <span class="main-stat-label">{{ translations.stat_vehicles or "pojazdów" }}</span>
+      </div>
+      <div class="main-stat">
+        <span class="main-stat-number">28+</span>
+        <span class="main-stat-label">{{ translations.stat_years or "lat doświadczenia" }}</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <section class="promotions-section" id="promotions">

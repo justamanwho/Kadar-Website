@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 <a href="{{ url_for('index') }}" class="back-btn">← {{ translations.back_home or 'Powrót' }}</a>
 
 <section class="about-section">
@@ -13,13 +12,122 @@
     </picture>
 
     <div class="about-text">
-      <p>{{ translations.about_us_intro or "Jesteśmy zespołem z wieloletnim doświadczeniem w przeprowadzkach, działającym na terenie Bielska-Białej i całej Polski." }}</p>
-      <p>{{ translations.about_us_values or "Naszą misją jest zapewnienie bezpiecznej, sprawnej i bezstresowej przeprowadzki dla każdego klienta." }}</p>
-      <p>{{ translations.about_us_end or "Zaufaj nam, a Twoja przeprowadzka przebiegnie gładko i profesjonalnie." }}</p>
+      <h1 class="section-title">{{ translations.about_us_title or "O Nas" }}</h1>
+
+      <div class="about-intro">
+        <p>{{ translations.about_us_intro or "Jesteśmy zespołem z wieloletnim doświadczeniem w przeprowadzkach, działającym na terenie Bielska-Białej i całej Polski." }}</p>
+      </div>
+
+      <div class="about-story">
+        <h2>{{ translations.about_us_story_title or "Nasza Historia" }}</h2>
+        <p>{{ translations.about_us_story_p1 or "Nasza firma powstała z pasji do pomagania ludziom w ważnych momentach ich życia. Zauważyliśmy, że przeprowadzka, choć ekscytująca, często wiąże się ze stresem i wyzwaniami logistycznymi. Postanowiliśmy zmienić to doświadczenie, oferując kompleksową pomoc, która odciąży naszych klientów od najtrudniejszych aspektów przenosin." }}</p>
+        <p>{{ translations.about_us_story_p2 or "Przez lata rozwijaliśmy nasze usługi, inwestując w nowoczesny sprzęt, szkolenia dla pracowników i rozszerzając zasięg działania. Dziś z dumą możemy powiedzieć, że jesteśmy zaufanym partnerem setek rodzin i firm w całej Polsce." }}</p>
+      </div>
+
+      <div class="about-values">
+        <h2>{{ translations.about_us_values_title or "Nasze Wartości" }}</h2>
+
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-icon">
+              <picture>
+                <source srcset="{{ url_for('static', filename='services/moving-home.webp') }}" type="image/webp">
+                <img src="{{ url_for('static', filename='services/moving-home.png') }}" alt="Rzetelność" width="60" height="60" loading="lazy">
+              </picture>
+            </div>
+            <h3>{{ translations.value_reliability_title or "Rzetelność" }}</h3>
+            <p>{{ translations.value_reliability_desc or "Dotrzymujemy terminów i obietnic. Każdą przeprowadzkę traktujemy z najwyższą starannością, dbając o bezpieczeństwo powierzonego nam mienia." }}</p>
+          </div>
+
+
+          <div class="value-item">
+            <div class="value-icon">
+              <picture>
+                <source srcset="{{ url_for('static', filename='services/moving-furniture.webp') }}" type="image/webp">
+                <img src="{{ url_for('static', filename='services/moving-furniture.png') }}" alt="Troska" width="60" height="60" loading="lazy">
+              </picture>
+            </div>
+            <h3>{{ translations.value_care_title or "Troska" }}</h3>
+            <p>{{ translations.value_care_desc or "Rozumiemy emocjonalny aspekt przeprowadzki. Traktujemy przedmioty naszych klientów z taką samą uwagą, jak swoje własne, zapewniając im maksymalne bezpieczeństwo." }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-expertise">
+        <h2>{{ translations.about_us_expertise_title or "Nasze Doświadczenie" }}</h2>
+        <p>{{ translations.about_us_expertise_p1 or "Specjalizujemy się w różnych rodzajach przeprowadzek, od małych mieszkań po duże domy jednorodzinne i lokale komercyjne. Nasza flota pojazdów jest dostosowana do różnorodnych potrzeb, co pozwala nam efektywnie zarządzać nawet najbardziej wymagającymi zleceniami." }}</p>
+
+        <div class="expertise-stats">
+          <div class="stat">
+            <span class="stat-number">5000+</span>
+            <span class="stat-label">{{ translations.stat_moves or "przeprowadzek" }}</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5</span>
+            <span class="stat-label">{{ translations.stat_vehicles or "pojazdów" }}</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">28+</span>
+            <span class="stat-label">{{ translations.stat_years or "lat doświadczenia" }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-process">
+        <h2>{{ translations.about_us_process_title or "Jak Działamy" }}</h2>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3>{{ translations.process_step1_title or "Bezpłatna Wycena" }}</h3>
+            <p>{{ translations.process_step1_desc or "Oferujemy darmową, przejrzystą wycenę online lub podczas wizyty. Uwzględniamy wszystkie czynniki, aby cena była sprawiedliwa i ostateczna." }}</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3>{{ translations.process_step2_title or "Planowanie i Przygotowanie" }}</h3>
+            <p>{{ translations.process_step2_desc or "Tworzymy szczegółowy plan przeprowadzki, uwzględniając specyfikę przedmiotów, dostęp do nieruchomości i preferowany termin." }}</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3>{{ translations.process_step3_title or "Profesjonalne Wykonanie" }}</h3>
+            <p>{{ translations.process_step3_desc or "Nasi doświadczeni pracownicy bezpiecznie pakują, transportują i rozładowują wszystkie przedmioty, dbając o każdy detal." }}</p>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3>{{ translations.process_step4_title or "Zakończenie i Wsparcie" }}</h3>
+            <p>{{ translations.process_step4_desc or "Po zakończeniu przeprowadzki sprawdzamy satysfakcję klienta i oferujemy wsparcie posprzedażowe." }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-team">
+        <h2>{{ translations.about_us_team_title or "Poznaj Nasz Zespół" }}</h2>
+        <p>{{ translations.about_us_team_desc or "Nasi pracownicy to wykwalifikowani specjaliści z wieloletnim doświadczeniem w branży przeprowadzkowej. Każdy członek zespołu przechodzi szkolenia z zakresu bezpiecznego pakowania, transportu i obsługi specjalistycznego sprzętu. Dzięki temu możemy zagwarantować najwyższą jakość usług." }}</p>
+      </div>
+
+      <div class="about-commitment">
+        <h2>{{ translations.about_us_commitment_title or "Nasze Zaangażowanie" }}</h2>
+        <p>{{ translations.about_us_commitment_p1 or "Jesteśmy dumni z naszej pracy i relacji, które budujemy z klientami. Wielu z nich wraca do nas przy kolejnych przeprowadzkach lub poleca nas swoim znajomym - to dla nas największe wyróżnienie." }}</p>
+        <p>{{ translations.about_us_commitment_p2 or "Nieustannie się rozwijamy, wprowadzając nowe rozwiązania i usprawnienia, aby każda kolejna przeprowadzka była jeszcze lepsza od poprzedniej." }}</p>
+      </div>
+
+      <div class="about-cta">
+        <p class="about-us-end">{{ translations.about_us_end or "Zaufaj nam, a Twoja przeprowadzka przebiegnie gładko i profesjonalnie." }}</p>
+        <div class="cta-buttons">
+          <a href="tel:+48601896568" class="btn secondary">{{ translations.call_now or "Zadzwoń do Nas" }}</a>
+        </div>
+      </div>
     </div>
+
+    <picture>
+      <source srcset="{{ url_for('static', filename='logo.webp') }}" type="image/webp">
+      <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="about-logo" width="200" height="200" loading="lazy">
+    </picture>
   </div>
 </section>
-
 
 
 {% endblock %}
