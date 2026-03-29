@@ -83,26 +83,36 @@
   <h2 class="section-title">{{ translations.gallery_title }}</h2>
 
   <div class="gallery" id="moves-gallery">
-    {% for i in range(2, 16) %}
-      <a href="{{ url_for('static', filename='gallery/gallery (' ~ i ~ ').jpg') }}"
-         class="gallery__item"
-         data-gallery="moves">
-        <!-- Optimized gallery images with WebP and lazy loading -->
-        <picture>
-          <source srcset="{{ url_for('static', filename='gallery/gallery (' ~ i ~ ').webp') }}" type="image/webp">
-          <img
-            src="{{ url_for('static', filename='gallery/gallery (' ~ i ~ ').jpg') }}"
-            alt="Przeprowadzka – zdjęcie {{ i }}"
-            loading="lazy"
-            width="300"
-            height="300">
-        </picture>
-      </a>
+
+    {% for file in gallery_files %}
+      {% if file.is_video %}
+        <!-- VIDEO -->
+        <div class="gallery__item">
+          <video controls width="300" height="300" style="object-fit: cover;" loading="lazy">
+            <source src="{{ url_for('static', filename='gallery/' ~ file.name) }}" type="video/mp4">
+          </video>
+        </div>
+      {% else %}
+        <!-- IMAGE -->
+        <a href="{{ url_for('static', filename='gallery/' ~ file.name) }}"
+           class="gallery__item"
+           data-gallery="moves">
+          <picture>
+            <source srcset="{{ url_for('static', filename='gallery/' ~ file.name.rsplit('.', 1)[0] ~ '.webp') }}" type="image/webp">
+            <img
+              src="{{ url_for('static', filename='gallery/' ~ file.name) }}"
+              alt="Przeprowadzka"
+              loading="lazy"
+              width="300"
+              height="300"
+              style="object-fit: cover;">
+          </picture>
+        </a>
+      {% endif %}
     {% endfor %}
+
   </div>
 </section>
-
-
 
 <!-- OFFER / SERVICES -->
 <section class="services-section" id="oferta">

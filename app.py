@@ -60,11 +60,36 @@ def inject_translations():
 
 @app.route('/')
 def index():
+    # --- Language logic ---
     if 'lang' not in session:
         session['lang'] = 'pl'  # Default Language
 
     max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
-    return render_template('index.html', max_length=max_length)
+
+    # --- Gallery logic ---
+    gallery_path = os.path.join(app.static_folder, "gallery")
+    files = sorted(os.listdir(gallery_path))
+
+    gallery_files = []
+    for f in files:
+        # Skip WebP and already compressed videos
+        if '_compressed' in f or f.lower().endswith('webp'):
+            continue
+
+        ext = f.lower().split('.')[-1]
+
+        # Only include original images and videos
+        if ext in ['jpg', 'jpeg', 'png', 'mp4', 'mov', 'webm']:
+            gallery_files.append({
+                "name": f,
+                "is_video": ext in ["mp4", "mov", "webm"]
+            })
+
+    return render_template(
+        'index.html',
+        max_length=max_length,
+        gallery_files=gallery_files
+    )
 
 
 @app.route('/<lang_code>')
