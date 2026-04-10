@@ -2,6 +2,13 @@
 A website for a moving company called KADAR, operating in Bielsko-Biała, Poland.
 
 
+## Features
+- Fully responsive design (mobile, tablet, desktop)
+- Photo gallery of completed moving work
+- Multilingual support
+- SEO-friendly structure
+
+  
 ## Setup
 
 1. Clone the repository:
@@ -27,7 +34,7 @@ A website for a moving company called KADAR, operating in Bielsko-Biała, Poland
 
 
 ## Links and Sources:
-- website - kadarprzeprowadzki.pl
+- website - https://kadarprzeprowadzki.pl
 
 
 <img width="1920" height="958" alt="kadar-website" src="https://github.com/user-attachments/assets/b5678d92-6061-42c9-bff1-59874082f8f8" />
