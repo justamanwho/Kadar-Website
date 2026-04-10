@@ -2,5 +2,35 @@
 A website for a moving company called KADAR, operating in Bielsko-Biała, Poland.
 
 
+## Setup
 
-# To Do List:
+1. Clone the repository:
+   <br>git clone https://github.com/justamanwho/Kadar-Website.git
+   <br>cd Kadar-Website
+
+
+2. Create and activate virtual environment:
+   <br>python -m venv venv
+   <br>source venv/bin/activate
+
+
+3. Install dependencies:
+   <br>pip install -r requirements.txt
+
+
+4. Create a `.env` file with your secret key(can be anything):
+   <br>SECRET_KEY=secret_key
+
+
+5. Run the website:
+   <br>python3 app.py
+
+
+## Links and Sources:
+- website - kadarprzeprowadzki.pl
+
+
+<img width="1920" height="958" alt="kadar-website" src="https://github.com/user-attachments/assets/b5678d92-6061-42c9-bff1-59874082f8f8" />
+
+
+## To Do List:
