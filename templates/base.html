@@ -4,7 +4,7 @@
 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>Kadar Przeprowadzki - Bielsko Biała i cała Poslka</title>
+        <title>{% block page_title %}Kadar Przeprowadzki - Bielsko Biała i cała Poslka{% endblock %}</title>
         <link rel="icon" type="image/jpg" href="static/logo.jpg" class="icon-image">
         <link rel="shortcut icon" type="image/jpg" href="static/logo.jpg" class="icon-image">
 
@@ -16,7 +16,8 @@
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Great+Vibes&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Great+Vibes&display=swap"></noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles.min.css') }}?v=20250924">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.min.css') }}?v=20260126">
+        {% block extra_head %}{% endblock %}
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" media="print" onload="this.media='all'">
         <link rel="stylesheet" href="https://unpkg.com/glightbox/dist/css/glightbox.min.css" media="print" onload="this.media='all'">
         <link rel="preload" href="{{ url_for('static', filename='slides/horizontal1.webp') }}" as="image">
@@ -31,6 +32,14 @@
         <script src="{{ url_for('static', filename='js/truck-scroll-global.js') }}" defer></script>
         <script src="{{ url_for('static', filename='js/text-flyin.js') }}" defer></script>
         <script src="{{ url_for('static', filename='js/language-selector.js') }}?v=20250924" defer></script>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WQL658BCE"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-9WQL658BCE');
+        </script>
 
     </head>
 
@@ -54,9 +63,9 @@
                 <li><a href="{{ url_for('index') }}#wycena" class="site-menu-link">{{ translations.menu5 }}</a></li>
                 <li><a href="{{ url_for('index') }}#promotions" class="site-menu-link">{{ translations.menu6 }}</a></li>
                 <li><a href="{{ url_for('index') }}#opinie" class="site-menu-link">{{ translations.menu7 }}</a></li>
+                <li><a href="{{ url_for('blog') }}" class="site-menu-link">{{ translations.menu8 }}</a></li>
             </ul>
         </nav>
-
 
         <!-- Everything that is in index.html -->
         <div id="main-content">
