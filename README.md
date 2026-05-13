@@ -41,3 +41,7 @@ A website for a moving company called KADAR, operating in Bielsko-Biała, Poland
 
 
 ## To Do List:
+
+- blog section
+- częste pytania
+/home/john/Downloads/website-optimization.mp4

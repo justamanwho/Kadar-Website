@@ -118,6 +118,12 @@ def about():
     return render_template('about-us.html', max_length=max_length)
 
 
+@app.route('/blog')
+def blog():
+    max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
+    return render_template('blog.html', max_length=max_length)
+
+
 @app.after_request
 def add_header(response):
     # Extend caching to all static file types
