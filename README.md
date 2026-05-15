@@ -42,7 +42,6 @@ A website for a moving company called KADAR, operating in Bielsko-Biała, Poland
 
 ## To Do List:
 
-- fulfil blog page
+- make different urls for different blogs
 - add frequent questions page
-- add bottom information to homepage like in blog page 
-- fix styles problem regarding blog page
+- add footer to homepage (the one I have in blog)

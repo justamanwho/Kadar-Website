@@ -82,24 +82,21 @@ h2 { font-size: 2.2rem; }
 }
 
 .tm-home-img-container {
-	background-image: url('blog_images/tm-home-img.jpg');
+	background-image: url('blog_images/background.jpg');
 	background-size: auto;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 500px;
 }
 
-.tm-about-img-container { background-image: url('blog_images/tm-about-img.jpg');	}
-.tm-blog-img-container { background-image: url('blog_images/tm-blog-img.jpg'); }
-.tm-contact-img-container { background-image: url('blog_images/tm-contact-img.jpg'); }
+.background-container { background-image: url('blog_images/background.jpg'); }
 
-.tm-about-img-container,
-.tm-blog-img-container,
-.tm-contact-img-container {
-	background-size: auto 200px;
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 200px;
+.background-container {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .tm-title {
