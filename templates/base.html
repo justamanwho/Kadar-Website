@@ -7,6 +7,7 @@
         <title>{% block page_title %}Przeprowadzki Bielsko Biala - Kadar Przeprowadzki - Bielsko-Biała{% endblock %}</title>
         <meta name="description" content="{% block description %}Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przeprowadzki Bielsko Biala. Bielsko-Biała{% endblock %}">
         <meta name="keywords" content="przeprowadzki, przeprowadzki Bielsko-Biała, Bielsko Biala, Kadar, bielsko-biala, firma przeprowadzkowa Bielsko-Biała, przeprowadzki mieszkań, przeprowadzki domów, transport mebli, pakowanie przeprowadzki, Kadar Przeprowadzki">
+        <link rel="canonical" href="https://kadarprzeprowadzki.pl{{ request.path }}" />
         <!-- ========================================== -->
         <!-- HREFLANG TAGS FOR MULTILINGUAL SEO         -->
         <link rel="alternate" href="{{ url_for('main.index', lang_code='pl', _external=True) }}" hreflang="pl" />
