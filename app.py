@@ -1,10 +1,12 @@
-from flask import Flask, render_template, redirect, url_for, session, request
+from flask import Flask, render_template, redirect, url_for, session, request, g
 from dotenv import load_dotenv
 import logging
 import atexit
 import json
 import os
 
+# Import the blueprint
+from main_routes import bp
 
 logger = logging.getLogger(__name__)
 logger.setLevel('DEBUG')
@@ -17,7 +19,6 @@ for handler in handlers:
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
-
 app = Flask(__name__)
 logger.info("Website is live")
 
@@ -28,11 +29,13 @@ def app_shutdown():
 
 atexit.register(app_shutdown)
 
-
 load_dotenv('.env')
 app.secret_key = os.getenv('SECRET_KEY')
 
+# Register the blueprint
+app.register_blueprint(bp)
 
+# Language options (only needed here for root redirect)
 LANGUAGE_OPTIONS = {
     'pl': {'name': 'Polski'},
     'en': {'name': 'English'},
@@ -45,93 +48,39 @@ LANGUAGE_OPTIONS = {
 def load_translations(lang_code):
     file_path = f"translations/{lang_code}.json"
     if not os.path.exists(file_path):
-        file_path = "translations/pl.json"  # Default Language
+        file_path = "translations/pl.json"
     with open(file_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 
-# 🔹 Global context processor so translations work in ALL templates (including base.html)
+# Global context processor
 @app.context_processor
 def inject_translations():
-    lang = session.get('lang', 'pl')
+    lang = getattr(g, 'lang_code', session.get('lang', 'pl'))
     translations = load_translations(lang)
     return dict(translations=translations, lang=lang, language_options=LANGUAGE_OPTIONS)
 
 
+# Root route - redirects to appropriate language version
 @app.route('/')
-def index():
-    # --- Language logic ---
-    if 'lang' not in session:
-        session['lang'] = 'pl'  # Default Language
-
-    max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
-
-    # --- Gallery logic ---
-    gallery_path = os.path.join(app.static_folder, "gallery")
-    files = sorted(os.listdir(gallery_path))
-
-    gallery_files = []
-    for f in files:
-        # Skip WebP and already compressed videos
-        if '_compressed' in f or f.lower().endswith('webp'):
-            continue
-
-        ext = f.lower().split('.')[-1]
-
-        # Only include original images and videos
-        if ext in ['jpg', 'jpeg', 'png', 'mp4', 'mov', 'webm']:
-            gallery_files.append({
-                "name": f,
-                "is_video": ext in ["mp4", "mov", "webm"]
-            })
-
-    return render_template(
-        'index.html',
-        max_length=max_length,
-        gallery_files=gallery_files
-    )
+def root():
+    lang = session.get('lang')
+    if not lang:
+        best_match = request.accept_languages.best_match(['pl', 'en', 'de', 'ukr', 'ja'])
+        lang = best_match if best_match else 'pl'
+    session['lang'] = lang
+    return redirect(url_for('main.index', lang_code=lang))
 
 
-@app.route('/<lang_code>')
-def set_language(lang_code):
-    if lang_code in LANGUAGE_OPTIONS:
-        session['lang'] = lang_code
-        logger.info(f"Language was set to {lang_code}")
-    return redirect(url_for('index'))
-
-
-@app.route('/credits')
-def credits():
-    max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
-    return render_template('credits.html', max_length=max_length)
-
-
-@app.route('/kontakt')
-def contact():
-    max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
-    return render_template('contact.html', max_length=max_length)
-
-
-@app.route('/o-nas')
-def about():
-    max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
-    return render_template('about-us.html', max_length=max_length)
-
-
-@app.route('/blog')
-def blog():
-    max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
-    return render_template('blog.html', max_length=max_length)
+# FIXED: Language switcher endpoint (matches the form action)
 
 
 @app.after_request
 def add_header(response):
-    # Extend caching to all static file types
     if (request.path.startswith('/static/') or
-        request.path.endswith(('.webp', '.jpg', '.jpeg', '.png', '.css', '.js', '.mp4', '.webm'))):
-        response.cache_control.max_age = 31536000  # 1 year
+            request.path.endswith(('.webp', '.jpg', '.jpeg', '.png', '.css', '.js', '.mp4', '.webm'))):
+        response.cache_control.max_age = 31536000
         response.cache_control.public = True
-        # Add immutable for versioned files
         if 'v=' in request.path or '.min.' in request.path:
             response.cache_control.immutable = True
     return response

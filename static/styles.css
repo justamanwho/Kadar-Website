@@ -1057,7 +1057,7 @@ h3 { font-size: clamp(1.3rem, 3.2vw, 1.8rem); }
 
 .back-btn{
   position: absolute;
-  top: 16px;
+  top: 80px;
   left: 16px;
   z-index: 10000;
   display: inline-block;

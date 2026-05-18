@@ -8,19 +8,6 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 
 
 <div class="slider">
-  <div class="language-switcher">
-    <div class="language-picker js-language-picker"
-         data-trigger-class="li4-btn li4-btn--subtle js-tab-focus">
-      <form class="language-picker__form">
-        <select id="language-picker-select" name="language">
-          <option lang="pl" value="pl" {% if lang == 'pl' %}selected{% endif %}>PL</option>
-          <option lang="en" value="en" {% if lang == 'en' %}selected{% endif %}>EN</option>
-          <option lang="de" value="de" {% if lang == 'de' %}selected{% endif %}>DE</option>
-          <option lang="ukr" value="ukr" {% if lang == 'ukr' %}selected{% endif %}>UKR</option>
-        </select>
-      </form>
-    </div>
-  </div>
 
   <div class="slides">
     <div class="slide"><img src="{{ url_for('static', filename='slides/horizontal1.webp') }}" loading="eager" width="1920" height="1080" alt="Moving service slide 1"></div>
@@ -57,16 +44,16 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
   <div class="about-with-logos">
     <!-- Optimized logo with explicit dimensions -->
     <picture>
-      <source srcset="static/logo.webp" type="image/webp">
-      <img src="static/logo.jpg" alt="Logo left" class="about-logo" width="200" height="200" loading="lazy">
+      <source srcset="{{ url_for('static', filename='logo.webp') }}" type="image/webp">
+      <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo left" class="about-logo" width="200" height="200" loading="lazy">
     </picture>
     <div class="about-text">
       <p>{{ translations.about_p1 }}</p>
       <p>{{ translations.about_p2 }}</p>
     </div>
     <picture>
-      <source srcset="static/logo.webp" type="image/webp">
-      <img src="static/logo.jpg" alt="Logo left" class="about-logo" width="200" height="200" loading="lazy">
+      <source srcset="{{ url_for('static', filename='logo.webp') }}" type="image/webp">
+      <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo left" class="about-logo" width="200" height="200" loading="lazy">
     </picture>
   </div>
 </section>
@@ -321,7 +308,7 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 </section>
 
 <footer class="site-footer">
-  <small><a href="{{ url_for('credits') }}">Credits</a></small>
+  <small><a href="{{ url_for('main.credits') }}">Credits</a></small>
 </footer>
 
 

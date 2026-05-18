@@ -1,0 +1,182 @@
+/* footer.css - tylko style dla stopki */
+/* Wyciągnięte z templatemo-style.css i dostosowane */
+
+.tm-footer {
+    color: #c6c6c6;
+    background-color: #191919;
+    background-image: url('blog_images/classic-pattern-bg.png');
+    font-size: 1rem;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.tm-footer .container-fluid {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.tm-footer .tm-gold-text {
+    color: #cc9900;
+}
+
+.tm-footer .tm-title {
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.tm-footer .tm-footer-content-box-title {
+    margin-bottom: 30px;
+}
+
+.tm-footer .tm-footer-links-container {
+    padding-left: 10px;
+}
+
+.tm-footer .tm-gray-bg {
+    background-color: #CCCCCC;
+    color: black;
+    padding: 30px 20px 20px;
+}
+
+.tm-footer .tm-footer-link {
+    color: #CCCC66;
+    line-height: 2.8;
+    text-decoration: underline;
+}
+
+.tm-footer .tm-footer-link:hover,
+.tm-footer .tm-footer-link:focus {
+    color: #CCCC66;
+    text-decoration: none;
+}
+
+.tm-footer .tm-footer-thumbnail {
+    margin-bottom: 5px;
+    max-width: 100%;
+    height: auto;
+}
+
+.tm-footer .tm-copyright-text {
+    color: #999999;
+    margin-bottom: 0;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.tm-footer hr {
+    border-top: 1px solid #CCCCCC;
+}
+
+.tm-footer .tm-btn {
+    color: white;
+    background-color: #cc9900;
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 30px;
+    text-decoration: none;
+}
+
+.tm-footer .tm-btn:hover,
+.tm-footer .tm-btn:focus {
+    background-color: #906E09;
+    color: white;
+    outline: none;
+}
+
+.tm-footer .tm-btn-gray {
+    background-color: #666666;
+}
+
+.tm-footer .tm-btn-gray:hover,
+.tm-footer .tm-btn-gray:focus {
+    background-color: #515050;
+}
+
+.tm-footer .tm-margin-b-30 {
+    margin-bottom: 30px;
+}
+
+.tm-footer .tm-margin-b-20 {
+    margin-bottom: 20px;
+}
+
+/* Style dla Twojej listy .footer-links-list */
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-list li {
+    margin-bottom: 25px;
+    color: #ccc;
+}
+
+/* Responsywność */
+@media (max-width: 991px) {
+    .tm-footer .tm-footer-content-box {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 543px) {
+    .tm-footer .tm-footer-links-container {
+        padding-left: 0;
+    }
+}
+
+/* Układ poziomy stopki - zastępuje Bootstrap grid */
+.tm-footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.tm-footer [class*="col-"] {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* 4 kolumny obok siebie na desktopie */
+@media (min-width: 992px) {
+    .tm-footer .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+/* 2 kolumny obok siebie na tablecie */
+@media (min-width: 768px) and (max-width: 991px) {
+    .tm-footer .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* 1 kolumna na telefonie */
+@media (max-width: 767px) {
+    .tm-footer [class*="col-"] {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Ukrywanie na różnych rozmiarach */
+.hidden-lg-up {
+    display: none;
+}
+
+/* Wyśrodkowanie tekstu w stopce na małych ekranach */
+@media (max-width: 767px) {
+    .tm-footer .tm-footer-content-box {
+        text-align: center;
+    }
+    .tm-footer .tm-footer-links-container {
+        padding-left: 0;
+    }
+}
