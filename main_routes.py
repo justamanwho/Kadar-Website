@@ -1,5 +1,4 @@
-# main_routes.py
-from flask import Blueprint, render_template, session, request, current_app, g
+from flask import Blueprint, render_template, session, current_app, g
 import os
 import json
 
@@ -87,30 +86,106 @@ def blog():
     max_length = max(len(option['name']) for option in LANGUAGE_OPTIONS.values())
     return render_template('blog.html', max_length=max_length)
 
-
+# 1
 @bp.route('/blog/poradnik')
 def blog_poradnik():
     return render_template('blog_poradnik.html')
 
 
+# 2
 @bp.route('/blog/naczynia')
 def blog_naczynia():
     return render_template('blog_naczynia.html')
 
-
+# 3
 @bp.route('/blog/zwierzeta')
 def blog_zwierzeta():
     return render_template('blog_zwierzeta.html')
 
-
+# 4
 @bp.route('/blog/bezwindy')
 def blog_bezwindy():
     return render_template('blog_bezwindy.html')
 
-
+# 5
 @bp.route('/blog/bielsko')
 def blog_bielsko():
     return render_template('blog_bielsko.html')
+
+# 6
+@bp.route('/blog/pianino')
+def blog_pianino():
+    return render_template('blog_pianino.html')
+
+# 7
+@bp.route('/blog/ukryte-koszty')
+def blog_ukryte_koszty():
+    return render_template('blog_ukryte_koszty.html')
+
+# 8
+@bp.route('/blog/wycena')
+def blog_wycena():
+    return render_template('blog_wycena.html')
+
+# 9
+@bp.route('/blog/biuro')
+def blog_biuro():
+    return render_template('blog_biuro.html')
+
+# 10
+@bp.route('/blog/magazyn')
+def blog_magazyn():
+    return render_template('blog_magazyn.html')
+
+# 11
+@bp.route('/blog/sejf')
+def blog_sejf():
+    return render_template('blog_sejf.html')
+
+# 12
+@bp.route('/blog/kartony')
+def blog_kartony():
+    return render_template('blog_kartony.html')
+
+# 13
+@bp.route('/blog/walizka')
+def blog_walizka():
+    return render_template('blog_walizka.html')
+
+# 14
+@bp.route('/blog/lato')
+def blog_lato():
+    return render_template('blog_lato.html')
+
+# 15
+@bp.route('/blog/zima')
+def blog_zima():
+    return render_template('blog_zima.html')
+
+# 16
+@bp.route('/blog/weekend')
+def blog_weekend():
+    return render_template('blog_weekend.html')
+
+# 17
+@bp.route('/blog/wybor-firmy')
+def blog_wybor_firmy():
+    return render_template('blog_wybor_firmy.html')
+
+# 18
+@bp.route('/blog/antyki')
+def blog_antyki():
+    return render_template('blog_antyki.html')
+
+# 19
+@bp.route('/blog/list')
+def blog_list():
+    return render_template('blog_list.html')
+
+# 20
+@bp.route('/blog/dzieci')
+def blog_dzieci():
+    return render_template('blog_dzieci.html')
 
 
 @bp.route('/credits')

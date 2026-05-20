@@ -1,12 +1,11 @@
-from flask import Flask, render_template, redirect, url_for, session, request, g
+from flask import Flask, render_template_string, redirect, url_for, session, request, g, make_response
 from dotenv import load_dotenv
+from main_routes import bp
 import logging
 import atexit
 import json
 import os
 
-# Import the blueprint
-from main_routes import bp
 
 logger = logging.getLogger(__name__)
 logger.setLevel('DEBUG')
@@ -31,6 +30,64 @@ atexit.register(app_shutdown)
 
 load_dotenv('.env')
 app.secret_key = os.getenv('SECRET_KEY')
+
+# @app.before_request
+# def log_request_info():
+#     print(f"📡 Request: {request.method} {request.path}")
+#
+# @app.route('/sitemap.xml')
+# def sitemap_xml():
+#     print("🔥🔥🔥 JESTEM W FUNKCJI SITEMAP! 🔥🔥🔥")
+#     base_url = 'https://kadarprzeprowadzki.pl'
+#
+#     # Lista nazw Twoich stron (bez języka)
+#     slugs = ['o-nas', 'kontakt', 'blog', 'credits']
+#     blog_posts = ['naczynia', 'zwierzeta', 'bezwindy', 'bielsko']
+#     languages = ['pl', 'en', 'de', 'ukr']
+#
+#     pages = []
+#
+#     for lang in languages:
+#         # Główne strony
+#         for slug in slugs:
+#             if slug == '':
+#                 url = f'{base_url}/{lang}/'
+#                 priority = '0.9' if lang == 'pl' else '0.8'
+#             else:
+#                 url = f'{base_url}/{lang}/{slug}'
+#                 priority = '0.7' if lang == 'pl' else '0.6'
+#             pages.append({'loc': url, 'priority': priority})
+#
+#         # Wpisy blogowe
+#         for post in blog_posts:
+#             url = f'{base_url}/{lang}/blog/{post}'
+#             priority = '0.6'
+#             pages.append({'loc': url, 'priority': priority})
+#
+#     # Dodajesz tutaj wszystkie wersje językowe
+#     lang_codes = ['pl', 'en', 'de', 'ukr']
+#     for code in lang_codes:
+#         pages.append({'loc': f'{base_url}/{code}/', 'priority': '0.9'})
+#         pages.append({'loc': f'{base_url}/{code}/blog', 'priority': '0.8'})
+#         # ... analogicznie dla innych podstron
+#
+#     # Tworzysz XML
+#     sitemap_xml = render_template_string('''
+# <?xml version="1.0" encoding="UTF-8"?>
+# <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+#     {% for page in pages %}
+#     <url>
+#         <loc>{{ page.loc }}</loc>
+#         <priority>{{ page.priority }}</priority>
+#     </url>
+#     {% endfor %}
+# </urlset>
+# ''', pages=pages)
+#
+#     response = make_response(sitemap_xml)
+#     response.headers['Content-Type'] = 'application/xml'
+#     return response
+
 
 # Register the blueprint
 app.register_blueprint(bp)
@@ -64,15 +121,9 @@ def inject_translations():
 # Root route - redirects to appropriate language version
 @app.route('/')
 def root():
-    lang = session.get('lang')
-    if not lang:
-        best_match = request.accept_languages.best_match(['pl', 'en', 'de', 'ukr', 'ja'])
-        lang = best_match if best_match else 'pl'
-    session['lang'] = lang
-    return redirect(url_for('main.index', lang_code=lang))
-
-
-# FIXED: Language switcher endpoint (matches the form action)
+    # Always default to Polish, ignoring browser language
+    session['lang'] = 'pl'
+    return redirect(url_for('main.index', lang_code='pl'))
 
 
 @app.after_request

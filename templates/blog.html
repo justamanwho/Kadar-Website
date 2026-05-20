@@ -6,10 +6,51 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='templatemo-style.css') }}">
+    <style>
+        /* Dodatkowe style dla siatki blogów */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        .blog-card {
+            border-bottom: none !important;
+            margin-bottom: 30px !important;
+            padding-bottom: 0 !important;
+        }
+        .blog-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+        .blog-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        .blog-card .blog-meta {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 10px;
+        }
+        .blog-card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .blog-card .tm-btn {
+            padding: 6px 15px;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
-
 
 <div class="background-container"></div>
 
@@ -18,112 +59,212 @@
         <div class="row">
 
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
-                <!-- GŁÓWNY ARTYKUŁ -->
-                <div class="tm-blog-post">
-                    <h3 class="tm-gold-text">Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku</h3>
-                    <p>Opublikowano: 15 marca 2025 | Autor: Kadar Przeprowadzki</p>
-                    <img src="{{ url_for('static', filename='blog_images/relocation-main.jpg') }}" alt="Przeprowadzki Bielsko-Biała - profesjonalne pakowanie" class="img-fluid tm-img-post">
 
-                    <p>Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z? Niezależnie od tego, czy przeprowadzasz się na Żywieckiej, w Mikuszowicach, na Złotych Łanach czy w ścisłym centrum – dobrze zorganizowana przeprowadzka to klucz do sukcesu. W tym poradniku podpowiemy Ci, jak krok po kroku przygotować się do przeprowadzki, by uniknąć stresu i niepotrzebnych problemów.</p>
+                <h2 class="section-title">Wszystkie poradniki przeprowadzkowe</h2>
+                <p style="margin-bottom: 30px;">Praktyczne porady i wskazówki dotyczące przeprowadzki w Bielsko Biala. Wybierz temat, który Cię interesuje.</p>
 
-                    <p>Firmy przeprowadzkowe w Bielsku-Białej działają codziennie, ale nie każda oferuje ten sam poziom usług. Wybierając profesjonalną firmę przeprowadzkową, zyskujesz pewność, że Twoje rzeczy są w dobrych rękach. Przeprowadzki mieszkań, domów czy biur wymagają odpowiedniego sprzętu – odpowiednio przygotowane samochody przeprowadzkowe, wózki, pasy transportowe i materiały pakowe to podstawa. Kadar Przeprowadzki to firma, która doskonale zna specyfikę Bielska-Białej – wąskie uliczki na Górnym Przedmieściu, brak miejsc parkingowych przy blokach na osiedlu Złote Łany czy windy w starych kamienicach na Dolnym Przedmieściu. Dzięki wieloletniemu doświadczeniu wiemy, jak sprawnie przeprowadzić każdą przeprowadzkę – nawet w trudnych warunkach.</p>
+                <!-- LISTA BLOGÓW W 2 KOLUMNACH -->
+                <div class="blog-grid">
 
-                    <p><strong>Krok 1: Zaplanuj swoją przeprowadzkę z wyprzedzeniem</strong></p>
-                    <p>Przeprowadzki wymagają dobrego planu. Już na 4-6 tygodni przed planowaną datą przeprowadzki warto zacząć organizować wszystkie formalności. Jeśli szukasz profesjonalnej firmy przeprowadzkowej w Bielsku-Białej, im wcześniej się skontaktujesz, tym łatwiej będzie dopasować termin. W Kadar Przeprowadzki oferujemy bezpłatną wycenę – nasi specjaliści przyjadą do Ciebie, ocenią ilość rzeczy do przewiezienia i odpowiedzą na wszystkie pytania. To nic nie kosztuje, a pozwala uniknąć niespodzianek. Pamiętaj – dobra firma przeprowadzkowa nie boi się obejrzeć rzeczy na miejscu przed wystawieniem oferty.</p>
+                    <!-- Blog 1 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Jak przygotować się do przeprowadzki w Bielsko Biala?</h3>
+                        <div class="blog-meta">15 marca 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/poradnik.jpg') }}" alt="Przeprowadzki Bielsko Biala">
+                        <p>Planujesz przeprowadzkę w Bielsko Biala? Sprawdź nasz kompleksowy poradnik. Dowiesz się, jak zaplanować, spakować i przeprowadzić się bez stresu.</p>
+                        <a href="{{ url_for('main.blog_poradnik') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
 
-                    <p><strong>Krok 2: Zrób porządki – pozbądź się niepotrzebnych rzeczy</strong></p>
-                    <p>Przeprowadzka to idealny moment, by pozbyć się rzeczy, których nie używasz. Przejrzyj każdą szafę, każdy karton w piwnicy i każdą paczkę na strychu. To, czego nie potrzebujesz, możesz oddać, sprzedać lub wyrzucić. Dzięki temu Twoja przeprowadzka będzie tańsza (mniej rzeczy do przewiezienia) i szybsza. Firmy przeprowadzkowe często oferują też usługę wynajmu kontenerów na rzeczy do oddania lub utylizacji – warto zapytać o taką możliwość. W Kadar Przeprowadzki zawsze doradzamy naszym klientom, by przed przeprowadzką zrobili selekcję. To oszczędza czas, pieniądze i nerwy.</p>
+                    <!-- Blog 2 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Jak bezpiecznie pakować naczynia i szkło?</h3>
+                        <div class="blog-meta">10 marca 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/naczynia.jpg') }}" alt="Pakowanie naczyń Bielsko Biala">
+                        <p>Sprawdzone metody pakowania delikatnych przedmiotów. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami.</p>
+                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
 
-                    <p><strong>Krok 3: Zdobądź dobre kartony i materiały pakowe</strong></p>
-                    <p>Bezpieczne zapakowanie rzeczy to podstawa udanej przeprowadzki. Potrzebujesz solidnych kartonów (najlepiej różnych rozmiarów), taśmy pakowej, folii bąbelkowej, folii stretch, markerów do opisywania pudełek oraz worków na śmieci (przydają się do pakowania pościeli, ręczników czy ubrań). Jeśli nie masz czasu lub ochoty na samodzielne pakowanie – wiele firm przeprowadzkowych oferuje usługę profesjonalnego pakowania. W Kadar Przeprowadzki nasi pracownicy spakują całe Twoje mieszkanie w kilka godzin, używając odpowiednich materiałów. Dzięki temu nie musisz martwić się o stłuczone szkło czy porysowane meble. Profesjonalne pakowanie to spokój ducha – szczególnie przy przeprowadzkach w Bielsku-Białej, gdzie czasem trzeba szybko działać.</p>
+                    <!-- Blog 3 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzka z psem i kotem – jak zmniejszyć stres?</h3>
+                        <div class="blog-meta">5 marca 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/zwierzeta.jpg') }}" alt="Przeprowadzka z psem i kotem Bielsko Biala">
+                        <p>Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady jak przygotować pupila na zmianę otoczenia.</p>
+                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
 
-                    <p><strong>Krok 4: Opisuj kartony – to zaoszczędzi Ci godzin rozpakowywania</strong></p>
-                    <p>To banalna rada, ale mało kto jej słucha. Opisz każdy karton: co w środku, z którego pokoju pochodzi, czy zawiera rzeczy delikatne. Przykład: "KUCHNIA – naczynia, SZKŁO" lub "SYPIALNIA – pościel, ubrania". Możesz też stosować kody kolorów – np. czerwony marker do rzeczy kruchych, zielony do ubrań. Dzięki temu po przeprowadzce od razu wiesz, gdzie rozpakować dany karton. Dobre firmy przeprowadzkowe w Bielsku-Białej często oferują też usługę rozpakowania i ustawienia mebli w nowym miejscu – to ogromne ułatwienie, szczególnie przy dużych przeprowadzkach.</p>
+                    <!-- Blog 4 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzka w kamienicy bez windy Bielsko Biala</h3>
+                        <div class="blog-meta">1 marca 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/bezwindy.jpg') }}" alt="Przeprowadzka bez windy Bielsko Biala">
+                        <p>Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach.</p>
+                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
 
-                    <p><strong>Krok 5: Przygotuj "walizkę pierwszej potrzeby"</strong></p>
-                    <p>W dniu przeprowadzki spakuj osobno rzeczy, które będą Ci potrzebne od razu po przyjeździe do nowego miejsca. Do takiej walizki włóż: dokumenty, leki, ładowarki do telefonów, podstawowe ubrania na 2-3 dni, ręczniki, pościel na pierwsze noce, zestaw sztućców i talerzy, czajnik elektryczny, kawę/herbatę, przekąski, wodę oraz zabawki i jedzenie dla dzieci i zwierząt. Dzięki temu nie będziesz musiał szukać tych rzeczy wśród dziesiątek kartonów. W Kadar Przeprowadzki zawsze przypominamy naszym klientom o tej liście – wielu osobom ratuje ona pierwszy wieczór w nowym domu.</p>
+                    <!-- Blog 5 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzki Bielsko Biala – przewodnik po dzielnicach</h3>
+                        <div class="blog-meta">25 lutego 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/bielsko.jpg') }}" alt="Przeprowadzki Bielsko Biala dzielnice">
+                        <p>Sprawdź, które dzielnice Bielsko Biala są najbardziej popularne, gdzie znajdują się kamienice bez windy, a gdzie bloki z windą.</p>
+                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
 
-                    <p><strong>Krok 6: Nie zapomnij o formalnościach</strong></p>
-                    <p>Przeprowadzka to nie tylko transport rzeczy. Musisz też zadbać o formalności: wymeldowanie i zameldowanie (lub zgłoszenie zmiany adresu), powiadomienie poczty o zmianie adresu (Poczta Polska ma taką usługę), zmiana adresu w banku, ZUS, szkole lub przedszkolu dziecka, ubezpieczycielu, a także u dostawców mediów (prąd, gaz, internet, woda). Zrób sobie listę i odhaczaj kolejne punkty. Przy przeprowadzkach międzymiastowych lub międzynarodowych listy są dłuższe – wtedy warto skonsultować się z ekspertem. W Kadar Przeprowadzki mamy doświadczenie także w przeprowadzkach zagranicznych – doradzamy, jakie formalności trzeba załatwić.</p>
+                    <!-- Blog 6 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzka biura w Bielsko Biala – jak zminimalizować przestoje?</h3>
+                        <div class="blog-meta">20 lutego 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/biuro.jpg') }}" alt="Przeprowadzka biura Bielsko Biala">
+                        <p>Przeprowadzka biura to wyzwanie. Dowiedz się, jak zaplanować ją tak, by firma nie straciła ani jednego dnia roboczego.</p>
+                        <a href="{{ url_for('main.blog_biuro') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
 
-                    <p><strong>Krok 7: Przygotuj mieszkanie na dzień przeprowadzki</strong></p>
-                    <p>W dniu przeprowadzki warto przygotować przestrzeń dla firmy przeprowadzkowej. Oznacz przedmioty, które mają jechać (np. kolorowymi karteczkami) i te, które zostają. Usuń przeszkody z ciągów komunikacyjnych – przeprowadzki w blokach często utrudniają wózki zostawione na korytarzu czy rowery pod schodami. Jeśli mieszkasz w kamienicy bez windy w Bielsku-Białej – uprzedź firmę przeprowadzkową. Nasi pracownicy w Kadar Przeprowadzki są przyzwyczajeni do schodów i potrafią sprawnie przenieść nawet ciężkie meble, ale lepiej wiedzieć o tym wcześniej. Zadbaj też o miejsce do zaparkowania samochodu przeprowadzkowego jak najbliżej wejścia – w centrum Bielska-Białej bywa z tym trudno, więc warto zarezerwować miejsce lub wcześniej zaparkować swój samochód gdzie indziej.</p>
+                    <!-- Blog 7 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Ukryte koszty przeprowadzki – czego unikać?</h3>
+                        <div class="blog-meta">15 lutego 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/ukryte-koszty.jpg') }}" alt="Ukryte koszty przeprowadzki Bielsko Biala">
+                        <p>Nie daj się zaskoczyć dodatkowym opłatom. Sprawdź, jakie ukryte koszty mogą pojawić się przy wyborze firmy przeprowadzkowej.</p>
+                        <a href="{{ url_for('main.blog_ukryte_koszty') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
 
-                    <p><strong>Krok 8: Współpracuj z firmą przeprowadzkową</strong></p>
-                    <p>Wybierając firmę przeprowadzkową w Bielsku-Białej, zwróć uwagę na opinie, doświadczenie i ofertę. Dobre firmy przeprowadzkowe mają własny sprzęt, ubezpieczenie OC oraz wykwalifikowanych pracowników. Unikaj firm, które oferują podejrzanie niskie ceny – często kończy się to uszkodzonymi meblami lub brakiem odpowiedzialności za szkody. Kadar Przeprowadzki to firma z wieloletnim doświadczeniem na rynku przeprowadzek w Bielsku-Białej i całej Polsce. Nasi klienci cenią nas za terminowość, profesjonalizm i dbałość o szczegóły. Oferujemy kompleksowe usługi przeprowadzkowe – od pakowania, przez transport, po rozpakowanie i ustawienie mebli. Działamy na terenie całego województwa śląskiego, a także wykonujemy przeprowadzki międzymiastowe i międzynarodowe.</p>
+                    <!-- Blog 8 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Darmowa wycena przeprowadzki – jak działa?</h3>
+                        <div class="blog-meta">10 lutego 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/wycena.jpg') }}" alt="Darmowa wycena przeprowadzki Bielsko Biala">
+                        <p>Większość firm oferuje darmową wycenę przez telefon. Sprawdź, o co pytać i jak przygotować się do rozmowy.</p>
+                        <a href="{{ url_for('main.blog_wycena') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
 
-                    <p>Szukasz sprawdzonej firmy przeprowadzkowej w Bielsku-Białej? Potrzebujesz profesjonalnych przeprowadzek mieszkań, domów lub biur? Zapraszamy do kontaktu z Kadar Przeprowadzki. Nasi doradcy odpowiedzą na wszystkie pytania i pomogą zaplanować Twoją przeprowadzkę krok po kroku. Działamy na terenie Bielska-Białej oraz okolicznych miejscowości – Czechowice-Dziedzice, Żywiec, Skoczów, Cieszyn, Pszczyna, Oświęcim. Przeprowadzki w Bielsku-Białej to nasza specjalność – od lat pomagamy mieszkańcom naszego miasta w bezpiecznej i komfortowej zmianie adresu. Sprawdź nasze opinie i przekonaj się, dlaczego klienci wybierają właśnie nas.</p>
+                    <!-- Blog 9 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzka magazynu – logistyka i planowanie</h3>
+                        <div class="blog-meta">5 lutego 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/magazyn.jpg') }}" alt="Przeprowadzka magazynu Bielsko Biala">
+                        <p>Przeprowadzka magazynu to skomplikowane zadanie. Dowiedz się, jak zaplanować transport towarów i regałów.</p>
+                        <a href="{{ url_for('main.blog_magazyn') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
 
-                    <p>Zapraszamy do lektury kolejnych poradników na naszym blogu. W następnym artykule pokażemy, jak bezpiecznie pakować naczynia i szkło – techniki, które stosują profesjonalne firmy przeprowadzkowe. A jeśli masz pytania – skontaktuj się z nami. Jesteśmy tu, żeby pomóc!</p>
+                    <!-- Blog 10 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzka sejfu i ciężkich przedmiotów</h3>
+                        <div class="blog-meta">30 stycznia 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/sejf.jpg') }}" alt="Przeprowadzka sejfu Bielsko Biala">
+                        <p>Transport sejfu ważącego kilkaset kilogramów wymaga specjalistycznego sprzętu. Sprawdź, jak to zrobić bezpiecznie.</p>
+                        <a href="{{ url_for('main.blog_sejf') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
+                    <!-- Blog 11 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzka z antykami i cennymi przedmiotami</h3>
+                        <div class="blog-meta">25 stycznia 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/antyki.jpg') }}" alt="Przeprowadzka z antykami Bielsko Biala">
+                        <p>Obrazy, porcelana, kryształy – przewóz cennych przedmiotów wymaga szczególnej ostrożności i ubezpieczenia.</p>
+                        <a href="{{ url_for('main.blog_antyki') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
+                    <!-- Blog 12 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Lista kontrolna przeprowadzki – pobierz i wydrukuj</h3>
+                        <div class="blog-meta">20 stycznia 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/list.jpg') }}" alt="Lista kontrolna przeprowadzki Bielsko Biala">
+                        <p>Sprawdź, o czym pamiętać przed, w trakcie i po przeprowadzce. Pobierz naszą listę kontrolną.</p>
+                        <a href="{{ url_for('main.blog_list') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
+                    <!-- Blog 13 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Jak oznaczać kartony – system kolorów i kodów</h3>
+                        <div class="blog-meta">15 stycznia 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/kartony.jpg') }}" alt="Oznaczanie kartonów Bielsko Biala">
+                        <p>Prosty system kolorów i kodów, dzięki któremu rozpakujesz się w kilka godzin, nie dni.</p>
+                        <a href="{{ url_for('main.blog_kartony') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
+                    <!-- Blog 14 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Co spakować na samym końcu? Walizka pierwszej potrzeby</h3>
+                        <div class="blog-meta">10 stycznia 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/walizka.jpg') }}" alt="Walizka pierwszej potrzeby Bielsko Biala">
+                        <p>Lista rzeczy, które musisz mieć pod ręką od razu po przeprowadzce – zanim rozpakujesz kartony.</p>
+                        <a href="{{ url_for('main.blog_walizka') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
+                    <!-- Blog 15 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzka latem w Bielsko Biala – plusy i minusy</h3>
+                        <div class="blog-meta">5 stycznia 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/lato.jpg') }}" alt="Przeprowadzka latem Bielsko Biala">
+                        <p>Dłuższe dni, lepsza pogoda, ale wyższe ceny. Sprawdź, czy warto przeprowadzać się latem.</p>
+                        <a href="{{ url_for('main.blog_lato') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
+                    <!-- Blog 16 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzka zimą w Bielsko Biala – na co uważać?</h3>
+                        <div class="blog-meta">30 grudnia 2024 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/zima.jpg') }}" alt="Przeprowadzka zimą Bielsko Biala">
+                        <p>Śnieg, lód, krótkie dni – przeprowadzka zimą ma swoje wyzwania. Sprawdź, jak się przygotować.</p>
+                        <a href="{{ url_for('main.blog_zima') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
+                    <!-- Blog 17 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzka w weekend – czy to dobry pomysł?</h3>
+                        <div class="blog-meta">20 grudnia 2024 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/weekend.jpg') }}" alt="Przeprowadzka w weekend Bielsko Biala">
+                        <p>Plusy i minusy przeprowadzki w sobotę lub niedzielę. Kiedy się opłaca, a kiedy lepiej wybrać dzień powszedni?</p>
+                        <a href="{{ url_for('main.blog_weekend') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
+                    <!-- Blog 18 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Jak wybrać dobrą firmę przeprowadzkową w Bielsko Biala?</h3>
+                        <div class="blog-meta">15 grudnia 2024 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/wybor-firmy.jpg') }}" alt="Wybór firmy przeprowadzkowej Bielsko Biala">
+                        <p>Na co zwrócić uwagę, czego unikać i jak nie dać się oszukać przy wyborze firmy przeprowadzkowej.</p>
+                        <a href="{{ url_for('main.blog_wybor_firmy') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
+                    <!-- Blog 19 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Jak bezpiecznie przeprowadzić fortepian lub pianino?</h3>
+                        <div class="blog-meta">18 maja 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/pianino.jpg') }}" alt="Przeprowadzka fortepianu Bielsko Biala">
+                        <p>Fortepian waży od 200 do 500 kg. Sprawdź, jak bezpiecznie go przewieźć i na co uważać przy transporcie instrumentu.</p>
+                        <a href="{{ url_for('main.blog_pianino') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
+                    <!-- Blog 20 -->
+                    <div class="tm-blog-post blog-card">
+                        <h3 class="tm-gold-text">Przeprowadzka z dziećmi w Bielsko Biala – jak ułatwić im adaptację?</h3>
+                        <div class="blog-meta">20 maja 2025 | Kadar Przeprowadzki</div>
+                        <img src="{{ url_for('static', filename='blog_images/dzieci.jpg') }}" alt="Przeprowadzka z dziećmi Bielsko Biala">
+                        <p>Przeprowadzka to wyzwanie nie tylko dla dorosłych, ale przede wszystkim dla dzieci. Sprawdź, jak pomóc dziecku zaaklimatyzować się w nowym miejscu.</p>
+                        <a href="{{ url_for('main.blog_dzieci') }}" class="tm-btn text-uppercase">Czytaj więcej →</a>
+                    </div>
+
                 </div>
+
             </div>
 
-            <!-- PANEL BOCZNY (ASIDE) - ZASTĄPIONO POLSKIMI TREŚCIAMI O PRZEPROWADZKACH -->
+            <!-- PANEL BOCZNY (ASIDE) -->
             <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r">
                 <div class="tm-aside-container">
-                    <h3 class="tm-gold-text tm-title tm-margin-t-small">
-                        Przydatne linki
-                    </h3>
-                    <nav>
-                        <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">Strona główna Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">O firmie Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">Kontakt i bezpłatna wycena</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">Usługi przeprowadzkowe</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">Opinie klientów</a></li>
-                        </ul>
-                    </nav>
-
-                    <hr class="tm-margin-t-small">
-
-                    <div class="tm-content-box">
-                        <img src="{{ url_for('static', filename='blog_images/relocation-main.jpg') }}" alt="Przeprowadzki Bielsko Poradnik" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku</h4>
-                        <p class="tm-margin-b-20">Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?</p>
-                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
-                    </div>
-
-                    <hr class="tm-margin-t-small">
-
-                    <div class="tm-content-box">
-                        <img src="{{ url_for('static', filename='blog_images/relocation-2.jpg') }}" alt="Bezpieczne pakowanie szkła i naczyń" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak bezpiecznie pakować naczynia i szkło?</h4>
-                        <p class="tm-margin-b-20">Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami.</p>
-                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
-                    </div>
-
-                    <hr class="tm-margin-t-small">
-
-                    <div class="tm-content-box">
-                        <img src="{{ url_for('static', filename='blog_images/relocation-3.jpg') }}" alt="Przeprowadzka z psem i kotem" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?</h4>
-                        <p class="tm-margin-b-20">Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia.</p>
-                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
-                    </div>
-
-                    <hr class="tm-margin-t-small">
-
-                    <div class="tm-content-box">
-                        <img src="{{ url_for('static', filename='blog_images/relocation-4.jpg') }}" alt="Przeprowadzka w kamienicy bez windy" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka w kamienicy bez windy – na co uważać?</h4>
-                        <p class="tm-margin-b-20">Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej.</p>
-                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
-                    </div>
-
-                    <hr class="tm-margin-t-small">
-
-                    <div class="tm-content-box">
-                        <img src="{{ url_for('static', filename='blog_images/relocation-5.jpg') }}" alt="Przeprowadzki Bielsko-Biała" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzki w Bielsku-Białej – co warto wiedzieć?</h4>
-                        <p class="tm-margin-b-20">Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie.</p>
-                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
-                    </div>
-
+                    <h3 class="tm-gold-text tm-title">Przydatne linki</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                        <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">Strona główna Kadar Przeprowadzki</a></li>
+                        <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">O firmie Kadar Przeprowadzki</a></li>
+                        <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">Kontakt i bezpłatna wycena</a></li>
+                        <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">Usługi przeprowadzkowe</a></li>
+                        <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">Opinie klientów</a></li>
+                    </ul>
                 </div>
             </aside>
         </div>
     </div>
 </section>
-
 
 {% endblock %}

@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block page_title %}Jak oznaczać kartony – system kolorów i kodów | Kadar Przeprowadzki{% endblock %}
+
+{% block description %}Jak oznaczać kartony podczas przeprowadzki Bielsko Biala. System kolorów i kodów dla łatwiejszego rozpakowania. Sprawdzone metody.{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='templatemo-style.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="background-container"></div>
+
+<section class="tm-section">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
+                <div class="tm-blog-post">
+                    <h3 class="tm-gold-text">Jak oznaczać kartony – system kolorów i kodów podczas przeprowadzki Bielsko Biala</h3>
+                    <p>Opublikowano: 19 maja 2025 | Autor: Kadar Przeprowadzki</p>
+                    <img src="{{ url_for('static', filename='blog_images/kartony.jpg') }}" alt="Oznaczanie kartonów przeprowadzka Bielsko Biala" class="img-fluid tm-img-post">
+
+                    <p>Dobrze oznaczony karton to połowa sukcesu podczas przeprowadzki Bielsko Biala. Dzięki systemowi kolorów i kodów rozpakujesz się w kilka godzin, nie dni. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala, która doradza klientom, jak skutecznie oznaczać kartony.</p>
+
+                    <p><strong>Dlaczego warto oznaczać kartony?</strong></p>
+                    <ul>
+                        <li>Szybkie rozpakowanie – od razu wiesz, co gdzie jest</li>
+                        <li>Mniej chaosu po przeprowadzce Bielsko Biala</li>
+                        <li>Łatwiej dla firmy przeprowadzkowej – wie, gdzie który karton ma stać</li>
+                    </ul>
+
+                    <p><strong>System kolorów – prosty i skuteczny</strong></p>
+                    <p>Przyklej kolorową naklejkę lub taśmę na każdym kartonie. Przypisz kolory do pomieszczeń:</p>
+                    <ul>
+                        <li>🔴 Czerwony – sypialnia</li>
+                        <li>🟢 Zielony – kuchnia</li>
+                        <li>🔵 Niebieski – łazienka</li>
+                        <li>🟡 Żółty – salon</li>
+                        <li>🟠 Pomarańczowy – gabinet/biuro</li>
+                        <li>⚫ Czarny – piwnica/garage</li>
+                    </ul>
+
+                    <p><strong>System kodów – dla bardziej wymagających</strong></p>
+                    <p>Oprócz koloru, zapisz kod na kartonie. Np. "S1" – sypialnia, karton 1. Zrób listę kodów w telefonie lub na kartce.</p>
+
+                    <p><strong>Co jeszcze napisać na kartonie?</strong></p>
+                    <ul>
+                        <li><strong>Zawartość</strong> – "naczynia", "książki", "ubrania zimowe"</li>
+                        <li><strong>"TA STRONA DO GÓRY"</strong> – dla delikatnych rzeczy</li>
+                        <li><strong>"SZKOŁO"</strong> – dla naczyń i szkła</li>
+                        <li><strong>Pokój docelowy</strong> – np. "KUCHNIA"</li>
+                    </ul>
+
+                    <p><strong>Przykład dobrego opisu na kartonie:</strong></p>
+                    <pre style="background:#f4f4f4; padding:10px; border-left: 3px solid #cc9900;">
+KUCHNIA (zielony)
+SZKOŁO – TALERZE I KUBKI
+TA STRONA DO GÓRY
+Karton 3/12
+                    </pre>
+
+                    <p><strong>Czego unikać przy oznaczaniu kartonów?</strong></p>
+                    <ul>
+                        <li>❌ Pisania tylko "różne rzeczy" – to nic nie mówi</li>
+                        <li>❌ Używania zmywalnych markerów – rozmazują się</li>
+                        <li>❌ Braku oznaczenia, która strona jest do góry</li>
+                    </ul>
+
+                    <p><strong>Dodatkowe porady przed przeprowadzką Bielsko Biala</strong></p>
+                    <ul>
+                        <li>Zrób zdjęcie każdego pokoju przed pakowaniem – później łatwiej ustawić meble</li>
+                        <li>Drobną elektronikę (laptopy, tablety) pakuj osobno i noś sam</li>
+                        <li>Dokumenty przewoź w osobnej torbie, nie w kartonie</li>
+                    </ul>
+
+                    <p><strong>Dlaczego warto wybrać Kadar Przeprowadzki?</strong></p>
+                    <ul>
+                        <li>Ponad 28 lat doświadczenia w przeprowadzkach Bielsko Biala</li>
+                        <li>Profesjonalne materiały pakowe</li>
+                        <li>Pomoc w oznaczaniu i organizacji</li>
+                        <li>Bezpłatna wycena przeprowadzki Bielsko Biala</li>
+                    </ul>
+
+                    <p>Szukasz firmy przeprowadzkowej Bielsko Biala, która pomoże Ci w całym procesie? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki Bielsko Biala to nasza specjalność. Zadzwoń i zapytaj o bezpłatną wycenę!</p>
+                </div>
+            </div>
+
+
+            <!-- PANEL BOCZNY (ASIDE) - ZASTĄPIONO POLSKIMI TREŚCIAMI O PRZEPROWADZKACH -->
+            <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r">
+                <div class="tm-aside-container">
+                    <h3 class="tm-gold-text tm-title tm-margin-t-small">
+                        Przydatne linki
+                    </h3>
+                    <nav>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">Strona główna Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">O firmie Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">Kontakt i bezpłatna wycena</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">Usługi przeprowadzkowe</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">Opinie klientów</a></li>
+                        </ul>
+                    </nav>
+
+                    <hr class="tm-margin-t-small">
+
+                    <div class="tm-content-box">
+                        <img src="{{ url_for('static', filename='blog_images/poradnik.jpg') }}" alt="Przeprowadzki Bielsko Poradnik" class="tm-margin-b-30 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku</h4>
+                        <p class="tm-margin-b-20">Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?</p>
+                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                    </div>
+
+                    <hr class="tm-margin-t-small">
+
+                    <div class="tm-content-box">
+                        <img src="{{ url_for('static', filename='blog_images/naczynia.jpg') }}" alt="Bezpieczne pakowanie szkła i naczyń" class="tm-margin-b-30 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Jak bezpiecznie pakować naczynia i szkło?</h4>
+                        <p class="tm-margin-b-20">Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami.</p>
+                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                    </div>
+
+                    <hr class="tm-margin-t-small">
+
+                    <div class="tm-content-box">
+                        <img src="{{ url_for('static', filename='blog_images/zwierzeta.jpg') }}" alt="Przeprowadzka z psem i kotem" class="tm-margin-b-30 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?</h4>
+                        <p class="tm-margin-b-20">Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia.</p>
+                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                    </div>
+
+                    <hr class="tm-margin-t-small">
+
+                    <div class="tm-content-box">
+                        <img src="{{ url_for('static', filename='blog_images/bezwindy.jpg') }}" alt="Przeprowadzka w kamienicy bez windy" class="tm-margin-b-30 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka w kamienicy bez windy – na co uważać?</h4>
+                        <p class="tm-margin-b-20">Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej.</p>
+                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                    </div>
+
+                    <hr class="tm-margin-t-small">
+
+                    <div class="tm-content-box">
+                        <img src="{{ url_for('static', filename='blog_images/bielsko.jpg') }}" alt="Przeprowadzki Bielsko-Biała" class="tm-margin-b-30 img-fluid">
+                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzki w Bielsku-Białej – co warto wiedzieć?</h4>
+                        <p class="tm-margin-b-20">Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie.</p>
+                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                    </div>
+
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
