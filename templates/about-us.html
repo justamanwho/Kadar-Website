@@ -32,19 +32,18 @@
             <div class="value-icon">
               <picture>
                 <source srcset="{{ url_for('static', filename='services/moving-home.webp') }}" type="image/webp">
-                <img src="{{ url_for('static', filename='services/moving-home.png') }}" alt="Rzetelność" width="60" height="60" loading="lazy">
+                <img src="{{ url_for('static', filename='services/moving-home.png') }}" alt="{{ translations.value_reliability_title or 'Rzetelność' }}" width="60" height="60" loading="lazy">
               </picture>
             </div>
             <h3>{{ translations.value_reliability_title or "Rzetelność" }}</h3>
             <p>{{ translations.value_reliability_desc or "Dotrzymujemy terminów i obietnic. Każdą przeprowadzkę traktujemy z najwyższą starannością, dbając o bezpieczeństwo powierzonego nam mienia." }}</p>
           </div>
 
-
           <div class="value-item">
             <div class="value-icon">
               <picture>
                 <source srcset="{{ url_for('static', filename='services/moving-furniture.webp') }}" type="image/webp">
-                <img src="{{ url_for('static', filename='services/moving-furniture.png') }}" alt="Troska" width="60" height="60" loading="lazy">
+                <img src="{{ url_for('static', filename='services/moving-furniture.png') }}" alt="{{ translations.value_care_title or 'Troska' }}" width="60" height="60" loading="lazy">
               </picture>
             </div>
             <h3>{{ translations.value_care_title or "Troska" }}</h3>
@@ -128,6 +127,5 @@
     </picture>
   </div>
 </section>
-
 
 {% endblock %}

@@ -22,12 +22,12 @@
     <div class="card">
       <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
       <h3>{{ translations.address_title or "Adres" }}</h3>
-      <p>ul Grazyny 7, Bielsko-Biała, Poland</p>
+      <p>ul. Grażyny 7, 43-300 Bielsko-Biała, Poland</p>
     </div>
   </div>
 
   <div class="contact-cta">
-    <a href="tel:+48601896568" class="btn primary">{{ translations.call_us or "Zadzwoń teraz" }}</a>
+    <a href="tel:+48601896568" class="btn primary">{{ translations.call_now or "Zadzwoń teraz" }}</a>
     <a href="mailto:kadaredi@gmail.com" class="btn secondary">{{ translations.email_us or "Napisz e-mail" }}</a>
   </div>
 </section>
@@ -43,7 +43,7 @@
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-      title="Mapa – Kadar Przeprowadzki">
+      title="{{ translations.contact_title or 'Mapa – Kadar Przeprowadzki' }}">
     </iframe>
   </div>
 </section>

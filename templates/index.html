@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block description %}
-Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przeprowadzki Bielsko Biala. Bielsko-Biała
+{{ translations.description or "Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przeprowadzki Bielsko Biala. Bielsko-Biała" }}
 {% endblock %}
 
 {% block content %}
@@ -19,13 +19,13 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 
   <div class="bottom-center">
     <h1 id="hero-heading" class="luxury-heading">
-      <span class="line">Przeprowadzki</span>
-      <span class="line">Bielsko-Biała</span>
+      <span class="line">{{ translations.hero_line1 or "Przeprowadzki" }}</span>
+      <span class="line">{{ translations.hero_line2 or "Bielsko-Biała" }}</span>
     </h1>
 
     <div class="buttons">
       <button class="btn primary">
-        <a href="tel:+48601896568" class="btn primary">{{ translations.call_us }}</a>
+        <a href="tel:+48601896568" class="btn primary">{{ translations.call_us or "Zadzwoń 601 896 568" }}</a>
       </button>
     </div>
 
@@ -42,14 +42,13 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 
 <section class="about-section" id="o-nas">
   <div class="about-with-logos">
-    <!-- Optimized logo with explicit dimensions -->
     <picture>
       <source srcset="{{ url_for('static', filename='logo.webp') }}" type="image/webp">
       <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo left" class="about-logo" width="200" height="200" loading="lazy">
     </picture>
     <div class="about-text">
-      <p>{{ translations.about_p1 }}</p>
-      <p>{{ translations.about_p2 }}</p>
+      <p>{{ translations.about_p1 or "Oferujemy przeprowadzki osób prywatnych oraz instytucji na terenie Bielska-Białej oraz całej Polski." }}</p>
+      <p>{{ translations.about_p2 or "Firma istnieje od 1997 roku i od tego czasu zdobyliśmy ogromne doświadczenie w branży przeprowadzkowej." }}</p>
     </div>
     <picture>
       <source srcset="{{ url_for('static', filename='logo.webp') }}" type="image/webp">
@@ -60,17 +59,17 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 
 
 <section class="fleet-section">
-  <h2 class="section-title">{{ translations.fleet_title }}</h2>
+  <h2 class="section-title">{{ translations.fleet_title or "Nasze pojazdy" }}</h2>
   <div class="fleet-content">
     <div class="fleet-text">
-      <p>{{ translations.fleet_text | safe }}</p>
+      <p>{{ translations.fleet_text | safe or "Dysponujemy samochodami przystosowanymi do przeprowadzek, w tym auto <strong>z windą o udźwigu do 750 kg.</strong> Dzięki temu możemy bezpiecznie i sprawnie przewozić nawet ciężkie meble oraz sprzęt." }}</p>
     </div>
   </div>
 </section>
 
 
 <section class="gallery-wrap">
-  <h2 class="section-title">{{ translations.gallery_title }}</h2>
+  <h2 class="section-title">{{ translations.gallery_title or "Galeria zdjęć z przeprowadzek" }}</h2>
 
   <div class="gallery" id="moves-gallery">
 
@@ -107,23 +106,22 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 <!-- OFFER / SERVICES -->
 <section class="services-section" id="oferta">
   <div class="services-header">
-    <span class="eyebrow">{{ translations.services_eyebrow }}</span>
+    <span class="eyebrow">{{ translations.services_eyebrow or "Oferta" }}</span>
   </div>
 
-  <h2 class="section-title">{{ translations.services_title }}</h2>
+  <h2 class="section-title">{{ translations.services_title or "Czym się zajmujemy" }}</h2>
 
   <div class="services-grid">
     <!-- Card 1 -->
     <article class="service-card">
       <div class="service-icon">
-        <!-- Optimized service icons -->
         <picture>
           <source srcset="{{ url_for('static', filename='services/moving-home.webp') }}" type="image/webp">
-          <img src="{{ url_for('static', filename='services/moving-home.png') }}" alt="" width="70" height="70" loading="lazy">
+          <img src="{{ url_for('static', filename='services/moving-home.png') }}" alt="Moving Home" width="70" height="70" loading="lazy">
         </picture>
       </div>
-      <h3 class="service-title">{{ translations.services_1_title }}</h3>
-      <p class="service-desc">{{ translations.services_1_desc }}</p>
+      <h3 class="service-title">{{ translations.services_1_title or "Przeprowadzki domów i mieszkań" }}</h3>
+      <p class="service-desc">{{ translations.services_1_desc or "Zapewniamy pomoc i fachowe doradztwo na wszystkich etapach przeprowadzki. Dlatego przeprowadzka z nami jest łatwa." }}</p>
     </article>
 
     <!-- Card 2 -->
@@ -131,11 +129,11 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
       <div class="service-icon">
         <picture>
           <source srcset="{{ url_for('static', filename='services/moving-agd.webp') }}" type="image/webp">
-          <img src="{{ url_for('static', filename='services/moving-agd.png') }}" alt="" width="70" height="70" loading="lazy">
+          <img src="{{ url_for('static', filename='services/moving-agd.png') }}" alt="Moving AGD" width="70" height="70" loading="lazy">
         </picture>
       </div>
-      <h3 class="service-title">{{ translations.services_2_title }}</h3>
-      <p class="service-desc">{{ translations.services_2_desc }}</p>
+      <h3 class="service-title">{{ translations.services_2_title or "Wywóz mebli, sprzętu AGD i RTV" }}</h3>
+      <p class="service-desc">{{ translations.services_2_desc or "Zajmujemy się również wywozem starych mebli oraz sprzętu AGD i RTV. Gdy okaże się, że po przeprowadzce jest coś, czego chcielibyście się pozbyć, zajmiemy się tym!" }}</p>
     </article>
 
     <!-- Card 3 -->
@@ -143,11 +141,11 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
       <div class="service-icon">
         <picture>
           <source srcset="{{ url_for('static', filename='services/moving-company.webp') }}" type="image/webp">
-          <img src="{{ url_for('static', filename='services/moving-company.png') }}" alt="" width="70" height="70" loading="lazy">
+          <img src="{{ url_for('static', filename='services/moving-company.png') }}" alt="Moving Company" width="70" height="70" loading="lazy">
         </picture>
       </div>
-      <h3 class="service-title">{{ translations.services_3_title }}</h3>
-      <p class="service-desc">{{ translations.services_3_desc }}</p>
+      <h3 class="service-title">{{ translations.services_3_title or "Przeprowadzki firm" }}</h3>
+      <p class="service-desc">{{ translations.services_3_desc or "Jeśli szukasz sprawdzonej ekipy, z którą Twoja przeprowadzka będzie łatwiejsza, to dobrze trafiłeś. Ponieważ przeprowadzki firm to nasza specjalność." }}</p>
     </article>
 
     <!-- Card 4 -->
@@ -155,11 +153,11 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
       <div class="service-icon">
         <picture>
           <source srcset="{{ url_for('static', filename='services/moving-truck.webp') }}" type="image/webp">
-          <img src="{{ url_for('static', filename='services/moving-truck.png') }}" alt="" width="70" height="70" loading="lazy">
+          <img src="{{ url_for('static', filename='services/moving-truck.png') }}" alt="Moving Truck" width="70" height="70" loading="lazy">
         </picture>
       </div>
-      <h3 class="service-title">{{ translations.services_4_title }}</h3>
-      <p class="service-desc">{{ translations.services_4_desc }}</p>
+      <h3 class="service-title">{{ translations.services_4_title or "Wynajem samochodu z kierowcą" }}</h3>
+      <p class="service-desc">{{ translations.services_4_desc or "Potrzebujesz samochodu do przeprowadzki z dużą przestrzenią załadunkową? Zadzwoń do nas! Oferujemy wynajem takich samochodów wraz z kierowcą." }}</p>
     </article>
 
     <!-- Card 5 -->
@@ -167,11 +165,11 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
       <div class="service-icon">
         <picture>
           <source srcset="{{ url_for('static', filename='services/moving-furniture.webp') }}" type="image/webp">
-          <img src="{{ url_for('static', filename='services/moving-furniture.png') }}" alt="" width="70" height="70" loading="lazy">
+          <img src="{{ url_for('static', filename='services/moving-furniture.png') }}" alt="Moving Furniture" width="70" height="70" loading="lazy">
         </picture>
       </div>
-      <h3 class="service-title">{{ translations.services_5_title }}</h3>
-      <p class="service-desc">{{ translations.services_5_desc }}</p>
+      <h3 class="service-title">{{ translations.services_5_title or "Montaż i demontaż mebli" }}</h3>
+      <p class="service-desc">{{ translations.services_5_desc or "Poza przeprowadzką nasza ekipa może zająć się również demontażem i montażem Twoich mebli mieszkalnych oraz mebli biurowych." }}</p>
     </article>
 
   </div>
@@ -180,9 +178,9 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 
 
 <section class="pricing-note" id="wycena">
-  <h2 class="section-title">{{ translations.pricing_title }}</h2>
-  <p>{{ translations.pricing_p1 }}</p>
-  <p>{{ translations.pricing_p2 }}</p>
+  <h2 class="section-title">{{ translations.pricing_title or "Przeprowadzki Bielsko-Biała tanio" }}</h2>
+  <p>{{ translations.pricing_p1 or "Oferujemy przejrzyste i uczciwe ceny. Dokładną wycenę przygotowujemy po poznaniu wszystkich szczegółów zlecenia – adresów załadunku i rozładunku, liczby oraz wagi przedmiotów do przewiezienia." }}</p>
+  <p>{{ translations.pricing_p2 or "Na tej podstawie określamy potrzebną liczbę pojazdów i pracowników oraz przewidywany czas realizacji, dzięki czemu płacisz tylko za to, czego naprawdę potrzebujesz." }}</p>
 </section>
 
 
@@ -210,7 +208,7 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 
 
 <section class="promotions-section" id="promotions">
-  <h2 class="section-title">{{ translations.promotions_title }}</h2>
+  <h2 class="section-title">{{ translations.promotions_title or "Promocje" }}</h2>
 
   <p class="promotion-title">
     <span class="promotion-highlight">-10%</span> <strong>{{ translations.discount or "rabatu" }}</strong>
@@ -220,7 +218,6 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
     {{ translations.loyalty_offer or "dla stałych klientów, na transport bagażowy z kierowcą – dajemy wizytówkę po pierwszej przeprowadzce" }}
   </p>
 
-  <!-- Optimized promotion image -->
   <picture>
     <source srcset="{{ url_for('static', filename='card.webp') }}" type="image/webp">
     <img
@@ -236,41 +233,41 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 
 <!-- CZĘSTE PYTANIA (FAQ) -->
 <section class="faq-section" id="faq">
-  <h2 class="section-title">Częste pytania</h2>
+  <h2 class="section-title">{{ translations.faq_title or "Częste pytania" }}</h2>
 
   <div class="faq-grid">
       <div class="faq-col">
           <div class="faq-item">
-              <h3 class="faq-question">Czy oferujecie bezpłatną wycenę?</h3>
-              <p class="faq-answer">Tak! Wystarczy jeden telefon. Wycena jest bezpłatna i nie zobowiązuje do skorzystania z usługi.</p>
+              <h3 class="faq-question">{{ translations.faq_question1 or "Czy oferujecie bezpłatną wycenę?" }}</h3>
+              <p class="faq-answer">{{ translations.faq_answer1 or "Tak! Wystarczy jeden telefon. Wycena jest bezpłatna i nie zobowiązuje do skorzystania z usługi." }}</p>
           </div>
           <div class="faq-item">
-              <h3 class="faq-question">Czy przeprowadzacie w weekendy?</h3>
-              <p class="faq-answer">Tak, pracujemy również w soboty i niedziele. Nie musisz brać urlopu w pracy.</p>
+              <h3 class="faq-question">{{ translations.faq_question2 or "Czy przeprowadzacie w weekendy?" }}</h3>
+              <p class="faq-answer">{{ translations.faq_answer2 or "Tak, pracujemy również w soboty i niedziele. Nie musisz brać urlopu w pracy." }}</p>
           </div>
           <div class="faq-item">
-            <h3 class="faq-question">Czy przeprowadzka na parterze jest tańsza?</h3>
-            <p class="faq-answer">Tak, brak schodów to niższa cena.</p>
+            <h3 class="faq-question">{{ translations.faq_question3 or "Czy przeprowadzka na parterze jest tańsza?" }}</h3>
+            <p class="faq-answer">{{ translations.faq_answer3 or "Tak, brak schodów to niższa cena." }}</p>
           </div>
       </div>
       <div class="faq-col">
           <div class="faq-item">
-              <h3 class="faq-question">Jak wygląda przeprowadzka bez windy?</h3>
-              <p class="faq-answer">Nasi pracownicy są przyzwyczajeni do wąskich klatek i wysokich schodów. Używamy pasów transportowych i specjalnych wózków.</p>
+              <h3 class="faq-question">{{ translations.faq_question4 or "Jak wygląda przeprowadzka bez windy?" }}</h3>
+              <p class="faq-answer">{{ translations.faq_answer4 or "Nasi pracownicy są przyzwyczajeni do wąskich klatek i wysokich schodów. Używamy pasów transportowych i specjalnych wózków." }}</p>
           </div>
           <div class="faq-item">
-              <h3 class="faq-question">Czy przewozicie fortepiany i sejfy?</h3>
-              <p class="faq-answer">Tak, specjalizujemy się w transporcie ciężkich i delikatnych przedmiotów. Przewieziemy bezpiecznie.</p>
+              <h3 class="faq-question">{{ translations.faq_question5 or "Czy przewozicie fortepiany i sejfy?" }}</h3>
+              <p class="faq-answer">{{ translations.faq_answer5 or "Tak, specjalizujemy się w transporcie ciężkich i delikatnych przedmiotów. Przewieziemy bezpiecznie." }}</p>
           </div>
           <div class="faq-item">
-            <h3 class="faq-question">Jak przygotować się do przeprowadzki?</h3>
-            <p class="faq-answer">Spakuj rzeczy, opisz kartony, przygotuj walizkę pierwszej potrzeby. Resztą zajmiemy się my.</p>
+            <h3 class="faq-question">{{ translations.faq_question6 or "Jak przygotować się do przeprowadzki?" }}</h3>
+            <p class="faq-answer">{{ translations.faq_answer6 or "Spakuj rzeczy, opisz kartony, przygotuj walizkę pierwszej potrzeby. Resztą zajmiemy się my." }}</p>
           </div>
       </div>
   </div>
 
   <div class="faq-footer">
-      <a href="{{ url_for('main.contact') }}" class="faq-link">Masz więcej pytań? Skontaktuj się z nami →</a>
+      <a href="{{ url_for('main.contact') }}" class="faq-link">{{ translations.faq_footer or "Masz więcej pytań? Skontaktuj się z nami →" }}</a>
   </div>
 
 </section>
@@ -279,7 +276,6 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 <!-- OPINIONS / TESTIMONIALS -->
 <section class="opinions-section" id="opinie">
   <div class="opinions-container">
-    <!-- header row -->
     <div class="opinions-header">
       <div>
         <p class="opinions-eyebrow">{{ translations.reviews_title or "Opinie klientów" }}</p>
@@ -293,12 +289,10 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
       </p>
     </div>
 
-    <!-- cards -->
     <div class="opinions-grid">
       {% for r in translations.reviews[:3] %}
       <article class="opinion-card">
         <div class="opinion-stars">
-          <!-- Optimized stars image -->
           <picture>
             <source srcset="{{ url_for('static', filename='stars.webp') }}" type="image/webp">
             <img src="{{ url_for('static', filename='stars.png') }}" alt="5/5" width="112" height="20" loading="lazy">
@@ -349,15 +343,14 @@ Przeprowadzki Bielsko-Biała i cała Polska. Przeprowadzki. Darmowa wycena przep
 </section>
 
 <footer class="site-footer">
-  <small><a href="{{ url_for('main.credits') }}">Credits</a></small>
+  <small><a href="{{ url_for('main.credits') }}">{{ translations.credits_title or "Credits" }}</a></small>
 </footer>
 
 
 <div class="truck-track" aria-hidden="true">
-  <!-- Optimized truck image -->
   <picture>
     <source srcset="{{ url_for('static', filename='truck.webp') }}" type="image/webp">
-    <img class="truck" src="{{ url_for('static', filename='truck.png') }}" alt="" width="65" height="40" loading="lazy">
+    <img class="truck" src="{{ url_for('static', filename='truck.png') }}" alt="Truck" width="65" height="40" loading="lazy">
   </picture>
 </div>
 

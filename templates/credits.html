@@ -4,23 +4,23 @@
 
 
 <!-- Back button -->
-<a class="back-btn" href="/" aria-label="Back to home">← {{ translations.back_home }}</a>
+<a class="back-btn" href="{{ url_for('main.index') }}" aria-label="{{ translations.back_home or 'Back to home' }}">← {{ translations.back_home or 'Powrót' }}</a>
 
 <section class="credits-section">
-  <h2 class="section-title">{{ translations.credits_title }}</h2>
+  <h2 class="section-title">{{ translations.credits_title or "Autorzy" }}</h2>
 
-  <p>{{ translations.credits_created_by }}
+  <p>{{ translations.credits_created_by or "Strona internetowa została stworzona przez" }}
     <a href="https://dmytrokostiuk.me" target="_blank" rel="noopener">Dmytro Kostiuk</a>
   </p>
 
   <p>
-    {{ translations.credits_icons_designed_by }}
+    {{ translations.credits_icons_designed_by or "Niektóre ikony użyte na tej stronie zostały zaprojektowane przez" }}
     <a href="https://www.flaticon.com/authors/mikan933" target="_blank" rel="noopener noreferrer">mikan933</a>,
     <a href="https://www.flaticon.com/authors/Freepik" target="_blank" rel="noopener noreferrer">Freepik</a>,
     <a href="https://www.flaticon.com/authors/Uniconlabs" target="_blank" rel="noopener noreferrer">Uniconlabs</a>,
     <a href="https://www.flaticon.com/authors/hilmy-abiyyu-a" target="_blank" rel="noopener noreferrer">Hilmy Abiyyu A.</a>,
     <a href="https://www.flaticon.com/authors/Leremy" target="_blank" rel="noopener noreferrer">Leremy</a>
-    {{ translations.credits_from }}
+    {{ translations.credits_from or "z" }}
     <a href="https://www.flaticon.com/" target="_blank" rel="noopener noreferrer">Flaticon</a>.
   </p>
 </section>

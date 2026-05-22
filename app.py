@@ -31,68 +31,62 @@ atexit.register(app_shutdown)
 load_dotenv('.env')
 app.secret_key = os.getenv('SECRET_KEY')
 
-# @app.before_request
-# def log_request_info():
-#     print(f"📡 Request: {request.method} {request.path}")
-#
-# @app.route('/sitemap.xml')
-# def sitemap_xml():
-#     print("🔥🔥🔥 JESTEM W FUNKCJI SITEMAP! 🔥🔥🔥")
-#     base_url = 'https://kadarprzeprowadzki.pl'
-#
-#     # Lista nazw Twoich stron (bez języka)
-#     slugs = ['o-nas', 'kontakt', 'blog', 'credits']
-#     blog_posts = ['naczynia', 'zwierzeta', 'bezwindy', 'bielsko']
-#     languages = ['pl', 'en', 'de', 'ukr']
-#
-#     pages = []
-#
-#     for lang in languages:
-#         # Główne strony
-#         for slug in slugs:
-#             if slug == '':
-#                 url = f'{base_url}/{lang}/'
-#                 priority = '0.9' if lang == 'pl' else '0.8'
-#             else:
-#                 url = f'{base_url}/{lang}/{slug}'
-#                 priority = '0.7' if lang == 'pl' else '0.6'
-#             pages.append({'loc': url, 'priority': priority})
-#
-#         # Wpisy blogowe
-#         for post in blog_posts:
-#             url = f'{base_url}/{lang}/blog/{post}'
-#             priority = '0.6'
-#             pages.append({'loc': url, 'priority': priority})
-#
-#     # Dodajesz tutaj wszystkie wersje językowe
-#     lang_codes = ['pl', 'en', 'de', 'ukr']
-#     for code in lang_codes:
-#         pages.append({'loc': f'{base_url}/{code}/', 'priority': '0.9'})
-#         pages.append({'loc': f'{base_url}/{code}/blog', 'priority': '0.8'})
-#         # ... analogicznie dla innych podstron
-#
-#     # Tworzysz XML
-#     sitemap_xml = render_template_string('''
-# <?xml version="1.0" encoding="UTF-8"?>
-# <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-#     {% for page in pages %}
-#     <url>
-#         <loc>{{ page.loc }}</loc>
-#         <priority>{{ page.priority }}</priority>
-#     </url>
-#     {% endfor %}
-# </urlset>
-# ''', pages=pages)
-#
-#     response = make_response(sitemap_xml)
-#     response.headers['Content-Type'] = 'application/xml'
-#     return response
+
+@app.route('/sitemap-main.xml')
+def sitemap_xml():
+    base_url = 'https://kadarprzeprowadzki.pl'
+
+    blog_posts = ['poradnik', 'naczynia', 'zwierzeta', 'bezwindy', 'bielsko',
+                  'pianino', 'ukryte-koszty', 'wycena', 'biuro', 'magazyn',
+                  'sejf', 'kartony', 'walizka', 'lato', 'zima', 'weekend',
+                  'wybor-firmy', 'antyki', 'list', 'dzieci']
+
+    # Główne strony
+    slugs = ['', 'o-nas', 'kontakt', 'blog', 'credits']
+    languages = ['pl', 'en', 'de', 'ukr']
+
+    pages = []
+
+    for lang in languages:
+        for slug in slugs:
+            if slug == '':
+                url = f'{base_url}/{lang}/'
+                priority = '1.0' if lang == 'pl' else '0.9'
+            else:
+                url = f'{base_url}/{lang}/{slug}'
+                priority = '0.8' if lang == 'pl' else '0.7'
+            pages.append({'loc': url, 'priority': priority})
+
+        for post in blog_posts:
+            url = f'{base_url}/{lang}/blog/{post}'
+            priority = '0.7'
+            pages.append({'loc': url, 'priority': priority})
+
+    unique_pages = []
+    seen_urls = set()
+    for page in pages:
+        if page['loc'] not in seen_urls:
+            seen_urls.add(page['loc'])
+            unique_pages.append(page)
+
+    # Generuj XML
+    sitemap_xml = render_template_string('''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for page in pages %}
+    <url>
+        <loc>{{ page.loc }}</loc>
+        <priority>{{ page.priority }}</priority>
+    </url>
+    {% endfor %}
+</urlset>''', pages=unique_pages)
+
+    response = make_response(sitemap_xml)
+    response.headers['Content-Type'] = 'application/xml'
+    return response
 
 
-# Register the blueprint
 app.register_blueprint(bp)
 
-# Language options (only needed here for root redirect)
 LANGUAGE_OPTIONS = {
     'pl': {'name': 'Polski'},
     'en': {'name': 'English'},

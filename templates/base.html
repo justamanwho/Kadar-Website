@@ -119,25 +119,25 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                         <div class="tm-footer-content-box">
-                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Kadar Przeprowadzki</h3>
+                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">{{ translations.footer_about_title or "Kadar Przeprowadzki" }}</h3>
                             <div class="tm-gray-bg">
-                                <p>Profesjonalne przeprowadzki w Bielsku-Białej i całej Polsce. Ponad 10 lat doświadczenia, setki zadowolonych klientów.</p>
-                                <p>Działamy na terenie całego województwa śląskiego oraz wykonujemy przeprowadzki międzymiastowe i międzynarodowe.</p>
-                                <p><strong>Kadar Przeprowadzki – Twoja przeprowadzka w dobrych rękach</strong></p>
+                                <p>{{ translations.footer_about_text1 or "Profesjonalne przeprowadzki w Bielsku-Białej i całej Polsce. Ponad 10 lat doświadczenia, setki zadowolonych klientów." }}</p>
+                                <p>{{ translations.footer_about_text2 or "Działamy na terenie całego województwa śląskiego oraz wykonujemy przeprowadzki międzymiastowe i międzynarodowe." }}</p>
+                                <p><strong>{{ translations.footer_about_text3 or "Kadar Przeprowadzki – Twoja przeprowadzka w dobrych rękach" }}</strong></p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                         <div class="tm-footer-content-box tm-footer-links-container">
-                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Nasze usługi</h3>
+                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">{{ translations.footer_services_title or "Nasze usługi" }}</h3>
                             <ul class="footer-links-list">
-                                <li>Przeprowadzki mieszkań</li>
-                                <li>Przeprowadzki domów</li>
-                                <li>Przeprowadzki biur</li>
-                                <li>Przeprowadzki międzynarodowe</li>
-                                <li>Profesjonalne pakowanie</li>
-                                <li>Wycena online</li>
+                                <li>{{ translations.footer_services_item1 or "Przeprowadzki mieszkań" }}</li>
+                                <li>{{ translations.footer_services_item2 or "Przeprowadzki domów" }}</li>
+                                <li>{{ translations.footer_services_item3 or "Przeprowadzki biur" }}</li>
+                                <li>{{ translations.footer_services_item4 or "Przeprowadzki międzynarodowe" }}</li>
+                                <li>{{ translations.footer_services_item5 or "Profesjonalne pakowanie" }}</li>
+                                <li>{{ translations.footer_services_item6 or "Wycena online" }}</li>
                             </ul>
                         </div>
                     </div>
@@ -146,28 +146,28 @@
 
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                         <div class="tm-footer-content-box">
-                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Dlaczego my?</h3>
-                            <p class="tm-margin-b-30">Profesjonalny sprzęt, ubezpieczenie OC, doświadczeni pracownicy i dbałość o każdy szczegół – to wyróżnia Kadar Przeprowadzki na tle innych firm.</p>
+                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">{{ translations.footer_why_title or "Dlaczego my?" }}</h3>
+                            <p class="tm-margin-b-30">{{ translations.footer_why_text1 or "Profesjonalny sprzęt, ubezpieczenie OC, doświadczeni pracownicy i dbałość o każdy szczegół – to wyróżnia Kadar Przeprowadzki na tle innych firm." }}</p>
                             <hr class="tm-margin-b-30">
-                            <p class="tm-margin-b-30">Sprawdź nasze opinie w Google i na Facebooku – nasi klienci chętnie dzielą się swoimi doświadczeniami.</p>
+                            <p class="tm-margin-b-30">{{ translations.footer_why_text2 or "Sprawdź nasze opinie w Google i na Facebooku – nasi klienci chętnie dzielą się swoimi doświadczeniami." }}</p>
                             <hr class="tm-margin-b-30">
-                            <p class="tm-margin-b-30">Zadzwoń i zapytaj o bezpłatną wycenę – nasi doradcy odpowiedzą na wszystkie pytania.</p>
-                            <a href="{{ url_for('main.contact') }}" class="tm-btn tm-btn-gray text-uppercase">Kontakt</a>
+                            <p class="tm-margin-b-30">{{ translations.footer_why_text3 or "Zadzwoń i zapytaj o bezpłatną wycenę – nasi doradcy odpowiedzą na wszystkie pytania." }}</p>
+                            <a href="{{ url_for('main.contact') }}" class="tm-btn tm-btn-gray text-uppercase">{{ translations.footer_why_button or "Kontakt" }}</a>
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                         <div class="tm-footer-content-box">
-                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">Zaufali nam</h3>
-                            <p class="tm-margin-b-20">Dołącz do grona zadowolonych klientów, którzy przeprowadzili się z Kadar Przeprowadzki. Sprawdź nasze opinie i przekonaj się sam!</p>
-                            <a href="{{ url_for('main.index') }}#opinie" class="tm-btn tm-btn-gray text-uppercase">Opinie</a>
+                            <h3 class="tm-gold-text tm-title tm-footer-content-box-title">{{ translations.footer_trusted_title or "Zaufali nam" }}</h3>
+                            <p class="tm-margin-b-20">{{ translations.footer_trusted_text or "Dołącz do grona zadowolonych klientów, którzy przeprowadzili się z Kadar Przeprowadzki. Sprawdź nasze opinie i przekonaj się sam!" }}</p>
+                            <a href="{{ url_for('main.index') }}#opinie" class="tm-btn tm-btn-gray text-uppercase">{{ translations.footer_trusted_button or "Opinie" }}</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-xs-12 tm-copyright-col">
-                        <p class="tm-copyright-text">Kadar Przeprowadzki | Wszelkie prawa zastrzeżone</p>
+                        <p class="tm-copyright-text">{{ translations.footer_copyright or "Kadar Przeprowadzki | Wszelkie prawa zastrzeżone" }}</p>
                     </div>
                 </div>
             </div>

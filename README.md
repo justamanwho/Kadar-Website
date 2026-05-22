@@ -42,7 +42,6 @@ A website for a moving company called KADAR, operating in Bielsko-Biała, Poland
 
 ## To Do List:
 
-- add more translations to json files
-- make cennik page?
-- fix sitemap_xml
-- check every single blog
+- add translations of the blogs
+- add cennik?
+- compress css into mini css

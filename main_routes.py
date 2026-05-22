@@ -4,7 +4,6 @@ import json
 
 bp = Blueprint('main', __name__, url_prefix='/<lang_code>')
 
-# Language options (single source of truth)
 LANGUAGE_OPTIONS = {
     'pl': {'name': 'Polski'},
     'en': {'name': 'English'},
