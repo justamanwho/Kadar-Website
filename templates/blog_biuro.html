@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block page_title %}Przeprowadzka biura w Bielsko Biala – jak zminimalizować przestoje? | Kadar Przeprowadzki{% endblock %}
+{% block page_title %}{{ translations.blog_biuro_title or "Przeprowadzka biura w Bielsko Biala – jak zminimalizować przestoje? | Kadar Przeprowadzki" }}{% endblock %}
 
-{% block description %}Przeprowadzka biura w Bielsko Biala. Jak zminimalizować przestoje firmy podczas zmiany siedziby. Sprawdzone porady dla firm z Bielsko Biala.{% endblock %}
+{% block description %}{{ translations.blog_biuro_description or "Przeprowadzka biura w Bielsko Biala. Jak zminimalizować przestoje firmy podczas zmiany siedziby. Sprawdzone porady dla firm z Bielsko Biala." }}{% endblock %}
 
 {% block extra_head %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -20,65 +20,65 @@
 
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
                 <div class="tm-blog-post">
-                    <h3 class="tm-gold-text">Przeprowadzka biura w Bielsko Biala – jak zminimalizować przestoje?</h3>
-                    <p>Opublikowano: 18 maja 2025 | Autor: Kadar Przeprowadzki</p>
-                    <img src="{{ url_for('static', filename='blog_images/biuro.jpg') }}" alt="Przeprowadzka biura Bielsko Biala" class="img-fluid tm-img-post">
+                    <h3 class="tm-gold-text">{{ translations.blog_biuro_h1 or "Przeprowadzka biura w Bielsko Biala – jak zminimalizować przestoje?" }}</h3>
+                    <p>{{ translations.blog_biuro_published or "Opublikowano" }}: {{ translations.blog_biuro_date or "18 maja 2025" }} | {{ translations.blog_biuro_author or "Autor" }}: Kadar Przeprowadzki</p>
+                    <img src="{{ url_for('static', filename='blog_images/biuro.jpg') }}" alt="{{ translations.blog_biuro_img_alt or 'Przeprowadzka biura Bielsko Biala' }}" class="img-fluid tm-img-post">
 
-                    <p>Przeprowadzka biura w Bielsko Biala to wyzwanie logistyczne, które może wpłynąć na działalność Twojej firmy. Każdy dzień przestoju to straty finansowe i niezadowolenie klientów. W tym poradniku dla firm z Bielsko Biala podpowiemy Ci, jak przeprowadzić biuro bez zbędnych przestojów. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z doświadczeniem w przeprowadzkach biur.</p>
+                    <p>{{ translations.blog_biuro_p1 or "Przeprowadzka biura w Bielsko Biala to wyzwanie logistyczne, które może wpłynąć na działalność Twojej firmy. Każdy dzień przestoju to straty finansowe i niezadowolenie klientów. W tym poradniku dla firm z Bielsko Biala podpowiemy Ci, jak przeprowadzić biuro bez zbędnych przestojów. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z doświadczeniem w przeprowadzkach biur." }}</p>
 
-                    <p><strong>Dlaczego przeprowadzka biura w Bielsko Biala różni się od przeprowadzki mieszkania?</strong></p>
-                    <p>Przeprowadzka biura w Bielsko Biala to nie tylko transport mebli. To także sprzęt komputerowy, serwery, dokumenty, archiwum, kuchnia biurowa, a często wrażliwe dane klientów. Do tego dochodzi kwestia czasu – firma nie może stać zamknięta przez tydzień. Dlatego przeprowadzka biura w Bielsko Biala wymaga precyzyjnego planowania i doświadczonej firmy przeprowadzkowej Bielsko Biala.</p>
+                    <p><strong>{{ translations.blog_biuro_why_title or "Dlaczego przeprowadzka biura w Bielsko Biala różni się od przeprowadzki mieszkania?" }}</strong></p>
+                    <p>{{ translations.blog_biuro_why_text or "Przeprowadzka biura w Bielsko Biala to nie tylko transport mebli. To także sprzęt komputerowy, serwery, dokumenty, archiwum, kuchnia biurowa, a często wrażliwe dane klientów. Do tego dochodzi kwestia czasu – firma nie może stać zamknięta przez tydzień. Dlatego przeprowadzka biura w Bielsko Biala wymaga precyzyjnego planowania i doświadczonej firmy przeprowadzkowej Bielsko Biala." }}</p>
 
-                    <p><strong>Krok 1: Zaplanuj przeprowadzkę biura z co najmniej 4-6 tygodniowym wyprzedzeniem</strong></p>
-                    <p>Przeprowadzka biura w Bielsko Biala wymaga dobrego planu. Już na 4-6 tygodni przed planowaną datą przeprowadzki warto zacząć organizację. Wybierz firmę przeprowadzkową Bielsko Biala, która ma doświadczenie w przeprowadzkach biur. W Kadar Przeprowadzki oferujemy bezpłatną wycenę przeprowadzki biura w Bielsko Biala – przyjedziemy, obejrzymy biuro i zaproponujemy harmonogram.</p>
+                    <p><strong>{{ translations.blog_biuro_step1_title or "Krok 1: Zaplanuj przeprowadzkę biura z co najmniej 4-6 tygodniowym wyprzedzeniem" }}</strong></p>
+                    <p>{{ translations.blog_biuro_step1_text or "Przeprowadzka biura w Bielsko Biala wymaga dobrego planu. Już na 4-6 tygodni przed planowaną datą przeprowadzki warto zacząć organizację. Wybierz firmę przeprowadzkową Bielsko Biala, która ma doświadczenie w przeprowadzkach biur. W Kadar Przeprowadzki oferujemy bezpłatną wycenę przeprowadzki biura w Bielsko Biala – przyjedziemy, obejrzymy biuro i zaproponujemy harmonogram." }}</p>
 
-                    <p><strong>Krok 2: Przeprowadź inwentaryzację</strong></p>
-                    <p>Zanim firma przeprowadzkowa Bielsko Biala przyjedzie, zrób dokładną listę wszystkich mebli, sprzętu i dokumentów. Oznacz, co jedzie, a co zostaje (np. stare meble na wymianę). To przyspieszy przeprowadzkę biura w Bielsko Biala i zmniejszy ryzyko pomyłek. Profesjonalna firma przeprowadzkowa Bielsko Biala, taka jak Kadar Przeprowadzki, pomoże Ci w inwentaryzacji.</p>
+                    <p><strong>{{ translations.blog_biuro_step2_title or "Krok 2: Przeprowadź inwentaryzację" }}</strong></p>
+                    <p>{{ translations.blog_biuro_step2_text or "Zanim firma przeprowadzkowa Bielsko Biala przyjedzie, zrób dokładną listę wszystkich mebli, sprzętu i dokumentów. Oznacz, co jedzie, a co zostaje (np. stare meble na wymianę). To przyspieszy przeprowadzkę biura w Bielsko Biala i zmniejszy ryzyko pomyłek. Profesjonalna firma przeprowadzkowa Bielsko Biala, taka jak Kadar Przeprowadzki, pomoże Ci w inwentaryzacji." }}</p>
 
-                    <p><strong>Krok 3: Zaplanuj przeprowadzkę na weekend lub po godzinach</strong></p>
-                    <p>Najlepszym sposobem na uniknięcie przestojów jest przeprowadzka biura w Bielsko Biala w piątek po południu lub w weekend. Wtedy pracownicy nie tracą czasu pracy, a firma jest gotowa do działania w poniedziałek rano. Nie każda firma przeprowadzkowa Bielsko Biala pracuje w weekendy – Kadar Przeprowadzki tak, dostosowujemy się do potrzeb klienta.</p>
+                    <p><strong>{{ translations.blog_biuro_step3_title or "Krok 3: Zaplanuj przeprowadzkę na weekend lub po godzinach" }}</strong></p>
+                    <p>{{ translations.blog_biuro_step3_text or "Najlepszym sposobem na uniknięcie przestojów jest przeprowadzka biura w Bielsko Biala w piątek po południu lub w weekend. Wtedy pracownicy nie tracą czasu pracy, a firma jest gotowa do działania w poniedziałek rano. Nie każda firma przeprowadzkowa Bielsko Biala pracuje w weekendy – Kadar Przeprowadzki tak, dostosowujemy się do potrzeb klienta." }}</p>
 
-                    <p><strong>Krok 4: Przygotuj IT i sieć w nowym biurze</strong></p>
-                    <p>Przed przeprowadzką biura w Bielsko Biala upewnij się, że w nowym miejscu jest Internet, działa sieć, gniazdka elektryczne i klimatyzacja. Serwery i komputery powinny być przenoszone na samym końcu i uruchamiane jako pierwsze. Doświadczona firma przeprowadzkowa Bielsko Biala wie, jak bezpiecznie transportować sprzęt IT. W Kadar Przeprowadzki mamy doświadczenie w transporcie serwerów i delikatnego sprzętu elektronicznego.</p>
+                    <p><strong>{{ translations.blog_biuro_step4_title or "Krok 4: Przygotuj IT i sieć w nowym biurze" }}</strong></p>
+                    <p>{{ translations.blog_biuro_step4_text or "Przed przeprowadzką biura w Bielsko Biala upewnij się, że w nowym miejscu jest Internet, działa sieć, gniazdka elektryczne i klimatyzacja. Serwery i komputery powinny być przenoszone na samym końcu i uruchamiane jako pierwsze. Doświadczona firma przeprowadzkowa Bielsko Biala wie, jak bezpiecznie transportować sprzęt IT. W Kadar Przeprowadzki mamy doświadczenie w transporcie serwerów i delikatnego sprzętu elektronicznego." }}</p>
 
-                    <p><strong>Krok 5: Oznacz wszystko kolorami</strong></p>
-                    <p>Przeprowadzka biura w Bielsko Biala to setki pudełek z dokumentami, gadżetami, artykułami biurowymi. Oznacz każde pudełko kolorem odpowiadającym działowi lub pomieszczeniu w nowym biurze (np. czerwony – księgowość, niebieski – marketing). To znacznie przyspieszy rozładunek i rozpakowanie. Dobra firma przeprowadzkowa Bielsko Biala doradzi Ci, jak to zrobić.</p>
+                    <p><strong>{{ translations.blog_biuro_step5_title or "Krok 5: Oznacz wszystko kolorami" }}</strong></p>
+                    <p>{{ translations.blog_biuro_step5_text or "Przeprowadzka biura w Bielsko Biala to setki pudełek z dokumentami, gadżetami, artykułami biurowymi. Oznacz każde pudełko kolorem odpowiadającym działowi lub pomieszczeniu w nowym biurze (np. czerwony – księgowość, niebieski – marketing). To znacznie przyspieszy rozładunek i rozpakowanie. Dobra firma przeprowadzkowa Bielsko Biala doradzi Ci, jak to zrobić." }}</p>
 
-                    <p><strong>Krok 6: Wyznacz koordynatora przeprowadzki</strong></p>
-                    <p>Jedna osoba z Twojej firmy powinna być odpowiedzialna za kontakt z firmą przeprowadzkową Bielsko Biala i koordynację działań. Dzięki temu unikniesz chaosu i sprzecznych informacji. W Kadar Przeprowadzki zawsze wyznaczamy opiekuna przeprowadzki biura w Bielsko Biala, który jest w stałym kontakcie z Twoim koordynatorem.</p>
+                    <p><strong>{{ translations.blog_biuro_step6_title or "Krok 6: Wyznacz koordynatora przeprowadzki" }}</strong></p>
+                    <p>{{ translations.blog_biuro_step6_text or "Jedna osoba z Twojej firmy powinna być odpowiedzialna za kontakt z firmą przeprowadzkową Bielsko Biala i koordynację działań. Dzięki temu unikniesz chaosu i sprzecznych informacji. W Kadar Przeprowadzki zawsze wyznaczamy opiekuna przeprowadzki biura w Bielsko Biala, który jest w stałym kontakcie z Twoim koordynatorem." }}</p>
 
-                    <p><strong>Krok 7: Zadbaj o bezpieczeństwo dokumentów</strong></p>
-                    <p>Podczas przeprowadzki biura w Bielsko Biala dokumenty firmowe i dane klientów są szczególnie narażone. Upewnij się, że wybrana firma przeprowadzkowa Bielsko Biala ma zabezpieczenia i ubezpieczenie. W Kadar Przeprowadzki transportujemy dokumenty w zamkniętych, plombowanych skrzyniach, a nasi pracownicy mają podpisane umowy o poufności.</p>
+                    <p><strong>{{ translations.blog_biuro_step7_title or "Krok 7: Zadbaj o bezpieczeństwo dokumentów" }}</strong></p>
+                    <p>{{ translations.blog_biuro_step7_text or "Podczas przeprowadzki biura w Bielsko Biala dokumenty firmowe i dane klientów są szczególnie narażone. Upewnij się, że wybrana firma przeprowadzkowa Bielsko Biala ma zabezpieczenia i ubezpieczenie. W Kadar Przeprowadzki transportujemy dokumenty w zamkniętych, plombowanych skrzyniach, a nasi pracownicy mają podpisane umowy o poufności." }}</p>
 
-                    <p><strong>Krok 8: Przygotuj pracowników na przeprowadzkę</strong></p>
-                    <p>Poinformuj zespół o terminie przeprowadzki biura w Bielsko Biala z wyprzedzeniem. Każdy pracownik powinien spakować swoje rzeczy biurkowe w osobne pudełko i opisać je. Dzięki temu po przeprowadzce od razu wie, gdzie czego szukać. Niektóre firmy przeprowadzkowe Bielsko Biala oferują nawet szkolenie dla pracowników – zapytaj o to.</p>
+                    <p><strong>{{ translations.blog_biuro_step8_title or "Krok 8: Przygotuj pracowników na przeprowadzkę" }}</strong></p>
+                    <p>{{ translations.blog_biuro_step8_text or "Poinformuj zespół o terminie przeprowadzki biura w Bielsko Biala z wyprzedzeniem. Każdy pracownik powinien spakować swoje rzeczy biurkowe w osobne pudełko i opisać je. Dzięki temu po przeprowadzce od razu wie, gdzie czego szukać. Niektóre firmy przeprowadzkowe Bielsko Biala oferują nawet szkolenie dla pracowników – zapytaj o to." }}</p>
 
-                    <p><strong>Krok 9: Zaplanuj catering lub dzień wolny</strong></p>
-                    <p>Jeśli przeprowadzka biura w Bielsko Biala odbywa się w dzień pracy, rozważ zorganizowanie lunchu dla zespołu lub danie dnia wolnego. Zmniejszy to stres pracowników i zwiększy ich zaangażowanie. To szczególnie ważne przy przeprowadzkach biur w Bielsko Biala, gdzie liczy się komfort zespołu.</p>
+                    <p><strong>{{ translations.blog_biuro_step9_title or "Krok 9: Zaplanuj catering lub dzień wolny" }}</strong></p>
+                    <p>{{ translations.blog_biuro_step9_text or "Jeśli przeprowadzka biura w Bielsko Biala odbywa się w dzień pracy, rozważ zorganizowanie lunchu dla zespołu lub danie dnia wolnego. Zmniejszy to stres pracowników i zwiększy ich zaangażowanie. To szczególnie ważne przy przeprowadzkach biur w Bielsko Biala, gdzie liczy się komfort zespołu." }}</p>
 
-                    <p><strong>Krok 10: Wybierz sprawdzoną firmę przeprowadzkową Bielsko Biala</strong></p>
-                    <p>Przeprowadzka biura w Bielsko Biala to inwestycja w spokój i ciągłość działania firmy. Nie warto oszczędzać na firmie przeprowadzkowej. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z ponad 28-letnim doświadczeniem, w tym w przeprowadzkach biur, firm i instytucji. Oferujemy kompleksowe usługi – od pakowania, przez transport, po rozpakowanie i ustawienie mebli w nowym biurze. Działamy po godzinach i w weekendy, by Twoja firma nie traciła ani jednego dnia roboczego.</p>
+                    <p><strong>{{ translations.blog_biuro_step10_title or "Krok 10: Wybierz sprawdzoną firmę przeprowadzkową Bielsko Biala" }}</strong></p>
+                    <p>{{ translations.blog_biuro_step10_text or "Przeprowadzka biura w Bielsko Biala to inwestycja w spokój i ciągłość działania firmy. Nie warto oszczędzać na firmie przeprowadzkowej. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z ponad 28-letnim doświadczeniem, w tym w przeprowadzkach biur, firm i instytucji. Oferujemy kompleksowe usługi – od pakowania, przez transport, po rozpakowanie i ustawienie mebli w nowym biurze. Działamy po godzinach i w weekendy, by Twoja firma nie traciła ani jednego dnia roboczego." }}</p>
 
-                    <p><strong>Podsumowanie</strong></p>
-                    <p>Przeprowadzka biura w Bielsko Biala może być szybka i bezbolesna, jeśli odpowiednio ją zaplanujesz i wybierzesz doświadczoną firmę przeprowadzkową Bielsko Biala. Kluczowe jest działanie z wyprzedzeniem, zaangażowanie zespołu i wybór sprawdzonego partnera. Kadar Przeprowadzki to gwarancja przeprowadzki biura w Bielsko Biala bez zbędnych przestojów.</p>
+                    <p><strong>{{ translations.blog_biuro_summary_title or "Podsumowanie" }}</strong></p>
+                    <p>{{ translations.blog_biuro_summary_text or "Przeprowadzka biura w Bielsko Biala może być szybka i bezbolesna, jeśli odpowiednio ją zaplanujesz i wybierzesz doświadczoną firmę przeprowadzkową Bielsko Biala. Kluczowe jest działanie z wyprzedzeniem, zaangażowanie zespołu i wybór sprawdzonego partnera. Kadar Przeprowadzki to gwarancja przeprowadzki biura w Bielsko Biala bez zbędnych przestojów." }}</p>
 
-                    <p>Szukasz profesjonalnej firmy przeprowadzkowej Bielsko Biala do przeprowadzki biura? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki biur w Bielsko Biala to nasza specjalność. Zadzwoń i zapytaj o bezpłatną wycenę!</p>
+                    <p>{{ translations.blog_biuro_outro or "Szukasz profesjonalnej firmy przeprowadzkowej Bielsko Biala do przeprowadzki biura? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki biur w Bielsko Biala to nasza specjalność. Zadzwoń i zapytaj o bezpłatną wycenę!" }}</p>
                 </div>
             </div>
 
-            <!-- PANEL BOCZNY (ASIDE) - ZASTĄPIONO POLSKIMI TREŚCIAMI O PRZEPROWADZKACH -->
+            <!-- PANEL BOCZNY (ASIDE) -->
             <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r">
                 <div class="tm-aside-container">
                     <h3 class="tm-gold-text tm-title tm-margin-t-small">
-                        Przydatne linki
+                        {{ translations.useful_links or "Przydatne linki" }}
                     </h3>
                     <nav>
                         <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">Strona główna Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">O firmie Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">Kontakt i bezpłatna wycena</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">Usługi przeprowadzkowe</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">Opinie klientów</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">{{ translations.menu1 or "Strona główna" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">{{ translations.menu2 or "O firmie" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">{{ translations.menu3 or "Kontakt" }} i bezpłatna wycena</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">{{ translations.menu4 or "Usługi przeprowadzkowe" }}</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">{{ translations.menu7 or "Opinie klientów" }}</a></li>
                         </ul>
                     </nav>
 
@@ -86,45 +86,45 @@
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/poradnik.jpg') }}" alt="Przeprowadzki Bielsko Poradnik" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku</h4>
-                        <p class="tm-margin-b-20">Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?</p>
-                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_1_title or "Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_1_desc or "Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?" }}</p>
+                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/naczynia.jpg') }}" alt="Bezpieczne pakowanie szkła i naczyń" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak bezpiecznie pakować naczynia i szkło?</h4>
-                        <p class="tm-margin-b-20">Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami.</p>
-                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_2_title or "Jak bezpiecznie pakować naczynia i szkło?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_2_desc or "Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami." }}</p>
+                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/zwierzeta.jpg') }}" alt="Przeprowadzka z psem i kotem" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?</h4>
-                        <p class="tm-margin-b-20">Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia.</p>
-                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_3_title or "Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_3_desc or "Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia." }}</p>
+                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bezwindy.jpg') }}" alt="Przeprowadzka w kamienicy bez windy" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka w kamienicy bez windy – na co uważać?</h4>
-                        <p class="tm-margin-b-20">Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej.</p>
-                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_4_title or "Przeprowadzka w kamienicy bez windy – na co uważać?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_4_desc or "Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej." }}</p>
+                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bielsko.jpg') }}" alt="Przeprowadzki Bielsko-Biała" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzki w Bielsku-Białej – co warto wiedzieć?</h4>
-                        <p class="tm-margin-b-20">Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie.</p>
-                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_5_title or "Przeprowadzki w Bielsku-Białej – co warto wiedzieć?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_5_desc or "Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie." }}</p>
+                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                 </div>
@@ -132,6 +132,5 @@
         </div>
     </div>
 </section>
-
 
 {% endblock %}

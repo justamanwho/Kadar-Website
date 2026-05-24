@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block page_title %}Przeprowadzka sejfu i ciężkich przedmiotów Bielsko Biala | Kadar Przeprowadzki{% endblock %}
+{% block page_title %}{{ translations.blog_sejf_title or "Przeprowadzka sejfu i ciężkich przedmiotów Bielsko Biala | Kadar Przeprowadzki" }}{% endblock %}
 
-{% block description %}Przeprowadzka sejfu i ciężkich przedmiotów w Bielsko Biala. Bezpieczny transport sejfów, skrytek i ciężkich mebli. Sprawdź!{% endblock %}
+{% block description %}{{ translations.blog_sejf_description or "Przeprowadzka sejfu i ciężkich przedmiotów w Bielsko Biala. Bezpieczny transport sejfów, skrytek i ciężkich mebli. Sprawdź!" }}{% endblock %}
 
 {% block extra_head %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -20,70 +20,70 @@
 
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
                 <div class="tm-blog-post">
-                    <h3 class="tm-gold-text">Przeprowadzka sejfu i ciężkich przedmiotów w Bielsko Biala</h3>
-                    <p>Opublikowano: 19 maja 2025 | Autor: Kadar Przeprowadzki</p>
-                    <img src="{{ url_for('static', filename='blog_images/sejf.jpg') }}" alt="Przeprowadzka sejfu Bielsko Biala" class="img-fluid tm-img-post">
+                    <h3 class="tm-gold-text">{{ translations.blog_sejf_h1 or "Przeprowadzka sejfu i ciężkich przedmiotów w Bielsko Biala" }}</h3>
+                    <p>{{ translations.blog_sejf_published or "Opublikowano" }}: {{ translations.blog_sejf_date or "19 maja 2025" }} | {{ translations.blog_sejf_author or "Autor" }}: Kadar Przeprowadzki</p>
+                    <img src="{{ url_for('static', filename='blog_images/sejf.jpg') }}" alt="{{ translations.blog_sejf_img_alt or 'Przeprowadzka sejfu Bielsko Biala' }}" class="img-fluid tm-img-post">
 
-                    <p>Przeprowadzka sejfu lub innych ciężkich przedmiotów w Bielsko Biala wymaga specjalistycznego sprzętu i doświadczenia. Sejf waży często od 100 do nawet 1000 kg, a jego transport to nie lada wyzwanie. W tym poradniku podpowiemy Ci, jak bezpiecznie przeprowadzić sejf w Bielsko Biala. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z doświadczeniem w transporcie ciężkich przedmiotów.</p>
+                    <p>{{ translations.blog_sejf_p1 or "Przeprowadzka sejfu lub innych ciężkich przedmiotów w Bielsko Biala wymaga specjalistycznego sprzętu i doświadczenia. Sejf waży często od 100 do nawet 1000 kg, a jego transport to nie lada wyzwanie. W tym poradniku podpowiemy Ci, jak bezpiecznie przeprowadzić sejf w Bielsko Biala. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z doświadczeniem w transporcie ciężkich przedmiotów." }}</p>
 
-                    <p><strong>Dlaczego przeprowadzka sejfu w Bielsko Biala jest trudna?</strong></p>
-                    <p>Sejf to nie tylko duży ciężar, ale także delikatny mechanizm zamka. Nieumiejętny transport może uszkodzić zamek lub konstrukcję. Dodatkowo sejf często stoi w trudno dostępnym miejscu – w piwnicy, na piętrze bez windy, w ciasnym pomieszczeniu. Dlatego przeprowadzka sejfu w Bielsko Biala wymaga profesjonalnej firmy przeprowadzkowej Bielsko Biala.</p>
+                    <p><strong>{{ translations.blog_sejf_why_title or "Dlaczego przeprowadzka sejfu w Bielsko Biala jest trudna?" }}</strong></p>
+                    <p>{{ translations.blog_sejf_why_text or "Sejf to nie tylko duży ciężar, ale także delikatny mechanizm zamka. Nieumiejętny transport może uszkodzić zamek lub konstrukcję. Dodatkowo sejf często stoi w trudno dostępnym miejscu – w piwnicy, na piętrze bez windy, w ciasnym pomieszczeniu. Dlatego przeprowadzka sejfu w Bielsko Biala wymaga profesjonalnej firmy przeprowadzkowej Bielsko Biala." }}</p>
 
-                    <p><strong>Jak przygotować sejf do przeprowadzki Bielsko Biala?</strong></p>
+                    <p><strong>{{ translations.blog_sejf_prepare_title or "Jak przygotować sejf do przeprowadzki Bielsko Biala?" }}</strong></p>
                     <ul>
-                        <li>Opróżnij sejf z całej zawartości – dokumenty, biżuteria, gotówka</li>
-                        <li>Zabezpiecz drzwi sejfu taśmą, by nie otwierały się podczas transportu</li>
-                        <li>Zanotuj kod lub zabierz klucz – po przeprowadzce będziesz potrzebować dostępu</li>
-                        <li>Poinformuj firmę przeprowadzkową Bielsko Biala o dokładnej wadze sejfu</li>
+                        <li>{{ translations.blog_sejf_prepare1 or "Opróżnij sejf z całej zawartości – dokumenty, biżuteria, gotówka" }}</li>
+                        <li>{{ translations.blog_sejf_prepare2 or "Zabezpiecz drzwi sejfu taśmą, by nie otwierały się podczas transportu" }}</li>
+                        <li>{{ translations.blog_sejf_prepare3 or "Zanotuj kod lub zabierz klucz – po przeprowadzce będziesz potrzebować dostępu" }}</li>
+                        <li>{{ translations.blog_sejf_prepare4 or "Poinformuj firmę przeprowadzkową Bielsko Biala o dokładnej wadze sejfu" }}</li>
                     </ul>
 
-                    <p><strong>Jaki sprzęt jest potrzebny do przeprowadzki sejfu w Bielsko Biala?</strong></p>
-                    <p>Do transportu sejfu potrzebny jest specjalistyczny sprzęt: wózek do ciężkich przedmiotów, pasy transportowe, kliny, a często także samochód z windą. Nie każda firma przeprowadzkowa Bielsko Biala ma taki sprzęt. Kadar Przeprowadzki dysponuje całym niezbędnym wyposażeniem do przeprowadzki sejfów i ciężkich przedmiotów w Bielsko Biala.</p>
+                    <p><strong>{{ translations.blog_sejf_equipment_title or "Jaki sprzęt jest potrzebny do przeprowadzki sejfu w Bielsko Biala?" }}</strong></p>
+                    <p>{{ translations.blog_sejf_equipment_text or "Do transportu sejfu potrzebny jest specjalistyczny sprzęt: wózek do ciężkich przedmiotów, pasy transportowe, kliny, a często także samochód z windą. Nie każda firma przeprowadzkowa Bielsko Biala ma taki sprzęt. Kadar Przeprowadzki dysponuje całym niezbędnym wyposażeniem do przeprowadzki sejfów i ciężkich przedmiotów w Bielsko Biala." }}</p>
 
-                    <p><strong>Ile osób potrzeba do przeprowadzki sejfu w Bielsko Biala?</strong></p>
-                    <p>Do przeniesienia sejfu ważącego 200-300 kg potrzebujesz co najmniej 3-4 silnych osób. Przy cięższych sejfach (500+ kg) nawet 6 osób. Doświadczona firma przeprowadzkowa Bielsko Biala wie, ile pracowników wysłać. W Kadar Przeprowadzki zawsze dobieramy liczbę pracowników do wagi sejfu.</p>
+                    <p><strong>{{ translations.blog_sejf_workers_title or "Ile osób potrzeba do przeprowadzki sejfu w Bielsko Biala?" }}</strong></p>
+                    <p>{{ translations.blog_sejf_workers_text or "Do przeniesienia sejfu ważącego 200-300 kg potrzebujesz co najmniej 3-4 silnych osób. Przy cięższych sejfach (500+ kg) nawet 6 osób. Doświadczona firma przeprowadzkowa Bielsko Biala wie, ile pracowników wysłać. W Kadar Przeprowadzki zawsze dobieramy liczbę pracowników do wagi sejfu." }}</p>
 
-                    <p><strong>Przeprowadzka sejfu po schodach – czy to możliwe?</strong></p>
-                    <p>Tak, ale tylko jeśli masz odpowiedni sprzęt i doświadczenie. Sejf trzeba przenosić na specjalnych pasach i wózkach schodowych. Wąskie klatki schodowe w kamienicach Bielsko Biala dodatkowo utrudniają zadanie. Jeśli masz wątpliwości, skontaktuj się z firmą przeprowadzkową Bielsko Biala, która specjalizuje się w transporcie ciężkich przedmiotów.</p>
+                    <p><strong>{{ translations.blog_sejf_stairs_title or "Przeprowadzka sejfu po schodach – czy to możliwe?" }}</strong></p>
+                    <p>{{ translations.blog_sejf_stairs_text or "Tak, ale tylko jeśli masz odpowiedni sprzęt i doświadczenie. Sejf trzeba przenosić na specjalnych pasach i wózkach schodowych. Wąskie klatki schodowe w kamienicach Bielsko Biala dodatkowo utrudniają zadanie. Jeśli masz wątpliwości, skontaktuj się z firmą przeprowadzkową Bielsko Biala, która specjalizuje się w transporcie ciężkich przedmiotów." }}</p>
 
-                    <p><strong>Jakie inne ciężkie przedmioty przewozimy podczas przeprowadzki Bielsko Biala?</strong></p>
+                    <p><strong>{{ translations.blog_sejf_other_title or "Jakie inne ciężkie przedmioty przewozimy podczas przeprowadzki Bielsko Biala?" }}</strong></p>
                     <ul>
-                        <li>Fortepiany i pianina (200-500 kg)</li>
-                        <li>Łóżka i szafy z litego drewna</li>
-                        <li>AGD – lodówki, pralki, suszarki</li>
-                        <li>Urządzenia fitness – bieżnie, atlas</li>
-                        <li>Kominki i piece kaflowe (po demontażu)</li>
+                        <li>{{ translations.blog_sejf_other1 or "Fortepiany i pianina (200-500 kg)" }}</li>
+                        <li>{{ translations.blog_sejf_other2 or "Łóżka i szafy z litego drewna" }}</li>
+                        <li>{{ translations.blog_sejf_other3 or "AGD – lodówki, pralki, suszarki" }}</li>
+                        <li>{{ translations.blog_sejf_other4 or "Urządzenia fitness – bieżnie, atlas" }}</li>
+                        <li>{{ translations.blog_sejf_other5 or "Kominki i piece kaflowe (po demontażu)" }}</li>
                     </ul>
 
-                    <p><strong>Ile kosztuje przeprowadzka sejfu w Bielsko Biala?</strong></p>
-                    <p>Cena zależy od wagi sejfu, piętra, obecności windy i odległości. Orientacyjnie przeprowadzka sejfu w Bielsko Biala to koszt 200-600 zł. Najlepiej poprosić o bezpłatną wycenę przeprowadzki Bielsko Biala – firma przeprowadzkowa przyjedzie i oceni warunki.</p>
+                    <p><strong>{{ translations.blog_sejf_cost_title or "Ile kosztuje przeprowadzka sejfu w Bielsko Biala?" }}</strong></p>
+                    <p>{{ translations.blog_sejf_cost_text or "Cena zależy od wagi sejfu, piętra, obecności windy i odległości. Orientacyjnie przeprowadzka sejfu w Bielsko Biala to koszt 200-600 zł. Najlepiej poprosić o bezpłatną wycenę przeprowadzki Bielsko Biala – firma przeprowadzkowa przyjedzie i oceni warunki." }}</p>
 
-                    <p><strong>Dlaczego warto wybrać Kadar Przeprowadzki do transportu sejfu w Bielsko Biala?</strong></p>
+                    <p><strong>{{ translations.blog_sejf_why_us_title or "Dlaczego warto wybrać Kadar Przeprowadzki do transportu sejfu w Bielsko Biala?" }}</strong></p>
                     <ul>
-                        <li>Ponad 28 lat doświadczenia w przeprowadzkach Bielsko Biala</li>
-                        <li>Specjalistyczny sprzęt do ciężkich przedmiotów</li>
-                        <li>Doświadczeni pracownicy przeszkoleni w transporcie sejfów</li>
-                        <li>Ubezpieczenie OC i NW do 50 000 zł</li>
-                        <li>Bezpłatna wycena przeprowadzki Bielsko Biala</li>
+                        <li>{{ translations.blog_sejf_why_us1 or "Ponad 28 lat doświadczenia w przeprowadzkach Bielsko Biala" }}</li>
+                        <li>{{ translations.blog_sejf_why_us2 or "Specjalistyczny sprzęt do ciężkich przedmiotów" }}</li>
+                        <li>{{ translations.blog_sejf_why_us3 or "Doświadczeni pracownicy przeszkoleni w transporcie sejfów" }}</li>
+                        <li>{{ translations.blog_sejf_why_us4 or "Ubezpieczenie OC i NW do 50 000 zł" }}</li>
+                        <li>{{ translations.blog_sejf_why_us5 or "Bezpłatna wycena przeprowadzki Bielsko Biala" }}</li>
                     </ul>
 
-                    <p>Szukasz firmy przeprowadzkowej Bielsko Biala do transportu sejfu lub ciężkich przedmiotów? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki Bielsko Biala to nasza specjalność – przewieziemy bezpiecznie nawet najcięższe przedmioty. Zadzwoń i zapytaj o bezpłatną wycenę!</p>
+                    <p>{{ translations.blog_sejf_outro or "Szukasz firmy przeprowadzkowej Bielsko Biala do transportu sejfu lub ciężkich przedmiotów? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki Bielsko Biala to nasza specjalność – przewieziemy bezpiecznie nawet najcięższe przedmioty. Zadzwoń i zapytaj o bezpłatną wycenę!" }}</p>
                 </div>
             </div>
 
-            <!-- PANEL BOCZNY (ASIDE) - ZASTĄPIONO POLSKIMI TREŚCIAMI O PRZEPROWADZKACH -->
+            <!-- PANEL BOCZNY (ASIDE) -->
             <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r">
                 <div class="tm-aside-container">
                     <h3 class="tm-gold-text tm-title tm-margin-t-small">
-                        Przydatne linki
+                        {{ translations.useful_links or "Przydatne linki" }}
                     </h3>
                     <nav>
                         <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">Strona główna Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">O firmie Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">Kontakt i bezpłatna wycena</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">Usługi przeprowadzkowe</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">Opinie klientów</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">{{ translations.menu1 or "Strona główna" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">{{ translations.menu2 or "O firmie" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">{{ translations.menu3 or "Kontakt" }} i bezpłatna wycena</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">{{ translations.menu4 or "Usługi przeprowadzkowe" }}</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">{{ translations.menu7 or "Opinie klientów" }}</a></li>
                         </ul>
                     </nav>
 
@@ -91,45 +91,45 @@
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/poradnik.jpg') }}" alt="Przeprowadzki Bielsko Poradnik" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku</h4>
-                        <p class="tm-margin-b-20">Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?</p>
-                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_1_title or "Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_1_desc or "Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?" }}</p>
+                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/naczynia.jpg') }}" alt="Bezpieczne pakowanie szkła i naczyń" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak bezpiecznie pakować naczynia i szkło?</h4>
-                        <p class="tm-margin-b-20">Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami.</p>
-                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_2_title or "Jak bezpiecznie pakować naczynia i szkło?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_2_desc or "Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami." }}</p>
+                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/zwierzeta.jpg') }}" alt="Przeprowadzka z psem i kotem" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?</h4>
-                        <p class="tm-margin-b-20">Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia.</p>
-                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_3_title or "Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_3_desc or "Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia." }}</p>
+                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bezwindy.jpg') }}" alt="Przeprowadzka w kamienicy bez windy" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka w kamienicy bez windy – na co uważać?</h4>
-                        <p class="tm-margin-b-20">Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej.</p>
-                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_4_title or "Przeprowadzka w kamienicy bez windy – na co uważać?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_4_desc or "Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej." }}</p>
+                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bielsko.jpg') }}" alt="Przeprowadzki Bielsko-Biała" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzki w Bielsku-Białej – co warto wiedzieć?</h4>
-                        <p class="tm-margin-b-20">Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie.</p>
-                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_5_title or "Przeprowadzki w Bielsku-Białej – co warto wiedzieć?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_5_desc or "Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie." }}</p>
+                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                 </div>
@@ -137,6 +137,5 @@
         </div>
     </div>
 </section>
-
 
 {% endblock %}

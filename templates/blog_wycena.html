@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block page_title %}Darmowa wycena przeprowadzki Bielsko Biala – jak działa? | Kadar Przeprowadzki{% endblock %}
+{% block page_title %}{{ translations.blog_wycena_title or "Darmowa wycena przeprowadzki Bielsko Biala – jak działa? | Kadar Przeprowadzki" }}{% endblock %}
 
-{% block description %}Darmowa wycena przeprowadzki Bielsko Biala. Jak działa i na co uważać przy wyborze firmy przeprowadzkowej Bielsko Biala. Sprawdź przed przeprowadzką!{% endblock %}
+{% block description %}{{ translations.blog_wycena_description or "Darmowa wycena przeprowadzki Bielsko Biala. Jak działa i na co uważać przy wyborze firmy przeprowadzkowej Bielsko Biala. Sprawdź przed przeprowadzką!" }}{% endblock %}
 
 {% block extra_head %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -20,65 +20,65 @@
 
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
                 <div class="tm-blog-post">
-                    <h3 class="tm-gold-text">Darmowa wycena przeprowadzki Bielsko Biala – jak działa i na co uważać?</h3>
-                    <p>Opublikowano: 18 maja 2025 | Autor: Kadar Przeprowadzki</p>
-                    <img src="{{ url_for('static', filename='blog_images/wycena.jpg') }}" alt="Darmowa wycena przeprowadzki Bielsko Biala" class="img-fluid tm-img-post">
+                    <h3 class="tm-gold-text">{{ translations.blog_wycena_h1 or "Darmowa wycena przeprowadzki Bielsko Biala – jak działa i na co uważać?" }}</h3>
+                    <p>{{ translations.blog_wycena_published or "Opublikowano" }}: {{ translations.blog_wycena_date or "18 maja 2025" }} | {{ translations.blog_wycena_author or "Autor" }}: Kadar Przeprowadzki</p>
+                    <img src="{{ url_for('static', filename='blog_images/wycena.jpg') }}" alt="{{ translations.blog_wycena_img_alt or 'Darmowa wycena przeprowadzki Bielsko Biala' }}" class="img-fluid tm-img-post">
 
-                    <p>Większość firm przeprowadzkowych Bielsko Biala oferuje darmową wycenę przeprowadzki. To świetna okazja, by poznać koszty i uniknąć nieprzyjemnych niespodzianek. Ale nie każda darmowa wycena przeprowadzki Bielsko Biala jest taka sama. W tym poradniku podpowiemy Ci, jak działa darmowa wycena i na co uważać przy wyborze firmy przeprowadzkowej Bielsko Biala.</p>
+                    <p>{{ translations.blog_wycena_p1 or "Większość firm przeprowadzkowych Bielsko Biala oferuje darmową wycenę przeprowadzki. To świetna okazja, by poznać koszty i uniknąć nieprzyjemnych niespodzianek. Ale nie każda darmowa wycena przeprowadzki Bielsko Biala jest taka sama. W tym poradniku podpowiemy Ci, jak działa darmowa wycena i na co uważać przy wyborze firmy przeprowadzkowej Bielsko Biala." }}</p>
 
-                    <p><strong>Jak działa darmowa wycena przeprowadzki Bielsko Biala?</strong></p>
-                    <p>Darmowa wycena przeprowadzki Bielsko Biala najczęściej odbywa się przez telefon. Doświadczona firma przeprowadzkowa Bielsko Biala zadaje szczegółowe pytania – o metraż mieszkania, liczbę pokoi, piętro, windę, wąskie klatki schodowe, dostęp dla samochodu. Na tej podstawie jest w stanie oszacować koszt przeprowadzki. W Kadar Przeprowadzki wycena przeprowadzki Bielsko Biala przez telefon jest szybka i rzetelna – nasi specjaliści wiedzą, o co zapytać. To nic nie kosztuje i nie zobowiązuje do skorzystania z usługi.</p>
+                    <p><strong>{{ translations.blog_wycena_how_title or "Jak działa darmowa wycena przeprowadzki Bielsko Biala?" }}</strong></p>
+                    <p>{{ translations.blog_wycena_how_text or "Darmowa wycena przeprowadzki Bielsko Biala najczęściej odbywa się przez telefon. Doświadczona firma przeprowadzkowa Bielsko Biala zadaje szczegółowe pytania – o metraż mieszkania, liczbę pokoi, piętro, windę, wąskie klatki schodowe, dostęp dla samochodu. Na tej podstawie jest w stanie oszacować koszt przeprowadzki. W Kadar Przeprowadzki wycena przeprowadzki Bielsko Biala przez telefon jest szybka i rzetelna – nasi specjaliści wiedzą, o co zapytać. To nic nie kosztuje i nie zobowiązuje do skorzystania z usługi." }}</p>
 
-                    <p><strong>Na co uważać przy darmowej wycenie przeprowadzki Bielsko Biala?</strong></p>
-                    <p>Nie wszystkie firmy przeprowadzkowe Bielsko Biala traktują darmową wycenę uczciwie. Oto czego się wystrzegać:</p>
+                    <p><strong>{{ translations.blog_wycena_watch_title or "Na co uważać przy darmowej wycenie przeprowadzki Bielsko Biala?" }}</strong></p>
+                    <p>{{ translations.blog_wycena_watch_text or "Nie wszystkie firmy przeprowadzkowe Bielsko Biala traktują darmową wycenę uczciwie. Oto czego się wystrzegać:" }}</p>
 
-                    <p><strong>1. Wycena bez zadawania pytań</strong><br>
-                    Jeśli firma przeprowadzkowa Bielsko Biala od razu podaje cenę, nie pytając o metraż, piętro czy windę – uważaj. Bez tych informacji nie da się rzetelnie wycenić przeprowadzki. Uczciwa firma przeprowadzkowa Bielsko Biala zawsze zadaje szczegółowe pytania.</p>
+                    <p><strong>{{ translations.blog_wycena_watch1_title or "1. Wycena bez zadawania pytań" }}</strong><br>
+                    {{ translations.blog_wycena_watch1_text or "Jeśli firma przeprowadzkowa Bielsko Biala od razu podaje cenę, nie pytając o metraż, piętro czy windę – uważaj. Bez tych informacji nie da się rzetelnie wycenić przeprowadzki. Uczciwa firma przeprowadzkowa Bielsko Biala zawsze zadaje szczegółowe pytania." }}</p>
 
-                    <p><strong>2. Brak potwierdzenia wyceny</strong><br>
-                    Dobra firma przeprowadzkowa Bielsko Biala po telefonicznej wycenie wyśle Ci SMS lub email z potwierdzeniem. Jeśli nic nie dostajesz, cena może się zmienić.</p>
+                    <p><strong>{{ translations.blog_wycena_watch2_title or "2. Brak potwierdzenia wyceny" }}</strong><br>
+                    {{ translations.blog_wycena_watch2_text or "Dobra firma przeprowadzkowa Bielsko Biala po telefonicznej wycenie wyśle Ci SMS lub email z potwierdzeniem. Jeśli nic nie dostajesz, cena może się zmienić." }}</p>
 
-                    <p><strong>3. Bardzo niska cena</strong><br>
-                    Jeśli oferta jest podejrzanie niska, prawdopodobnie pojawią się ukryte koszty. Uczciwa firma przeprowadzkowa Bielsko Biala podaje realną cenę, nie najniższą.</p>
+                    <p><strong>{{ translations.blog_wycena_watch3_title or "3. Bardzo niska cena" }}</strong><br>
+                    {{ translations.blog_wycena_watch3_text or "Jeśli oferta jest podejrzanie niska, prawdopodobnie pojawią się ukryte koszty. Uczciwa firma przeprowadzkowa Bielsko Biala podaje realną cenę, nie najniższą." }}</p>
 
-                    <p><strong>4. Brak ubezpieczenia</strong><br>
-                    Zawsze pytaj o ubezpieczenie podczas wyceny przeprowadzki Bielsko Biala. Jeśli firma go nie ma – omijaj szerokim łukiem.</p>
+                    <p><strong>{{ translations.blog_wycena_watch4_title or "4. Brak ubezpieczenia" }}</strong><br>
+                    {{ translations.blog_wycena_watch4_text or "Zawsze pytaj o ubezpieczenie podczas wyceny przeprowadzki Bielsko Biala. Jeśli firma go nie ma – omijaj szerokim łukiem." }}</p>
 
-                    <p><strong>Jak przygotować się do darmowej wyceny przeprowadzki Bielsko Biala przez telefon?</strong></p>
-                    <p>Aby wycena przeprowadzki Bielsko Biala była jak najbardziej dokładna, przygotuj:</p>
+                    <p><strong>{{ translations.blog_wycena_prepare_title or "Jak przygotować się do darmowej wyceny przeprowadzki Bielsko Biala przez telefon?" }}</strong></p>
+                    <p>{{ translations.blog_wycena_prepare_text or "Aby wycena przeprowadzki Bielsko Biala była jak najbardziej dokładna, przygotuj:" }}</p>
                     <ul>
-                        <li>Metraż mieszkania lub liczbę pokoi</li>
-                        <li>Informację o piętrze i windzie</li>
-                        <li>Informację o dostępie dla samochodu (czy jest miejsce parkingowe)</li>
-                        <li>Informację o przedmiotach specjalnych (fortepian, sejf, antyki)</li>
+                        <li>{{ translations.blog_wycena_prepare1 or "Metraż mieszkania lub liczbę pokoi" }}</li>
+                        <li>{{ translations.blog_wycena_prepare2 or "Informację o piętrze i windzie" }}</li>
+                        <li>{{ translations.blog_wycena_prepare3 or "Informację o dostępie dla samochodu (czy jest miejsce parkingowe)" }}</li>
+                        <li>{{ translations.blog_wycena_prepare4 or "Informację o przedmiotach specjalnych (fortepian, sejf, antyki)" }}</li>
                     </ul>
 
-                    <p><strong>Dlaczego warto wybrać Kadar Przeprowadzki do wyceny przeprowadzki Bielsko Biala?</strong></p>
-                    <p>Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z 28-letnim doświadczeniem. Nasza darmowa wycena przeprowadzki Bielsko Biala jest:</p>
+                    <p><strong>{{ translations.blog_wycena_why_us_title or "Dlaczego warto wybrać Kadar Przeprowadzki do wyceny przeprowadzki Bielsko Biala?" }}</strong></p>
+                    <p>{{ translations.blog_wycena_why_us_text or "Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z 28-letnim doświadczeniem. Nasza darmowa wycena przeprowadzki Bielsko Biala jest:" }}</p>
                     <ul>
-                        <li>Telefoniczna – wystarczy zadzwonić</li>
-                        <li>Szczegółowa – pytamy o wszystko, co wpływa na cenę</li>
-                        <li>Szybka – wycenę podajemy od razu</li>
-                        <li>Bez zobowiązań – nic nie musisz podpisywać</li>
+                        <li>{{ translations.blog_wycena_why_us1 or "Telefoniczna – wystarczy zadzwonić" }}</li>
+                        <li>{{ translations.blog_wycena_why_us2 or "Szczegółowa – pytamy o wszystko, co wpływa na cenę" }}</li>
+                        <li>{{ translations.blog_wycena_why_us3 or "Szybka – wycenę podajemy od razu" }}</li>
+                        <li>{{ translations.blog_wycena_why_us4 or "Bez zobowiązań – nic nie musisz podpisywać" }}</li>
                     </ul>
 
-                    <p>Szukasz rzetelnej firmy przeprowadzkowej Bielsko Biala? Skontaktuj się z Kadar Przeprowadzki. Darmowa wycena przeprowadzki Bielsko Biala przez telefon to pierwszy krok do udanej i bezstresowej przeprowadzki. Zadzwoń i zapytaj o bezpłatną wycenę!</p>
+                    <p>{{ translations.blog_wycena_outro or "Szukasz rzetelnej firmy przeprowadzkowej Bielsko Biala? Skontaktuj się z Kadar Przeprowadzki. Darmowa wycena przeprowadzki Bielsko Biala przez telefon to pierwszy krok do udanej i bezstresowej przeprowadzki. Zadzwoń i zapytaj o bezpłatną wycenę!" }}</p>
                 </div>
             </div>
 
-            <!-- PANEL BOCZNY (ASIDE) - ZASTĄPIONO POLSKIMI TREŚCIAMI O PRZEPROWADZKACH -->
+            <!-- PANEL BOCZNY (ASIDE) -->
             <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r">
                 <div class="tm-aside-container">
                     <h3 class="tm-gold-text tm-title tm-margin-t-small">
-                        Przydatne linki
+                        {{ translations.useful_links or "Przydatne linki" }}
                     </h3>
                     <nav>
                         <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">Strona główna Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">O firmie Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">Kontakt i bezpłatna wycena</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">Usługi przeprowadzkowe</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">Opinie klientów</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">{{ translations.menu1 or "Strona główna" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">{{ translations.menu2 or "O firmie" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">{{ translations.menu3 or "Kontakt" }} i bezpłatna wycena</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">{{ translations.menu4 or "Usługi przeprowadzkowe" }}</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">{{ translations.menu7 or "Opinie klientów" }}</a></li>
                         </ul>
                     </nav>
 
@@ -86,45 +86,45 @@
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/poradnik.jpg') }}" alt="Przeprowadzki Bielsko Poradnik" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku</h4>
-                        <p class="tm-margin-b-20">Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?</p>
-                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_1_title or "Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_1_desc or "Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?" }}</p>
+                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/naczynia.jpg') }}" alt="Bezpieczne pakowanie szkła i naczyń" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak bezpiecznie pakować naczynia i szkło?</h4>
-                        <p class="tm-margin-b-20">Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami.</p>
-                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_2_title or "Jak bezpiecznie pakować naczynia i szkło?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_2_desc or "Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami." }}</p>
+                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/zwierzeta.jpg') }}" alt="Przeprowadzka z psem i kotem" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?</h4>
-                        <p class="tm-margin-b-20">Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia.</p>
-                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_3_title or "Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_3_desc or "Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia." }}</p>
+                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bezwindy.jpg') }}" alt="Przeprowadzka w kamienicy bez windy" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka w kamienicy bez windy – na co uważać?</h4>
-                        <p class="tm-margin-b-20">Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej.</p>
-                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_4_title or "Przeprowadzka w kamienicy bez windy – na co uważać?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_4_desc or "Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej." }}</p>
+                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bielsko.jpg') }}" alt="Przeprowadzki Bielsko-Biała" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzki w Bielsku-Białej – co warto wiedzieć?</h4>
-                        <p class="tm-margin-b-20">Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie.</p>
-                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_5_title or "Przeprowadzki w Bielsku-Białej – co warto wiedzieć?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_5_desc or "Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie." }}</p>
+                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                 </div>
@@ -132,6 +132,5 @@
         </div>
     </div>
 </section>
-
 
 {% endblock %}

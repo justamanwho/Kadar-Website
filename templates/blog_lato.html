@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block page_title %}Przeprowadzka latem – plusy i minusy | Kadar Przeprowadzki{% endblock %}
+{% block page_title %}{{ translations.blog_lato_title or "Przeprowadzka latem – plusy i minusy | Kadar Przeprowadzki" }}{% endblock %}
 
-{% block description %}Przeprowadzka latem w Bielsko Biala. Plusy i minusy wakacyjnej przeprowadzki. Na co uważać i dlaczego warto wybrać lato.{% endblock %}
+{% block description %}{{ translations.blog_lato_description or "Przeprowadzka latem w Bielsko Biala. Plusy i minusy wakacyjnej przeprowadzki. Na co uważać i dlaczego warto wybrać lato." }}{% endblock %}
 
 {% block extra_head %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -20,90 +20,91 @@
 
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
                 <div class="tm-blog-post">
-                    <h3 class="tm-gold-text">Przeprowadzka latem w Bielsko Biala – plusy i minusy</h3>
-                    <p>Opublikowano: 20 maja 2025 | Autor: Kadar Przeprowadzki</p>
-                    <img src="{{ url_for('static', filename='blog_images/lato.jpg') }}" alt="Przeprowadzka latem Bielsko Biala" class="img-fluid tm-img-post">
+                    <h3 class="tm-gold-text">{{ translations.blog_lato_h1 or "Przeprowadzka latem w Bielsko Biala – plusy i minusy" }}</h3>
+                    <p>{{ translations.blog_lato_published or "Opublikowano" }}: {{ translations.blog_lato_date or "20 maja 2025" }} | {{ translations.blog_lato_author or "Autor" }}: Kadar Przeprowadzki</p>
+                    <img src="{{ url_for('static', filename='blog_images/lato.jpg') }}" alt="{{ translations.blog_lato_img_alt or 'Przeprowadzka latem Bielsko Biala' }}" class="img-fluid tm-img-post">
 
-                    <p>Lato to popularny czas na przeprowadzkę Bielsko Biala. Dłuższe dni, lepsza pogoda, ale też większy ruch i wyższe ceny. W tym poradniku podpowiemy Ci, jakie są plusy i minusy przeprowadzki latem w Bielsko Biala. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z ponad 28-letnim doświadczeniem – doradzimy Ci, kiedy najlepiej się przeprowadzić.</p>
+                    <p>{{ translations.blog_lato_p1 or "Lato to popularny czas na przeprowadzkę Bielsko Biala. Dłuższe dni, lepsza pogoda, ale też większy ruch i wyższe ceny. W tym poradniku podpowiemy Ci, jakie są plusy i minusy przeprowadzki latem w Bielsko Biala. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z ponad 28-letnim doświadczeniem – doradzimy Ci, kiedy najlepiej się przeprowadzić." }}</p>
 
-                    <p><strong>✅ Plusy przeprowadzki latem w Bielsko Biala</strong></p>
-                    
-                    <p><strong>1. Dłuższe dni</strong><br>
-                    Latem dni są długie – możesz rozpocząć przeprowadzkę Bielsko Biala wcześnie rano i skończyć późnym wieczorem. To duży plus, zwłaszcza przy większych przeprowadzkach.</p>
+                    <p><strong>{{ translations.blog_lato_pros_title or "✅ Plusy przeprowadzki latem w Bielsko Biala" }}</strong></p>
 
-                    <p><strong>2. Lepsza pogoda</strong><br>
-                    Deszcz, śnieg i lód to zmora przeprowadzki. Latem ryzyko złej pogody jest mniejsze. Twoje rzeczy nie zmokną, a pracownicy firmy przeprowadzkowej Bielsko Biala pracują w komfortowych warunkach.</p>
+                    <p><strong>{{ translations.blog_lato_pros1_title or "1. Dłuższe dni" }}</strong><br>
+                    {{ translations.blog_lato_pros1_text or "Latem dni są długie – możesz rozpocząć przeprowadzkę Bielsko Biala wcześnie rano i skończyć późnym wieczorem. To duży plus, zwłaszcza przy większych przeprowadzkach." }}</p>
 
-                    <p><strong>3. Łatwiej o pomoc</strong><br>
-                    Znajomi i rodzina częściej są dostępni latem – urlopy, wolne dni. Możesz liczyć na dodatkową parę rąk podczas przeprowadzki Bielsko Biala.</p>
+                    <p><strong>{{ translations.blog_lato_pros2_title or "2. Lepsza pogoda" }}</strong><br>
+                    {{ translations.blog_lato_pros2_text or "Deszcz, śnieg i lód to zmora przeprowadzki. Latem ryzyko złej pogody jest mniejsze. Twoje rzeczy nie zmokną, a pracownicy firmy przeprowadzkowej Bielsko Biala pracują w komfortowych warunkach." }}</p>
 
-                    <p><strong>4. Dzieci nie chodzą do szkoły</strong><br>
-                    Przeprowadzka Bielsko Biala latem nie koliduje z nauką dzieci. Nie musisz martwić się o odbiór ze szkoły czy odrabianie lekcji.</p>
+                    <p><strong>{{ translations.blog_lato_pros3_title or "3. Łatwiej o pomoc" }}</strong><br>
+                    {{ translations.blog_lato_pros3_text or "Znajomi i rodzina częściej są dostępni latem – urlopy, wolne dni. Możesz liczyć na dodatkową parę rąk podczas przeprowadzki Bielsko Biala." }}</p>
 
-                    <p><strong>❌ Minusy przeprowadzki latem w Bielsko Biala</strong></p>
-                    
-                    <p><strong>1. Wyższe ceny</strong><br>
-                    Lato to sezon przeprowadzek. Firmy przeprowadzkowe Bielsko Biala mają więcej zleceń, więc ceny są wyższe niż zimą. Jeśli chcesz zaoszczędzić, rozważ przeprowadzkę Bielsko Biala poza sezonem.</p>
+                    <p><strong>{{ translations.blog_lato_pros4_title or "4. Dzieci nie chodzą do szkoły" }}</strong><br>
+                    {{ translations.blog_lato_pros4_text or "Przeprowadzka Bielsko Biala latem nie koliduje z nauką dzieci. Nie musisz martwić się o odbiór ze szkoły czy odrabianie lekcji." }}</p>
 
-                    <p><strong>2. Trudniej o termin</strong><br>
-                    W sezonie letnim firmy przeprowadzkowe Bielsko Biala są często zarezerwowane z wyprzedzeniem. Możesz mieć problem z dopasowaniem dogodnego terminu. Planuj z co najmniej 4-6 tygodni wyprzedzeniem.</p>
+                    <p><strong>{{ translations.blog_lato_cons_title or "❌ Minusy przeprowadzki latem w Bielsko Biala" }}</strong></p>
 
-                    <p><strong>3. Upały</strong><br>
-                    Wysokie temperatury utrudniają pracę. Noszenie ciężkich mebli w upale jest męczące. Jeśli decydujesz się na przeprowadzkę Bielsko Biala latem, wybierz wczesne godziny poranne.</p>
+                    <p><strong>{{ translations.blog_lato_cons1_title or "1. Wyższe ceny" }}</strong><br>
+                    {{ translations.blog_lato_cons1_text or "Lato to sezon przeprowadzek. Firmy przeprowadzkowe Bielsko Biala mają więcej zleceń, więc ceny są wyższe niż zimą. Jeśli chcesz zaoszczędzić, rozważ przeprowadzkę Bielsko Biala poza sezonem." }}</p>
 
-                    <p><strong>4. Więcej klientów na rynku</strong><br>
-                    Latem przeprowadza się więcej osób. To oznacza większy ruch na drogach, więcej samochodów przeprowadzkowych i trudniejsze warunki parkingowe w Bielsko Biala.</p>
+                    <p><strong>{{ translations.blog_lato_cons2_title or "2. Trudniej o termin" }}</strong><br>
+                    {{ translations.blog_lato_cons2_text or "W sezonie letnim firmy przeprowadzkowe Bielsko Biala są często zarezerwowane z wyprzedzeniem. Możesz mieć problem z dopasowaniem dogodnego terminu. Planuj z co najmniej 4-6 tygodni wyprzedzeniem." }}</p>
 
-                    <p><strong>Kiedy najlepiej przeprowadzić się w Bielsko Biala?</strong></p>
-                    
-                    <p><strong>Latem – jeśli:</strong></p>
+                    <p><strong>{{ translations.blog_lato_cons3_title or "3. Upały" }}</strong><br>
+                    {{ translations.blog_lato_cons3_text or "Wysokie temperatury utrudniają pracę. Noszenie ciężkich mebli w upale jest męczące. Jeśli decydujesz się na przeprowadzkę Bielsko Biala latem, wybierz wczesne godziny poranne." }}</p>
+
+                    <p><strong>{{ translations.blog_lato_cons4_title or "4. Więcej klientów na rynku" }}</strong><br>
+                    {{ translations.blog_lato_cons4_text or "Latem przeprowadza się więcej osób. To oznacza większy ruch na drogach, więcej samochodów przeprowadzkowych i trudniejsze warunki parkingowe w Bielsko Biala." }}</p>
+
+                    <p><strong>{{ translations.blog_lato_best_title or "Kiedy najlepiej przeprowadzić się w Bielsko Biala?" }}</strong></p>
+
+                    <p><strong>{{ translations.blog_lato_summer_title or "Latem – jeśli:" }}</strong></p>
                     <ul>
-                        <li>Masz dzieci w wieku szkolnym</li>
-                        <li>Nie lubisz zimna i deszczu</li>
-                        <li>Masz elastyczny budżet</li>
+                        <li>{{ translations.blog_lato_summer1 or "Masz dzieci w wieku szkolnym" }}</li>
+                        <li>{{ translations.blog_lato_summer2 or "Nie lubisz zimna i deszczu" }}</li>
+                        <li>{{ translations.blog_lato_summer3 or "Masz elastyczny budżet" }}</li>
                     </ul>
 
-                    <p><strong>Poza sezonem (jesień/zima) – jeśli:</strong></p>
+                    <p><strong>{{ translations.blog_lato_offseason_title or "Poza sezonem (jesień/zima) – jeśli:" }}</strong></p>
                     <ul>
-                        <li>Chcesz zaoszczędzić (niższe ceny)</li>
-                        <li>Nie zależy Ci na konkretnym terminie</li>
-                        <li>Przeprowadzasz się w Bielsko Biala na krótką odległość</li>
+                        <li>{{ translations.blog_lato_offseason1 or "Chcesz zaoszczędzić (niższe ceny)" }}</li>
+                        <li>{{ translations.blog_lato_offseason2 or "Nie zależy Ci na konkretnym terminie" }}</li>
+                        <li>{{ translations.blog_lato_offseason3 or "Przeprowadzasz się w Bielsko Biala na krótką odległość" }}</li>
                     </ul>
 
-                    <p><strong>Porady na przeprowadzkę latem w Bielsko Biala</strong></p>
+                    <p><strong>{{ translations.blog_lato_tips_title or "Porady na przeprowadzkę latem w Bielsko Biala" }}</strong></p>
                     <ul>
-                        <li>💧 Pij dużo wody – Ty i ekipa przeprowadzkowa</li>
-                        <li>🧴 Używaj kremu z filtrem – praca na słońce</li>
-                        <li>🌡️ Planuj przerwy w najgorętszych godzinach (12:00-15:00)</li>
-                        <li>📦 Pakuj rzeczy wrażliwe na ciepło (świece, kosmetyki) osobno</li>
-                        <li>🚚 Zamawiaj samochód z klimatyzacją – niektóre firmy przeprowadzkowe Bielsko Biala oferują taką opcję</li>
+                        <li>{{ translations.blog_lato_tips1 or "💧 Pij dużo wody – Ty i ekipa przeprowadzkowa" }}</li>
+                        <li>{{ translations.blog_lato_tips2 or "🧴 Używaj kremu z filtrem – praca na słońce" }}</li>
+                        <li>{{ translations.blog_lato_tips3 or "🌡️ Planuj przerwy w najgorętszych godzinach (12:00-15:00)" }}</li>
+                        <li>{{ translations.blog_lato_tips4 or "📦 Pakuj rzeczy wrażliwe na ciepło (świece, kosmetyki) osobno" }}</li>
+                        <li>{{ translations.blog_lato_tips5 or "🚚 Zamawiaj samochód z klimatyzacją – niektóre firmy przeprowadzkowe Bielsko Biala oferują taką opcję" }}</li>
                     </ul>
 
-                    <p><strong>Dlaczego warto wybrać Kadar Przeprowadzki?</strong></p>
+                    <p><strong>{{ translations.blog_lato_why_us_title or "Dlaczego warto wybrać Kadar Przeprowadzki?" }}</strong></p>
                     <ul>
-                        <li>Ponad 28 lat doświadczenia w przeprowadzkach Bielsko Biala</li>
-                        <li>Profesjonalne samochody z klimatyzacją</li>
-                        <li>Doświadczeni pracownicy</li>
-                        <li>Ubezpieczenie do 50 000 zł</li>
-                        <li>Bezpłatna wycena przeprowadzki Bielsko Biala</li>
+                        <li>{{ translations.blog_lato_why_us1 or "Ponad 28 lat doświadczenia w przeprowadzkach Bielsko Biala" }}</li>
+                        <li>{{ translations.blog_lato_why_us2 or "Profesjonalne samochody z klimatyzacją" }}</li>
+                        <li>{{ translations.blog_lato_why_us3 or "Doświadczeni pracownicy" }}</li>
+                        <li>{{ translations.blog_lato_why_us4 or "Ubezpieczenie do 50 000 zł" }}</li>
+                        <li>{{ translations.blog_lato_why_us5 or "Bezpłatna wycena przeprowadzki Bielsko Biala" }}</li>
                     </ul>
 
-                    <p>Planujesz przeprowadzkę Bielsko Biala latem? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki Bielsko Biala to nasza specjalność – doradzimy Ci najlepszy termin i przygotujemy ofertę. Zadzwoń i zapytaj o bezpłatną wycenę!</p>
+                    <p>{{ translations.blog_lato_outro or "Planujesz przeprowadzkę Bielsko Biala latem? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki Bielsko Biala to nasza specjalność – doradzimy Ci najlepszy termin i przygotujemy ofertę. Zadzwoń i zapytaj o bezpłatną wycenę!" }}</p>
                 </div>
             </div>
-            <!-- PANEL BOCZNY (ASIDE) - ZASTĄPIONO POLSKIMI TREŚCIAMI O PRZEPROWADZKACH -->
+
+            <!-- PANEL BOCZNY (ASIDE) -->
             <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r">
                 <div class="tm-aside-container">
                     <h3 class="tm-gold-text tm-title tm-margin-t-small">
-                        Przydatne linki
+                        {{ translations.useful_links or "Przydatne linki" }}
                     </h3>
                     <nav>
                         <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">Strona główna Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">O firmie Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">Kontakt i bezpłatna wycena</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">Usługi przeprowadzkowe</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">Opinie klientów</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">{{ translations.menu1 or "Strona główna" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">{{ translations.menu2 or "O firmie" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">{{ translations.menu3 or "Kontakt" }} i bezpłatna wycena</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">{{ translations.menu4 or "Usługi przeprowadzkowe" }}</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">{{ translations.menu7 or "Opinie klientów" }}</a></li>
                         </ul>
                     </nav>
 
@@ -111,45 +112,45 @@
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/poradnik.jpg') }}" alt="Przeprowadzki Bielsko Poradnik" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku</h4>
-                        <p class="tm-margin-b-20">Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?</p>
-                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_1_title or "Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_1_desc or "Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?" }}</p>
+                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/naczynia.jpg') }}" alt="Bezpieczne pakowanie szkła i naczyń" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak bezpiecznie pakować naczynia i szkło?</h4>
-                        <p class="tm-margin-b-20">Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami.</p>
-                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_2_title or "Jak bezpiecznie pakować naczynia i szkło?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_2_desc or "Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami." }}</p>
+                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/zwierzeta.jpg') }}" alt="Przeprowadzka z psem i kotem" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?</h4>
-                        <p class="tm-margin-b-20">Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia.</p>
-                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_3_title or "Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_3_desc or "Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia." }}</p>
+                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bezwindy.jpg') }}" alt="Przeprowadzka w kamienicy bez windy" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka w kamienicy bez windy – na co uważać?</h4>
-                        <p class="tm-margin-b-20">Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej.</p>
-                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_4_title or "Przeprowadzka w kamienicy bez windy – na co uważać?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_4_desc or "Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej." }}</p>
+                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bielsko.jpg') }}" alt="Przeprowadzki Bielsko-Biała" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzki w Bielsku-Białej – co warto wiedzieć?</h4>
-                        <p class="tm-margin-b-20">Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie.</p>
-                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_5_title or "Przeprowadzki w Bielsku-Białej – co warto wiedzieć?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_5_desc or "Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie." }}</p>
+                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                 </div>
@@ -157,6 +158,5 @@
         </div>
     </div>
 </section>
-
 
 {% endblock %}

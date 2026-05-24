@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block page_title %}Przeprowadzka magazynu Bielsko Biala – logistyka i planowanie | Kadar Przeprowadzki{% endblock %}
+{% block page_title %}{{ translations.blog_magazyn_title or "Przeprowadzka magazynu Bielsko Biala – logistyka i planowanie | Kadar Przeprowadzki" }}{% endblock %}
 
-{% block description %}Przeprowadzka magazynu w Bielsko Biala. Logistyka, planowanie i bezpieczny transport towarów. Sprawdzone porady dla firm z Bielsko Biala.{% endblock %}
+{% block description %}{{ translations.blog_magazyn_description or "Przeprowadzka magazynu w Bielsko Biala. Logistyka, planowanie i bezpieczny transport towarów. Sprawdzone porady dla firm z Bielsko Biala." }}{% endblock %}
 
 {% block extra_head %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -20,64 +20,65 @@
 
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
                 <div class="tm-blog-post">
-                    <h3 class="tm-gold-text">Przeprowadzka magazynu w Bielsko Biala – logistyka i planowanie</h3>
-                    <p>Opublikowano: 18 maja 2025 | Autor: Kadar Przeprowadzki</p>
-                    <img src="{{ url_for('static', filename='blog_images/magazyn.jpg') }}" alt="Przeprowadzka magazynu Bielsko Biala" class="img-fluid tm-img-post">
+                    <h3 class="tm-gold-text">{{ translations.blog_magazyn_h1 or "Przeprowadzka magazynu w Bielsko Biala – logistyka i planowanie" }}</h3>
+                    <p>{{ translations.blog_magazyn_published or "Opublikowano" }}: {{ translations.blog_magazyn_date or "18 maja 2025" }} | {{ translations.blog_magazyn_author or "Autor" }}: Kadar Przeprowadzki</p>
+                    <img src="{{ url_for('static', filename='blog_images/magazyn.jpg') }}" alt="{{ translations.blog_magazyn_img_alt or 'Przeprowadzka magazynu Bielsko Biala' }}" class="img-fluid tm-img-post">
 
-                    <p>Przeprowadzka magazynu w Bielsko Biala to jedno z najbardziej skomplikowanych zadań logistycznych. Towary, palety, regały, wózki widłowe – to wszystko trzeba przewieźć bezpiecznie i sprawnie, minimalizując przestoje w działalności firmy. W tym poradniku dla firm z Bielsko Biala podpowiemy Ci, jak zaplanować przeprowadzkę magazynu. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z doświadczeniem w przeprowadzkach magazynów i hal produkcyjnych.</p>
+                    <p>{{ translations.blog_magazyn_p1 or "Przeprowadzka magazynu w Bielsko Biala to jedno z najbardziej skomplikowanych zadań logistycznych. Towary, palety, regały, wózki widłowe – to wszystko trzeba przewieźć bezpiecznie i sprawnie, minimalizując przestoje w działalności firmy. W tym poradniku dla firm z Bielsko Biala podpowiemy Ci, jak zaplanować przeprowadzkę magazynu. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z doświadczeniem w przeprowadzkach magazynów i hal produkcyjnych." }}</p>
 
-                    <p><strong>Dlaczego przeprowadzka magazynu w Bielsko Biala jest tak trudna?</strong></p>
-                    <p>Przeprowadzka magazynu w Bielsko Biala różni się od przeprowadzki biura czy mieszkania. Mamy do czynienia z dużymi ilościami towarów, ciężkimi regałami, specjalistycznym sprzętem i często krótkim czasem na realizację. Każdy dzień przestoju magazynu to straty finansowe firmy. Dlatego przeprowadzka magazynu w Bielsko Biala wymaga doświadczonej firmy przeprowadzkowej Bielsko Biala, która ma odpowiedni sprzęt i wiedzę.</p>
+                    <p><strong>{{ translations.blog_magazyn_why_title or "Dlaczego przeprowadzka magazynu w Bielsko Biala jest tak trudna?" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_why_text or "Przeprowadzka magazynu w Bielsko Biala różni się od przeprowadzki biura czy mieszkania. Mamy do czynienia z dużymi ilościami towarów, ciężkimi regałami, specjalistycznym sprzętem i często krótkim czasem na realizację. Każdy dzień przestoju magazynu to straty finansowe firmy. Dlatego przeprowadzka magazynu w Bielsko Biala wymaga doświadczonej firmy przeprowadzkowej Bielsko Biala, która ma odpowiedni sprzęt i wiedzę." }}</p>
 
-                    <p><strong>Krok 1: Rozpocznij planowanie z 8-12 tygodniowym wyprzedzeniem</strong></p>
-                    <p>Przeprowadzka magazynu w Bielsko Biala wymaga długiego okresu przygotowań. Już na 8-12 tygodni przed planowaną datą warto zacząć organizację. Wybierz firmę przeprowadzkową Bielsko Biala, która ma doświadczenie w przeprowadzkach magazynów. W Kadar Przeprowadzki oferujemy bezpłatną wycenę przeprowadzki magazynu w Bielsko Biala – przyjedziemy, obejrzymy magazyn i zaproponujemy harmonogram.</p>
+                    <p><strong>{{ translations.blog_magazyn_step1_title or "Krok 1: Rozpocznij planowanie z 8-12 tygodniowym wyprzedzeniem" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_step1_text or "Przeprowadzka magazynu w Bielsko Biala wymaga długiego okresu przygotowań. Już na 8-12 tygodni przed planowaną datą warto zacząć organizację. Wybierz firmę przeprowadzkową Bielsko Biala, która ma doświadczenie w przeprowadzkach magazynów. W Kadar Przeprowadzki oferujemy bezpłatną wycenę przeprowadzki magazynu w Bielsko Biala – przyjedziemy, obejrzymy magazyn i zaproponujemy harmonogram." }}</p>
 
-                    <p><strong>Krok 2: Zrób pełną inwentaryzację towarów</strong></p>
-                    <p>Przed przeprowadzką magazynu w Bielsko Biala dokładnie spisz wszystkie towary, palety i sprzęt. Oznacz kategorie produktów, które są wrażliwe na temperaturę, wilgoć lub uszkodzenia mechaniczne. Profesjonalna firma przeprowadzkowa Bielsko Biala, taka jak Kadar Przeprowadzki, pomoże Ci w inwentaryzacji i zaproponuje sposób pakowania.</p>
+                    <p><strong>{{ translations.blog_magazyn_step2_title or "Krok 2: Zrób pełną inwentaryzację towarów" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_step2_text or "Przed przeprowadzką magazynu w Bielsko Biala dokładnie spisz wszystkie towary, palety i sprzęt. Oznacz kategorie produktów, które są wrażliwe na temperaturę, wilgoć lub uszkodzenia mechaniczne. Profesjonalna firma przeprowadzkowa Bielsko Biala, taka jak Kadar Przeprowadzki, pomoże Ci w inwentaryzacji i zaproponuje sposób pakowania." }}</p>
 
-                    <p><strong>Krok 3: Zaplanuj transport w kilku turach</strong></p>
-                    <p>Przeprowadzka magazynu w Bielsko Biala rzadko odbywa się jednorazowo. Lepiej zaplanować transport w kilku turach – np. najpierw towary rzadziej używane, potem bieżące, a na końcu regały i sprzęt ciężki. Doświadczona firma przeprowadzkowa Bielsko Biala doradzi Ci optymalny harmonogram. W Kadar Przeprowadzki mamy flotę samochodów przystosowanych do transportu palet i towarów wielkogabarytowych.</p>
+                    <p><strong>{{ translations.blog_magazyn_step3_title or "Krok 3: Zaplanuj transport w kilku turach" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_step3_text or "Przeprowadzka magazynu w Bielsko Biala rzadko odbywa się jednorazowo. Lepiej zaplanować transport w kilku turach – np. najpierw towary rzadziej używane, potem bieżące, a na końcu regały i sprzęt ciężki. Doświadczona firma przeprowadzkowa Bielsko Biala doradzi Ci optymalny harmonogram. W Kadar Przeprowadzki mamy flotę samochodów przystosowanych do transportu palet i towarów wielkogabarytowych." }}</p>
 
-                    <p><strong>Krok 4: Przygotuj nowy magazyn przed przeprowadzką</strong></p>
-                    <p>Zanim firma przeprowadzkowa Bielsko Biala przywiezie towary, nowy magazyn musi być gotowy – oznaczone miejsca na regały, działająca elektryka, oświetlenie, ogrzewanie. W przeciwnym razie przeprowadzka magazynu w Bielsko Biala może się przedłużyć. W Kadar Przeprowadzki przed rozpoczęciem przeprowadzki magazynu w Bielsko Biala zawsze sprawdzamy, czy nowa lokalizacja jest przygotowana.</p>
+                    <p><strong>{{ translations.blog_magazyn_step4_title or "Krok 4: Przygotuj nowy magazyn przed przeprowadzką" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_step4_text or "Zanim firma przeprowadzkowa Bielsko Biala przywiezie towary, nowy magazyn musi być gotowy – oznaczone miejsca na regały, działająca elektryka, oświetlenie, ogrzewanie. W przeciwnym razie przeprowadzka magazynu w Bielsko Biala może się przedłużyć. W Kadar Przeprowadzki przed rozpoczęciem przeprowadzki magazynu w Bielsko Biala zawsze sprawdzamy, czy nowa lokalizacja jest przygotowana." }}</p>
 
-                    <p><strong>Krok 5: Zadbaj o odpowiedni sprzęt do transportu</strong></p>
-                    <p>Do przeprowadzki magazynu w Bielsko Biala potrzebne są samochody z windą lub rampą, wózki paletowe, pasy transportowe, folia stretch i koce ochronne. Nie każda firma przeprowadzkowa Bielsko Biala dysponuje takim sprzętem. Kadar Przeprowadzki posiada flotę pojazdów przystosowanych do transportu towarów magazynowych, w tym auto z windą o udźwigu do 750 kg.</p>
+                    <p><strong>{{ translations.blog_magazyn_step5_title or "Krok 5: Zadbaj o odpowiedni sprzęt do transportu" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_step5_text or "Do przeprowadzki magazynu w Bielsko Biala potrzebne są samochody z windą lub rampą, wózki paletowe, pasy transportowe, folia stretch i koce ochronne. Nie każda firma przeprowadzkowa Bielsko Biala dysponuje takim sprzętem. Kadar Przeprowadzki posiada flotę pojazdów przystosowanych do transportu towarów magazynowych, w tym auto z windą o udźwigu do 750 kg." }}</p>
 
-                    <p><strong>Krok 6: Zabezpiecz towary wrażliwe</strong></p>
-                    <p>Podczas przeprowadzki magazynu w Bielsko Biala towary wrażliwe (elektronika, szkło, chemia, artykuły spożywcze) wymagają specjalnego zabezpieczenia. Użyj folii bąbelkowej, kartonów wzmacnianych, a w przypadku towarów niebezpiecznych – odpowiednich pojemników. Doświadczona firma przeprowadzkowa Bielsko Biala wie, jak to zrobić. W Kadar Przeprowadzki nasi pracownicy są przeszkoleni w transporcie towarów różnego rodzaju.</p>
+                    <p><strong>{{ translations.blog_magazyn_step6_title or "Krok 6: Zabezpiecz towary wrażliwe" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_step6_text or "Podczas przeprowadzki magazynu w Bielsko Biala towary wrażliwe (elektronika, szkło, chemia, artykuły spożywcze) wymagają specjalnego zabezpieczenia. Użyj folii bąbelkowej, kartonów wzmacnianych, a w przypadku towarów niebezpiecznych – odpowiednich pojemników. Doświadczona firma przeprowadzkowa Bielsko Biala wie, jak to zrobić. W Kadar Przeprowadzki nasi pracownicy są przeszkoleni w transporcie towarów różnego rodzaju." }}</p>
 
-                    <p><strong>Krok 7: Zaplanuj logistykę regałów</strong></p>
-                    <p>Regały magazynowe są ciężkie i często wymagają demontażu przed przeprowadzką magazynu w Bielsko Biala. Upewnij się, że wybrana firma przeprowadzkowa Bielsko Biala ma doświadczenie w demontażu i montażu regałów. W Kadar Przeprowadzki oferujemy demontaż i ponowny montaż regałów magazynowych w ramach przeprowadzki magazynu w Bielsko Biala.</p>
+                    <p><strong>{{ translations.blog_magazyn_step7_title or "Krok 7: Zaplanuj logistykę regałów" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_step7_text or "Regały magazynowe są ciężkie i często wymagają demontażu przed przeprowadzką magazynu w Bielsko Biala. Upewnij się, że wybrana firma przeprowadzkowa Bielsko Biala ma doświadczenie w demontażu i montażu regałów. W Kadar Przeprowadzki oferujemy demontaż i ponowny montaż regałów magazynowych w ramach przeprowadzki magazynu w Bielsko Biala." }}</p>
 
-                    <p><strong>Krok 8: Zabezpiecz dane i systemy IT</strong></p>
-                    <p>W wielu magazynach działają systemy WMS (Warehouse Management System). Przed przeprowadzką magazynu w Bielsko Biala wykonaj kopię zapasową danych. Serwery i komputery powinny być transportowane oddzielnie, w zabezpieczonych skrzyniach. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala, która współpracuje z firmami IT przy przeprowadzkach magazynów.</p>
+                    <p><strong>{{ translations.blog_magazyn_step8_title or "Krok 8: Zabezpiecz dane i systemy IT" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_step8_text or "W wielu magazynach działają systemy WMS (Warehouse Management System). Przed przeprowadzką magazynu w Bielsko Biala wykonaj kopię zapasową danych. Serwery i komputery powinny być transportowane oddzielnie, w zabezpieczonych skrzyniach. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala, która współpracuje z firmami IT przy przeprowadzkach magazynów." }}</p>
 
-                    <p><strong>Krok 9: Wyznacz koordynatora z Twojej firmy</strong></p>
-                    <p>Przeprowadzka magazynu w Bielsko Biala wymaga ścisłej współpracy między Twoim zespołem a firmą przeprowadzkową. Wyznacz jedną osobę odpowiedzialną za kontakt z nami i podejmowanie decyzji na bieżąco. W Kadar Przeprowadzki każda przeprowadzka magazynu w Bielsko Biala ma swojego opiekuna z naszej strony, który jest w stałym kontakcie z Twoim koordynatorem.</p>
+                    <p><strong>{{ translations.blog_magazyn_step9_title or "Krok 9: Wyznacz koordynatora z Twojej firmy" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_step9_text or "Przeprowadzka magazynu w Bielsko Biala wymaga ścisłej współpracy między Twoim zespołem a firmą przeprowadzkową. Wyznacz jedną osobę odpowiedzialną za kontakt z nami i podejmowanie decyzji na bieżąco. W Kadar Przeprowadzki każda przeprowadzka magazynu w Bielsko Biala ma swojego opiekuna z naszej strony, który jest w stałym kontakcie z Twoim koordynatorem." }}</p>
 
-                    <p><strong>Krok 10: Wybierz sprawdzoną firmę przeprowadzkową Bielsko Biala</strong></p>
-                    <p>Przeprowadzka magazynu w Bielsko Biala to duża inwestycja. Nie ryzykuj z nie sprawdzoną firmą. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z ponad 28-letnim doświadczeniem, w tym w przeprowadzkach magazynów, hal produkcyjnych i centrów logistycznych. Oferujemy kompleksowe usługi – od inwentaryzacji, przez pakowanie, transport, po rozładunek i ustawienie regałów. Działamy w Bielsko Biala i całej Polsce.</p>
+                    <p><strong>{{ translations.blog_magazyn_step10_title or "Krok 10: Wybierz sprawdzoną firmę przeprowadzkową Bielsko Biala" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_step10_text or "Przeprowadzka magazynu w Bielsko Biala to duża inwestycja. Nie ryzykuj z nie sprawdzoną firmą. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala z ponad 28-letnim doświadczeniem, w tym w przeprowadzkach magazynów, hal produkcyjnych i centrów logistycznych. Oferujemy kompleksowe usługi – od inwentaryzacji, przez pakowanie, transport, po rozładunek i ustawienie regałów. Działamy w Bielsko Biala i całej Polsce." }}</p>
 
-                    <p><strong>Podsumowanie</strong></p>
-                    <p>Przeprowadzka magazynu w Bielsko Biala to wyzwanie, ale z odpowiednim planem i doświadczoną firmą przeprowadzkową Bielsko Biala przebiega sprawnie. Kluczowe jest wcześniejsze planowanie, inwentaryzacja, zabezpieczenie towarów i wybór sprawdzonego partnera. Kadar Przeprowadzki to gwarancja bezpiecznej i terminowej przeprowadzki magazynu w Bielsko Biala.</p>
+                    <p><strong>{{ translations.blog_magazyn_summary_title or "Podsumowanie" }}</strong></p>
+                    <p>{{ translations.blog_magazyn_summary_text or "Przeprowadzka magazynu w Bielsko Biala to wyzwanie, ale z odpowiednim planem i doświadczoną firmą przeprowadzkową Bielsko Biala przebiega sprawnie. Kluczowe jest wcześniejsze planowanie, inwentaryzacja, zabezpieczenie towarów i wybór sprawdzonego partnera. Kadar Przeprowadzki to gwarancja bezpiecznej i terminowej przeprowadzki magazynu w Bielsko Biala." }}</p>
 
-                    <p>Szukasz profesjonalnej firmy przeprowadzkowej Bielsko Biala do przeprowadzki magazynu? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki magazynów w Bielsko Biala to nasza specjalność. Zadzwoń i zapytaj o bezpłatną wycenę!</p>
+                    <p>{{ translations.blog_magazyn_outro or "Szukasz profesjonalnej firmy przeprowadzkowej Bielsko Biala do przeprowadzki magazynu? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki magazynów w Bielsko Biala to nasza specjalność. Zadzwoń i zapytaj o bezpłatną wycenę!" }}</p>
                 </div>
             </div>
-            <!-- PANEL BOCZNY (ASIDE) - ZASTĄPIONO POLSKIMI TREŚCIAMI O PRZEPROWADZKACH -->
+
+            <!-- PANEL BOCZNY (ASIDE) -->
             <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r">
                 <div class="tm-aside-container">
                     <h3 class="tm-gold-text tm-title tm-margin-t-small">
-                        Przydatne linki
+                        {{ translations.useful_links or "Przydatne linki" }}
                     </h3>
                     <nav>
                         <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">Strona główna Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">O firmie Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">Kontakt i bezpłatna wycena</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">Usługi przeprowadzkowe</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">Opinie klientów</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">{{ translations.menu1 or "Strona główna" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">{{ translations.menu2 or "O firmie" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">{{ translations.menu3 or "Kontakt" }} i bezpłatna wycena</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">{{ translations.menu4 or "Usługi przeprowadzkowe" }}</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">{{ translations.menu7 or "Opinie klientów" }}</a></li>
                         </ul>
                     </nav>
 
@@ -85,45 +86,45 @@
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/poradnik.jpg') }}" alt="Przeprowadzki Bielsko Poradnik" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku</h4>
-                        <p class="tm-margin-b-20">Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?</p>
-                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_1_title or "Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_1_desc or "Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?" }}</p>
+                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/naczynia.jpg') }}" alt="Bezpieczne pakowanie szkła i naczyń" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak bezpiecznie pakować naczynia i szkło?</h4>
-                        <p class="tm-margin-b-20">Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami.</p>
-                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_2_title or "Jak bezpiecznie pakować naczynia i szkło?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_2_desc or "Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami." }}</p>
+                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/zwierzeta.jpg') }}" alt="Przeprowadzka z psem i kotem" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?</h4>
-                        <p class="tm-margin-b-20">Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia.</p>
-                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_3_title or "Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_3_desc or "Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia." }}</p>
+                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bezwindy.jpg') }}" alt="Przeprowadzka w kamienicy bez windy" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka w kamienicy bez windy – na co uważać?</h4>
-                        <p class="tm-margin-b-20">Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej.</p>
-                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_4_title or "Przeprowadzka w kamienicy bez windy – na co uważać?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_4_desc or "Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej." }}</p>
+                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bielsko.jpg') }}" alt="Przeprowadzki Bielsko-Biała" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzki w Bielsku-Białej – co warto wiedzieć?</h4>
-                        <p class="tm-margin-b-20">Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie.</p>
-                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_5_title or "Przeprowadzki w Bielsku-Białej – co warto wiedzieć?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_5_desc or "Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie." }}</p>
+                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                 </div>
@@ -131,6 +132,5 @@
         </div>
     </div>
 </section>
-
 
 {% endblock %}

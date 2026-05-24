@@ -14,12 +14,13 @@
         <link rel="alternate" href="{{ url_for('main.index', lang_code='en', _external=True) }}" hreflang="en" />
         <link rel="alternate" href="{{ url_for('main.index', lang_code='de', _external=True) }}" hreflang="de" />
         <link rel="alternate" href="{{ url_for('main.index', lang_code='ukr', _external=True) }}" hreflang="uk" />
+        <link rel="alternate" href="{{ url_for('main.index', lang_code='ja', _external=True) }}" hreflang="ja" />
         <link rel="alternate" href="{{ url_for('main.index', lang_code='pl', _external=True) }}" hreflang="x-default" />
 
         <!-- For subpages (blog, about, contact) - these will work dynamically -->
         {% if request.path != '/' and request.path != '' %}
             {% set clean_path = request.path %}
-            {% for old_lang in ['pl', 'en', 'de', 'ukr'] %}
+            {% for old_lang in ['pl', 'en', 'de', 'ukr', 'ja'] %}
                 {% if clean_path.startswith('/' + old_lang) %}
                     {% set clean_path = clean_path[3:] %}
                 {% endif %}
@@ -28,6 +29,7 @@
             <link rel="alternate" href="{{ request.url_root[:-1] }}/en{{ clean_path }}" hreflang="en" />
             <link rel="alternate" href="{{ request.url_root[:-1] }}/de{{ clean_path }}" hreflang="de" />
             <link rel="alternate" href="{{ request.url_root[:-1] }}/ukr{{ clean_path }}" hreflang="uk" />
+            <link rel="alternate" href="{{ request.url_root[:-1] }}/ja{{ clean_path }}" hreflang="ja" />
             <link rel="alternate" href="{{ request.url_root[:-1] }}/pl{{ clean_path }}" hreflang="x-default" />
         {% endif %}
         <!-- ========================================== -->

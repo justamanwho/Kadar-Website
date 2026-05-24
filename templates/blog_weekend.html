@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
-{% block page_title %}Przeprowadzka w weekend – czy to dobry pomysł? | Kadar Przeprowadzki{% endblock %}
+{% block page_title %}{{ translations.blog_weekend_title or "Przeprowadzka w weekend – czy to dobry pomysł? | Kadar Przeprowadzki" }}{% endblock %}
 
-{% block description %}Przeprowadzka w weekend w Bielsko Biala. Czy warto przeprowadzać się w sobotę lub niedzielę? Plusy, minusy i praktyczne porady.{% endblock %}
+{% block description %}{{ translations.blog_weekend_description or "Przeprowadzka w weekend w Bielsko Biala. Czy warto przeprowadzać się w sobotę lub niedzielę? Plusy, minusy i praktyczne porady." }}{% endblock %}
 
 {% block extra_head %}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -20,107 +20,107 @@
 
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
                 <div class="tm-blog-post">
-                    <h3 class="tm-gold-text">Przeprowadzka w weekend w Bielsko Biala – czy to dobry pomysł?</h3>
-                    <p>Opublikowano: 20 maja 2025 | Autor: Kadar Przeprowadzki</p>
-                    <img src="{{ url_for('static', filename='blog_images/weekend.jpg') }}" alt="Przeprowadzka w weekend Bielsko Biala" class="img-fluid tm-img-post">
+                    <h3 class="tm-gold-text">{{ translations.blog_weekend_h1 or "Przeprowadzka w weekend w Bielsko Biala – czy to dobry pomysł?" }}</h3>
+                    <p>{{ translations.blog_weekend_published or "Opublikowano" }}: {{ translations.blog_weekend_date or "20 maja 2025" }} | {{ translations.blog_weekend_author or "Autor" }}: Kadar Przeprowadzki</p>
+                    <img src="{{ url_for('static', filename='blog_images/weekend.jpg') }}" alt="{{ translations.blog_weekend_img_alt or 'Przeprowadzka w weekend Bielsko Biala' }}" class="img-fluid tm-img-post">
 
-                    <p>Przeprowadzka w weekend w Bielsko Biala to częsty wybór osób pracujących od poniedziałku do piątku. Ale czy to dobry pomysł? W tym poradniku podpowiemy Ci, jakie są plusy i minusy przeprowadzki w sobotę lub niedzielę. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala, która działa również w weekendy.</p>
+                    <p>{{ translations.blog_weekend_p1 or "Przeprowadzka w weekend w Bielsko Biala to częsty wybór osób pracujących od poniedziałku do piątku. Ale czy to dobry pomysł? W tym poradniku podpowiemy Ci, jakie są plusy i minusy przeprowadzki w sobotę lub niedzielę. Kadar Przeprowadzki to firma przeprowadzkowa Bielsko Biala, która działa również w weekendy." }}</p>
 
-                    <p><strong>✅ Plusy przeprowadzki w weekend w Bielsko Biala</strong></p>
+                    <p><strong>{{ translations.blog_weekend_pros_title or "✅ Plusy przeprowadzki w weekend w Bielsko Biala" }}</strong></p>
 
-                    <p><strong>1. Nie bierzesz urlopu</strong><br>
-                    Przeprowadzka w weekend w Bielsko Biala oznacza, że nie musisz brać wolnego w pracy. Oszczędzasz dni urlopowe na inne cele.</p>
+                    <p><strong>{{ translations.blog_weekend_pros1_title or "1. Nie bierzesz urlopu" }}</strong><br>
+                    {{ translations.blog_weekend_pros1_text or "Przeprowadzka w weekend w Bielsko Biala oznacza, że nie musisz brać wolnego w pracy. Oszczędzasz dni urlopowe na inne cele." }}</p>
 
-                    <p><strong>2. Łatwiej o pomoc</strong><br>
-                    Znajomi i rodzina częściej są dostępni w weekend. Możesz liczyć na dodatkową parę rąk podczas przeprowadzki Bielsko Biala.</p>
+                    <p><strong>{{ translations.blog_weekend_pros2_title or "2. Łatwiej o pomoc" }}</strong><br>
+                    {{ translations.blog_weekend_pros2_text or "Znajomi i rodzina częściej są dostępni w weekend. Możesz liczyć na dodatkową parę rąk podczas przeprowadzki Bielsko Biala." }}</p>
 
-                    <p><strong>3. Dzieci nie chodzą do szkoły</strong><br>
-                    Nie musisz martwić się o logistykę – dzieci są w domu i mogą pomóc lub spokojnie czekać.</p>
+                    <p><strong>{{ translations.blog_weekend_pros3_title or "3. Dzieci nie chodzą do szkoły" }}</strong><br>
+                    {{ translations.blog_weekend_pros3_text or "Nie musisz martwić się o logistykę – dzieci są w domu i mogą pomóc lub spokojnie czekać." }}</p>
 
-                    <p><strong>4. Czas na rozpakowanie</strong><br>
-                    Przeprowadzka w weekend w Bielsko Biala daje Ci całą niedzielę na rozpakowanie najpotrzebniejszych rzeczy przed poniedziałkiem.</p>
+                    <p><strong>{{ translations.blog_weekend_pros4_title or "4. Czas na rozpakowanie" }}</strong><br>
+                    {{ translations.blog_weekend_pros4_text or "Przeprowadzka w weekend w Bielsko Biala daje Ci całą niedzielę na rozpakowanie najpotrzebniejszych rzeczy przed poniedziałkiem." }}</p>
 
-                    <p><strong>❌ Minusy przeprowadzki w weekend w Bielsko Biala</strong></p>
+                    <p><strong>{{ translations.blog_weekend_cons_title or "❌ Minusy przeprowadzki w weekend w Bielsko Biala" }}</strong></p>
 
-                    <p><strong>1. Wyższe ceny</strong><br>
-                    Weekend to wyższe stawki. Firmy przeprowadzkowe Bielsko Biala często pobierają dodatkowe 20-30% za sobotę lub niedzielę.</p>
+                    <p><strong>{{ translations.blog_weekend_cons1_title or "1. Wyższe ceny" }}</strong><br>
+                    {{ translations.blog_weekend_cons1_text or "Weekend to wyższe stawki. Firmy przeprowadzkowe Bielsko Biala często pobierają dodatkowe 20-30% za sobotę lub niedzielę." }}</p>
 
-                    <p><strong>2. Mniejsza dostępność</strong><br>
-                    Weekendowe terminy rozchodzą się szybko. Jeśli chcesz przeprowadzić się w sobotę w Bielsko Biala, rezerwuj firmę z co najmniej 3-4 tygodniowym wyprzedzeniem.</p>
+                    <p><strong>{{ translations.blog_weekend_cons2_title or "2. Mniejsza dostępność" }}</strong><br>
+                    {{ translations.blog_weekend_cons2_text or "Weekendowe terminy rozchodzą się szybko. Jeśli chcesz przeprowadzić się w sobotę w Bielsko Biala, rezerwuj firmę z co najmniej 3-4 tygodniowym wyprzedzeniem." }}</p>
 
-                    <p><strong>3. Trudniej o parking</strong><br>
-                    W weekend w centrum Bielsko Biala jest więcej samochodów – trudniej o miejsce dla samochodu przeprowadzkowego.</p>
+                    <p><strong>{{ translations.blog_weekend_cons3_title or "3. Trudniej o parking" }}</strong><br>
+                    {{ translations.blog_weekend_cons3_text or "W weekend w centrum Bielsko Biala jest więcej samochodów – trudniej o miejsce dla samochodu przeprowadzkowego." }}</p>
 
-                    <p><strong>4. Hałas dla sąsiadów</strong><br>
-                    Wcześnie rano w sobotę lub niedzielę możesz narazić się na niezadowolenie sąsiadów. Sprawdź regulamin wspólnoty – niektóre zakazują prac w niedzielę.</p>
+                    <p><strong>{{ translations.blog_weekend_cons4_title or "4. Hałas dla sąsiadów" }}</strong><br>
+                    {{ translations.blog_weekend_cons4_text or "Wcześnie rano w sobotę lub niedzielę możesz narazić się na niezadowolenie sąsiadów. Sprawdź regulamin wspólnoty – niektóre zakazują prac w niedzielę." }}</p>
 
-                    <p><strong>Kiedy wybrać weekend, a kiedy dzień powszedni?</strong></p>
+                    <p><strong>{{ translations.blog_weekend_when_title or "Kiedy wybrać weekend, a kiedy dzień powszedni?" }}</strong></p>
 
                     <table style="width:100%; border-collapse: collapse;">
                         <tr style="background:#cc9900; color:white;">
-                            <th style="padding:8px; text-align:left;">Sytuacja</th>
-                            <th style="padding:8px; text-align:left;">Lepszy wybór</th>
+                            <th style="padding:8px; text-align:left;">{{ translations.blog_weekend_situation or "Sytuacja" }}</th>
+                            <th style="padding:8px; text-align:left;">{{ translations.blog_weekend_better or "Lepszy wybór" }}</th>
                         </tr>
                         <tr style="border-bottom:1px solid #ddd;">
-                            <td style="padding:8px;">Nie możesz wziąć urlopu</td>
-                            <td style="padding:8px;">✅ Weekend</td>
+                            <td style="padding:8px;">{{ translations.blog_weekend_sit1 or "Nie możesz wziąć urlopu" }}</td>
+                            <td style="padding:8px;">{{ translations.blog_weekend_choice1 or "✅ Weekend" }}</td>
                         </tr>
                         <tr style="border-bottom:1px solid #ddd;">
-                            <td style="padding:8px;">Chcesz zaoszczędzić</td>
-                            <td style="padding:8px;">✅ Poniedziałek-czwartek</td>
+                            <td style="padding:8px;">{{ translations.blog_weekend_sit2 or "Chcesz zaoszczędzić" }}</td>
+                            <td style="padding:8px;">{{ translations.blog_weekend_choice2 or "✅ Poniedziałek-czwartek" }}</td>
                         </tr>
                         <tr style="border-bottom:1px solid #ddd;">
-                            <td style="padding:8px;">Przeprowadzka dużego biura</td>
-                            <td style="padding:8px;">✅ Weekend (brak przestojów)</td>
+                            <td style="padding:8px;">{{ translations.blog_weekend_sit3 or "Przeprowadzka dużego biura" }}</td>
+                            <td style="padding:8px;">{{ translations.blog_weekend_choice3 or "✅ Weekend (brak przestojów)" }}</td>
                         </tr>
                         <tr style="border-bottom:1px solid #ddd;">
-                            <td style="padding:8px;">Masz elastyczny grafik</td>
-                            <td style="padding:8px;">✅ Dzień powszedni</td>
+                            <td style="padding:8px;">{{ translations.blog_weekend_sit4 or "Masz elastyczny grafik" }}</td>
+                            <td style="padding:8px;">{{ translations.blog_weekend_choice4 or "✅ Dzień powszedni" }}</td>
                         </tr>
-                        <tr>
-                            <td style="padding:8px;">Zależy Ci na szybkim terminie</td>
-                            <td style="padding:8px;">✅ Dzień powszedni</td>
+                        <tr style="border-bottom:1px solid #ddd;">
+                            <td style="padding:8px;">{{ translations.blog_weekend_sit5 or "Zależy Ci na szybkim terminie" }}</td>
+                            <td style="padding:8px;">{{ translations.blog_weekend_choice5 or "✅ Dzień powszedni" }}</td>
                         </tr>
                     </table>
 
-                    <p><strong>Porady na przeprowadzkę w weekend w Bielsko Biala</strong></p>
+                    <p><strong>{{ translations.blog_weekend_tips_title or "Porady na przeprowadzkę w weekend w Bielsko Biala" }}</strong></p>
                     <ul>
-                        <li>📅 Rezerwuj firmę przeprowadzkową Bielsko Biala z co najmniej 3-4 tygodniowym wyprzedzeniem</li>
-                        <li>💰 Zapytaj o cennik weekendowy – nie wszystkie firmy doliczają ekstra</li>
-                        <li>🅿️ Zarezerwuj miejsce parkingowe już w piątek wieczorem (wystaw własny samochód)</li>
-                        <li>📦 Spakuj wszystko do piątku – w weekend skup się na transporcie</li>
-                        <li>🔇 Uprzedź sąsiadów o przeprowadzce – unikniesz nieporozumień</li>
+                        <li>{{ translations.blog_weekend_tips1 or "📅 Rezerwuj firmę przeprowadzkową Bielsko Biala z co najmniej 3-4 tygodniowym wyprzedzeniem" }}</li>
+                        <li>{{ translations.blog_weekend_tips2 or "💰 Zapytaj o cennik weekendowy – nie wszystkie firmy doliczają ekstra" }}</li>
+                        <li>{{ translations.blog_weekend_tips3 or "🅿️ Zarezerwuj miejsce parkingowe już w piątek wieczorem (wystaw własny samochód)" }}</li>
+                        <li>{{ translations.blog_weekend_tips4 or "📦 Spakuj wszystko do piątku – w weekend skup się na transporcie" }}</li>
+                        <li>{{ translations.blog_weekend_tips5 or "🔇 Uprzedź sąsiadów o przeprowadzce – unikniesz nieporozumień" }}</li>
                     </ul>
 
-                    <p><strong>Czy firma przeprowadzkowa Bielsko Biala pracuje w niedzielę?</strong></p>
-                    <p>Nie wszystkie. W Kadar Przeprowadzki działamy również w niedziele i święta – dostosowujemy się do potrzeb klienta. Zapytaj o dostępność przy wycenie.</p>
+                    <p><strong>{{ translations.blog_weekend_sunday_title or "Czy firma przeprowadzkowa Bielsko Biala pracuje w niedzielę?" }}</strong></p>
+                    <p>{{ translations.blog_weekend_sunday_text or "Nie wszystkie. W Kadar Przeprowadzki działamy również w niedziele i święta – dostosowujemy się do potrzeb klienta. Zapytaj o dostępność przy wycenie." }}</p>
 
-                    <p><strong>Dlaczego warto wybrać Kadar Przeprowadzki?</strong></p>
+                    <p><strong>{{ translations.blog_weekend_why_us_title or "Dlaczego warto wybrać Kadar Przeprowadzki?" }}</strong></p>
                     <ul>
-                        <li>Ponad 28 lat doświadczenia w przeprowadzkach Bielsko Biala</li>
-                        <li>Pracujemy również w weekendy i święta</li>
-                        <li>Konkurencyjne ceny – nawet w weekend</li>
-                        <li>Ubezpieczenie do 50 000 zł</li>
-                        <li>Bezpłatna wycena przeprowadzki Bielsko Biala</li>
+                        <li>{{ translations.blog_weekend_why_us1 or "Ponad 28 lat doświadczenia w przeprowadzkach Bielsko Biala" }}</li>
+                        <li>{{ translations.blog_weekend_why_us2 or "Pracujemy również w weekendy i święta" }}</li>
+                        <li>{{ translations.blog_weekend_why_us3 or "Konkurencyjne ceny – nawet w weekend" }}</li>
+                        <li>{{ translations.blog_weekend_why_us4 or "Ubezpieczenie do 50 000 zł" }}</li>
+                        <li>{{ translations.blog_weekend_why_us5 or "Bezpłatna wycena przeprowadzki Bielsko Biala" }}</li>
                     </ul>
 
-                    <p>Planujesz przeprowadzkę w weekend w Bielsko Biala? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki Bielsko Biala to nasza specjalność – dopasujemy termin do Ciebie. Zadzwoń i zapytaj o bezpłatną wycenę!</p>
+                    <p>{{ translations.blog_weekend_outro or "Planujesz przeprowadzkę w weekend w Bielsko Biala? Skontaktuj się z Kadar Przeprowadzki. Przeprowadzki Bielsko Biala to nasza specjalność – dopasujemy termin do Ciebie. Zadzwoń i zapytaj o bezpłatną wycenę!" }}</p>
                 </div>
             </div>
 
-            <!-- PANEL BOCZNY (ASIDE) - ZASTĄPIONO POLSKIMI TREŚCIAMI O PRZEPROWADZKACH -->
+            <!-- PANEL BOCZNY (ASIDE) -->
             <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r">
                 <div class="tm-aside-container">
                     <h3 class="tm-gold-text tm-title tm-margin-t-small">
-                        Przydatne linki
+                        {{ translations.useful_links or "Przydatne linki" }}
                     </h3>
                     <nav>
                         <ul style="list-style: none; padding: 0; margin: 0 0 20px 0;">
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">Strona główna Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">O firmie Kadar Przeprowadzki</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">Kontakt i bezpłatna wycena</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">Usługi przeprowadzkowe</a></li>
-                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">Opinie klientów</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}" style="color: #666; text-decoration: none;">{{ translations.menu1 or "Strona główna" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.about') }}" style="color: #666; text-decoration: none;">{{ translations.menu2 or "O firmie" }} Kadar Przeprowadzki</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.contact') }}" style="color: #666; text-decoration: none;">{{ translations.menu3 or "Kontakt" }} i bezpłatna wycena</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#oferta" style="color: #666; text-decoration: none;">{{ translations.menu4 or "Usługi przeprowadzkowe" }}</a></li>
+                            <li style="margin-bottom: 8px;"><a href="{{ url_for('main.index') }}#opinie" style="color: #666; text-decoration: none;">{{ translations.menu7 or "Opinie klientów" }}</a></li>
                         </ul>
                     </nav>
 
@@ -128,45 +128,45 @@
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/poradnik.jpg') }}" alt="Przeprowadzki Bielsko Poradnik" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku</h4>
-                        <p class="tm-margin-b-20">Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?</p>
-                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_1_title or "Jak przygotować się do przeprowadzki w Bielsku-Białej? Poradnik krok po kroku" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_1_desc or "Planujesz przeprowadzkę w Bielsku-Białej? A może szukasz sprawdzonej firmy przeprowadzkowej, która zajmie się wszystkim od A do Z?" }}</p>
+                        <a href="{{ url_for('main.blog') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/naczynia.jpg') }}" alt="Bezpieczne pakowanie szkła i naczyń" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Jak bezpiecznie pakować naczynia i szkło?</h4>
-                        <p class="tm-margin-b-20">Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami.</p>
-                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_2_title or "Jak bezpiecznie pakować naczynia i szkło?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_2_desc or "Sprawdzone metody pakowania delikatnych przedmiotów podczas przeprowadzki w Bielsku-Białej. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami." }}</p>
+                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/zwierzeta.jpg') }}" alt="Przeprowadzka z psem i kotem" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?</h4>
-                        <p class="tm-margin-b-20">Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia.</p>
-                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_3_title or "Przeprowadzka z psem i kotem – jak zmniejszyć stres zwierząt?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_3_desc or "Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady dla firm przeprowadzkowych w Bielsku-Białej – jak przygotować pupila na zmianę otoczenia." }}</p>
+                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bezwindy.jpg') }}" alt="Przeprowadzka w kamienicy bez windy" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzka w kamienicy bez windy – na co uważać?</h4>
-                        <p class="tm-margin-b-20">Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej.</p>
-                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_4_title or "Przeprowadzka w kamienicy bez windy – na co uważać?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_4_desc or "Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach w Bielsku-Białej." }}</p>
+                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                     <hr class="tm-margin-t-small">
 
                     <div class="tm-content-box">
                         <img src="{{ url_for('static', filename='blog_images/bielsko.jpg') }}" alt="Przeprowadzki Bielsko-Biała" class="tm-margin-b-30 img-fluid">
-                        <h4 class="tm-margin-b-20 tm-gold-text">Przeprowadzki w Bielsku-Białej – co warto wiedzieć?</h4>
-                        <p class="tm-margin-b-20">Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie.</p>
-                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">Czytaj więcej</a>
+                        <h4 class="tm-margin-b-20 tm-gold-text">{{ translations.blog_card_5_title or "Przeprowadzki w Bielsku-Białej – co warto wiedzieć?" }}</h4>
+                        <p class="tm-margin-b-20">{{ translations.blog_card_5_desc or "Bielsko-Biała to miasto o specyficznej zabudowie – od kamienic w centrum po bloki na osiedlach. Kadar Przeprowadzki zna każdą dzielnicę i każde wyzwanie." }}</p>
+                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej" }}</a>
                     </div>
 
                 </div>
@@ -174,6 +174,5 @@
         </div>
     </div>
 </section>
-
 
 {% endblock %}
