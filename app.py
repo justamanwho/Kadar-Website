@@ -32,6 +32,15 @@ load_dotenv('.env')
 app.secret_key = os.getenv('SECRET_KEY')
 
 
+@app.before_request
+def redirect_without_language():
+    path = request.path
+    if path.startswith('/static/') or path == '/sitemap-main.xml':
+        return
+    if not path.startswith(('/pl/', '/en/', '/de/', '/ukr/', '/ja/')):
+        return redirect(f'/pl{path}', code=301)
+
+
 @app.route('/sitemap-main.xml')
 def sitemap_xml():
     base_url = 'https://kadarprzeprowadzki.pl'
