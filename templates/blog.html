@@ -24,23 +24,28 @@
             margin-bottom: 12px;
         }
         .blog-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.6rem;
             margin-bottom: 8px;
         }
         .blog-card .blog-meta {
-            font-size: 0.8rem;
+            font-size: 1.2rem;
             color: #999;
             margin-bottom: 10px;
         }
         .blog-card p {
-            font-size: 0.9rem;
+            font-size: 1.3rem;
             line-height: 1.5;
             margin-bottom: 12px;
         }
         .blog-card .tm-btn {
-            padding: 6px 15px;
-            font-size: 0.8rem;
+            padding: 10px 22px;
+            font-size: 1.2rem;
         }
+
+        .tm-gold-text {
+            font-size: 2rem;
+        }
+
         @media (max-width: 768px) {
             .blog-grid {
                 grid-template-columns: 1fr;
@@ -63,185 +68,304 @@
                 <p style="margin-bottom: 30px;">{{ translations.blog_list_subtitle or "Praktyczne porady i wskazówki dotyczące przeprowadzki w Bielsko Biala. Wybierz temat, który Cię interesuje." }}</p>
 
                 <div class="blog-grid">
-
                     <!-- Blog 1 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_1_title or "Jak przygotować się do przeprowadzki w Bielsko Biala?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_poradnik') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_1_title or "Jak przygotować się do przeprowadzki w Bielsko Biala?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_1_date or "15 marca 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/poradnik.jpg') }}" alt="{{ translations.blog_card_1_title or 'Przeprowadzki Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_poradnik') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/poradnik.jpg') }}" alt="{{ translations.blog_card_1_title or 'Przeprowadzki Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_1_desc or "Planujesz przeprowadzkę w Bielsko Biala? Sprawdź nasz kompleksowy poradnik. Dowiesz się, jak zaplanować, spakować i przeprowadzić się bez stresu." }}</p>
-                        <a href="{{ url_for('main.blog_poradnik') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_poradnik') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 2 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_2_title or "Jak bezpiecznie pakować naczynia i szkło?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_naczynia') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_2_title or "Jak bezpiecznie pakować naczynia i szkło?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_2_date or "10 marca 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/naczynia.jpg') }}" alt="{{ translations.blog_card_2_title or 'Pakowanie naczyń Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_naczynia') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/naczynia.jpg') }}" alt="{{ translations.blog_card_2_title or 'Pakowanie naczyń Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_2_desc or "Sprawdzone metody pakowania delikatnych przedmiotów. Dowiesz się, czym zastąpić folię bąbelkową i jak oznaczyć kartony z kruchościami." }}</p>
-                        <a href="{{ url_for('main.blog_naczynia') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_naczynia') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 3 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_3_title or "Przeprowadzka z psem i kotem – jak zmniejszyć stres?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_zwierzeta') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_3_title or "Przeprowadzka z psem i kotem – jak zmniejszyć stres?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_3_date or "5 marca 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/zwierzeta.jpg') }}" alt="{{ translations.blog_card_3_title or 'Przeprowadzka z psem i kotem Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_zwierzeta') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/zwierzeta.jpg') }}" alt="{{ translations.blog_card_3_title or 'Przeprowadzka z psem i kotem Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_3_desc or "Zwierzęta też przeżywają przeprowadzkę. Sprawdzone porady jak przygotować pupila na zmianę otoczenia." }}</p>
-                        <a href="{{ url_for('main.blog_zwierzeta') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_zwierzeta') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 4 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_4_title or "Przeprowadzka w kamienicy bez windy Bielsko Biala" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_bezwindy') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_4_title or "Przeprowadzka w kamienicy bez windy Bielsko Biala" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_4_date or "1 marca 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/bezwindy.jpg') }}" alt="{{ translations.blog_card_4_title or 'Przeprowadzka bez windy Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_bezwindy') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/bezwindy.jpg') }}" alt="{{ translations.blog_card_4_title or 'Przeprowadzka bez windy Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_4_desc or "Wąskie klatki, wysokie schody, ciasne zakręty? Sprawdź, jak profesjonalne firmy przeprowadzkowe radzą sobie w trudnych warunkach." }}</p>
-                        <a href="{{ url_for('main.blog_bezwindy') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_bezwindy') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 5 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_5_title or "Przeprowadzki Bielsko Biala – przewodnik po dzielnicach" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_bielsko') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_5_title or "Przeprowadzki Bielsko Biala – przewodnik po dzielnicach" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_5_date or "25 lutego 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/bielsko.jpg') }}" alt="{{ translations.blog_card_5_title or 'Przeprowadzki Bielsko Biala dzielnice' }}">
+                        <a href="{{ url_for('main.blog_bielsko') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/bielsko.jpg') }}" alt="{{ translations.blog_card_5_title or 'Przeprowadzki Bielsko Biala dzielnice' }}">
+                        </a>
                         <p>{{ translations.blog_card_5_desc or "Sprawdź, które dzielnice Bielsko Biala są najbardziej popularne, gdzie znajdują się kamienice bez windy, a gdzie bloki z windą." }}</p>
-                        <a href="{{ url_for('main.blog_bielsko') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_bielsko') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 6 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_6_title or "Przeprowadzka biura w Bielsko Biala – jak zminimalizować przestoje?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_biuro') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_6_title or "Przeprowadzka biura w Bielsko Biala – jak zminimalizować przestoje?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_6_date or "20 lutego 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/biuro.jpg') }}" alt="{{ translations.blog_card_6_title or 'Przeprowadzka biura Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_biuro') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/biuro.jpg') }}" alt="{{ translations.blog_card_6_title or 'Przeprowadzka biura Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_6_desc or "Przeprowadzka biura to wyzwanie. Dowiedz się, jak zaplanować ją tak, by firma nie straciła ani jednego dnia roboczego." }}</p>
-                        <a href="{{ url_for('main.blog_biuro') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_biuro') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 7 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_7_title or "Ukryte koszty przeprowadzki – czego unikać?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_ukryte_koszty') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_7_title or "Ukryte koszty przeprowadzki – czego unikać?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_7_date or "15 lutego 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/ukryte-koszty.jpg') }}" alt="{{ translations.blog_card_7_title or 'Ukryte koszty przeprowadzki Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_ukryte_koszty') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/ukryte-koszty.jpg') }}" alt="{{ translations.blog_card_7_title or 'Ukryte koszty przeprowadzki Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_7_desc or "Nie daj się zaskoczyć dodatkowym opłatom. Sprawdź, jakie ukryte koszty mogą pojawić się przy wyborze firmy przeprowadzkowej." }}</p>
-                        <a href="{{ url_for('main.blog_ukryte_koszty') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_ukryte_koszty') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 8 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_8_title or "Darmowa wycena przeprowadzki – jak działa?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_wycena') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_8_title or "Darmowa wycena przeprowadzki – jak działa?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_8_date or "10 lutego 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/wycena.jpg') }}" alt="{{ translations.blog_card_8_title or 'Darmowa wycena przeprowadzki Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_wycena') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/wycena.jpg') }}" alt="{{ translations.blog_card_8_title or 'Darmowa wycena przeprowadzki Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_8_desc or "Większość firm oferuje darmową wycenę przez telefon. Sprawdź, o co pytać i jak przygotować się do rozmowy." }}</p>
-                        <a href="{{ url_for('main.blog_wycena') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_wycena') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 9 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_9_title or "Przeprowadzka magazynu – logistyka i planowanie" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_magazyn') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_9_title or "Przeprowadzka magazynu – logistyka i planowanie" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_9_date or "5 lutego 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/magazyn.jpg') }}" alt="{{ translations.blog_card_9_title or 'Przeprowadzka magazynu Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_magazyn') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/magazyn.jpg') }}" alt="{{ translations.blog_card_9_title or 'Przeprowadzka magazynu Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_9_desc or "Przeprowadzka magazynu to skomplikowane zadanie. Dowiedz się, jak zaplanować transport towarów i regałów." }}</p>
-                        <a href="{{ url_for('main.blog_magazyn') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_magazyn') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 10 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_10_title or "Przeprowadzka sejfu i ciężkich przedmiotów" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_sejf') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_10_title or "Przeprowadzka sejfu i ciężkich przedmiotów" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_10_date or "30 stycznia 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/sejf.jpg') }}" alt="{{ translations.blog_card_10_title or 'Przeprowadzka sejfu Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_sejf') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/sejf.jpg') }}" alt="{{ translations.blog_card_10_title or 'Przeprowadzka sejfu Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_10_desc or "Transport sejfu ważącego kilkaset kilogramów wymaga specjalistycznego sprzętu. Sprawdź, jak to zrobić bezpiecznie." }}</p>
-                        <a href="{{ url_for('main.blog_sejf') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_sejf') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 11 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_11_title or "Przeprowadzka z antykami i cennymi przedmiotami" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_antyki') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_11_title or "Przeprowadzka z antykami i cennymi przedmiotami" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_11_date or "25 stycznia 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/antyki.jpg') }}" alt="{{ translations.blog_card_11_title or 'Przeprowadzka z antykami Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_antyki') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/antyki.jpg') }}" alt="{{ translations.blog_card_11_title or 'Przeprowadzka z antykami Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_11_desc or "Obrazy, porcelana, kryształy – przewóz cennych przedmiotów wymaga szczególnej ostrożności i ubezpieczenia." }}</p>
-                        <a href="{{ url_for('main.blog_antyki') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_antyki') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 12 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_12_title or "Lista kontrolna przeprowadzki – pobierz i wydrukuj" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_list') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_12_title or "Lista kontrolna przeprowadzki – pobierz i wydrukuj" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_12_date or "20 stycznia 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/list.jpg') }}" alt="{{ translations.blog_card_12_title or 'Lista kontrolna przeprowadzki Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_list') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/list.jpg') }}" alt="{{ translations.blog_card_12_title or 'Lista kontrolna przeprowadzki Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_12_desc or "Sprawdź, o czym pamiętać przed, w trakcie i po przeprowadzce. Pobierz naszą listę kontrolną." }}</p>
-                        <a href="{{ url_for('main.blog_list') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_list') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 13 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_13_title or "Jak oznaczać kartony – system kolorów i kodów" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_kartony') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_13_title or "Jak oznaczać kartony – system kolorów i kodów" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_13_date or "15 stycznia 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/kartony.jpg') }}" alt="{{ translations.blog_card_13_title or 'Oznaczanie kartonów Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_kartony') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/kartony.jpg') }}" alt="{{ translations.blog_card_13_title or 'Oznaczanie kartonów Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_13_desc or "Prosty system kolorów i kodów, dzięki któremu rozpakujesz się w kilka godzin, nie dni." }}</p>
-                        <a href="{{ url_for('main.blog_kartony') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_kartony') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 14 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_14_title or "Co spakować na samym końcu? Walizka pierwszej potrzeby" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_walizka') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_14_title or "Co spakować na samym końcu? Walizka pierwszej potrzeby" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_14_date or "10 stycznia 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/walizka.jpg') }}" alt="{{ translations.blog_card_14_title or 'Walizka pierwszej potrzeby Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_walizka') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/walizka.jpg') }}" alt="{{ translations.blog_card_14_title or 'Walizka pierwszej potrzeby Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_14_desc or "Lista rzeczy, które musisz mieć pod ręką od razu po przeprowadzce – zanim rozpakujesz kartony." }}</p>
-                        <a href="{{ url_for('main.blog_walizka') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_walizka') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 15 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_15_title or "Przeprowadzka latem w Bielsko Biala – plusy i minusy" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_lato') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_15_title or "Przeprowadzka latem w Bielsko Biala – plusy i minusy" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_15_date or "5 stycznia 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/lato.jpg') }}" alt="{{ translations.blog_card_15_title or 'Przeprowadzka latem Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_lato') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/lato.jpg') }}" alt="{{ translations.blog_card_15_title or 'Przeprowadzka latem Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_15_desc or "Dłuższe dni, lepsza pogoda, ale wyższe ceny. Sprawdź, czy warto przeprowadzać się latem." }}</p>
-                        <a href="{{ url_for('main.blog_lato') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_lato') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 16 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_16_title or "Przeprowadzka zimą w Bielsko Biala – na co uważać?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_zima') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_16_title or "Przeprowadzka zimą w Bielsko Biala – na co uważać?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_16_date or "30 grudnia 2024" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/zima.jpg') }}" alt="{{ translations.blog_card_16_title or 'Przeprowadzka zimą Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_zima') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/zima.jpg') }}" alt="{{ translations.blog_card_16_title or 'Przeprowadzka zimą Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_16_desc or "Śnieg, lód, krótkie dni – przeprowadzka zimą ma swoje wyzwania. Sprawdź, jak się przygotować." }}</p>
-                        <a href="{{ url_for('main.blog_zima') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_zima') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 17 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_17_title or "Przeprowadzka w weekend – czy to dobry pomysł?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_weekend') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_17_title or "Przeprowadzka w weekend – czy to dobry pomysł?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_17_date or "20 grudnia 2024" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/weekend.jpg') }}" alt="{{ translations.blog_card_17_title or 'Przeprowadzka w weekend Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_weekend') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/weekend.jpg') }}" alt="{{ translations.blog_card_17_title or 'Przeprowadzka w weekend Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_17_desc or "Plusy i minusy przeprowadzki w sobotę lub niedzielę. Kiedy się opłaca, a kiedy lepiej wybrać dzień powszedni?" }}</p>
-                        <a href="{{ url_for('main.blog_weekend') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_weekend') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 18 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_18_title or "Jak wybrać dobrą firmę przeprowadzkową w Bielsko Biala?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_wybor_firmy') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_18_title or "Jak wybrać dobrą firmę przeprowadzkową w Bielsko Biala?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_18_date or "15 grudnia 2024" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/wybor-firmy.jpg') }}" alt="{{ translations.blog_card_18_title or 'Wybór firmy przeprowadzkowej Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_wybor_firmy') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/wybor-firmy.jpg') }}" alt="{{ translations.blog_card_18_title or 'Wybór firmy przeprowadzkowej Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_18_desc or "Na co zwrócić uwagę, czego unikać i jak nie dać się oszukać przy wyborze firmy przeprowadzkowej." }}</p>
-                        <a href="{{ url_for('main.blog_wybor_firmy') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_wybor_firmy') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 19 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_19_title or "Jak bezpiecznie przeprowadzić fortepian lub pianino?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_pianino') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_19_title or "Jak bezpiecznie przeprowadzić fortepian lub pianino?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_19_date or "18 maja 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/pianino.jpg') }}" alt="{{ translations.blog_card_19_title or 'Przeprowadzka fortepianu Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_pianino') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/pianino.jpg') }}" alt="{{ translations.blog_card_19_title or 'Przeprowadzka fortepianu Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_19_desc or "Fortepian waży od 200 do 500 kg. Sprawdź, jak bezpiecznie go przewieźć i na co uważać przy transporcie instrumentu." }}</p>
-                        <a href="{{ url_for('main.blog_pianino') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_pianino') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                     <!-- Blog 20 -->
                     <div class="tm-blog-post blog-card">
-                        <h3 class="tm-gold-text">{{ translations.blog_card_20_title or "Przeprowadzka z dziećmi w Bielsko Biala – jak ułatwić im adaptację?" }}</h3>
+                        <h3 class="tm-gold-text">
+                            <a href="{{ url_for('main.blog_dzieci') }}" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                                {{ translations.blog_card_20_title or "Przeprowadzka z dziećmi w Bielsko Biala – jak ułatwić im adaptację?" }}
+                            </a>
+                        </h3>
                         <div class="blog-meta">{{ translations.blog_card_20_date or "20 maja 2025" }} | Kadar Przeprowadzki</div>
-                        <img src="{{ url_for('static', filename='blog_images/dzieci.jpg') }}" alt="{{ translations.blog_card_20_title or 'Przeprowadzka z dziećmi Bielsko Biala' }}">
+                        <a href="{{ url_for('main.blog_dzieci') }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ url_for('static', filename='blog_images/dzieci.jpg') }}" alt="{{ translations.blog_card_20_title or 'Przeprowadzka z dziećmi Bielsko Biala' }}">
+                        </a>
                         <p>{{ translations.blog_card_20_desc or "Przeprowadzka to wyzwanie nie tylko dla dorosłych, ale przede wszystkim dla dzieci. Sprawdź, jak pomóc dziecku zaaklimatyzować się w nowym miejscu." }}</p>
-                        <a href="{{ url_for('main.blog_dzieci') }}" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
+                        <a href="{{ url_for('main.blog_dzieci') }}" target="_blank" rel="noopener noreferrer" class="tm-btn text-uppercase">{{ translations.blog_read_more or "Czytaj więcej →" }}</a>
                     </div>
 
                 </div>

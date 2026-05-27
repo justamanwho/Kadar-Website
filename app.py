@@ -121,14 +121,6 @@ def inject_translations():
     return dict(translations=translations, lang=lang, language_options=LANGUAGE_OPTIONS)
 
 
-# Root route - redirects to appropriate language version
-@app.route('/')
-def root():
-    # Always default to Polish, ignoring browser language
-    session['lang'] = 'pl'
-    return redirect(url_for('main.index', lang_code='pl'))
-
-
 @app.after_request
 def add_header(response):
     if (request.path.startswith('/static/') or

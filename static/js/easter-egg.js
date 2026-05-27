@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bg.style.opacity = '0';
             document.body.classList.remove('the-world-active');
             document.body.classList.add('time-resumes');
-            setTimeout(() => window.location.href = '/ja', 1000);
+            setTimeout(() => window.location.href = '/ja/', 1000);
         };
     }
 

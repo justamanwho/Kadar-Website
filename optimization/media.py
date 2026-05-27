@@ -1,5 +1,4 @@
 import os
-import re
 import subprocess
 from PIL import Image
 
@@ -76,43 +75,7 @@ def optimize_all_media(folder="static"):
                 optimize_video(path)
 
 
-# =========================
-# CSS MINIFY
-# =========================
-def safe_minify(css):
-    css = re.sub(r'/\*.*?\*/', '', css, flags=re.DOTALL)
-    css = re.sub(r'\s+', ' ', css)
-    css = re.sub(r';\s*', ';', css)
-    css = re.sub(r':\s*', ':', css)
-    css = re.sub(r'\s*{\s*', '{', css)
-    css = re.sub(r'\s*}\s*', '}', css)
-    css = re.sub(r',\s*', ',', css)
-    return css.strip()
 
-
-def minify_css(input_path, output_path):
-    try:
-        with open(input_path, 'r', encoding='utf-8') as f:
-            original = f.read()
-
-        minified = safe_minify(original)
-
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.write(minified)
-
-        print("CSS minified!")
-
-    except Exception as e:
-        print(f"CSS error: {e}")
-
-
-# =========================
-# MAIN
-# =========================
 if __name__ == '__main__':
     optimize_all_media("static")
 
-    minify_css(
-        'static/styles.css',
-        'static/styles.min.css'
-    )

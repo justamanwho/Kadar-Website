@@ -42,8 +42,5 @@ A website for a moving company called KADAR, operating in Bielsko-Biała, Poland
 
 ## To Do List:
 
-- add cennik?
-- compress css into mini css
 - make the page not move after changing language (the same scroll location)
-- make blog list visually bigger
 - make videos indexed
